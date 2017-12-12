@@ -1,0 +1,14 @@
+<div class="table-wrapper">
+
+  <table class="table table-bordered">
+    <tr>
+      <th>このとき付与されたポイント</th>
+      <th>ポイント付与日</th>
+    </tr>
+    <% f.points.each do |m| %>
+      <tr>
+        <td><%= m.amount %></td>
+        <td><%= m.created_at.to_s %></td>
+      </tr>
+    <% end %>
+  </table>

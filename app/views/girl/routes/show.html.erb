@@ -1,0 +1,17 @@
+<% @title = @prefecture.name %> <h1><%= @title %></h1>
+
+<ul class="breadcrumb">
+  <li><%= link_to 'HOME', :girl_prefecture %><span class="divider"></span></li>
+  <li><%= link_to '路線選択', girl_prefecture_routes_path(@prefecture.id) %><span class="divider"></span></li>
+  <li class="active"><%= @route.name %></li>
+</ul>
+<div class="col-sm-12">
+  <h4><%= @route.name %></h4>
+</div>
+<% @stations.each do |f| %>
+
+  <div class="list-group">
+    <%= link_to f.name, girl_prefecture_route_station_path(@prefecture.id, @route.id, f.id), {:class => "list-group-item col-sm-2"} %>
+  </div>
+
+<% end %>

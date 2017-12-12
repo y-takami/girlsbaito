@@ -1,0 +1,115 @@
+<table class="table col-sm-8">
+  <tr>
+    <td>店舗名</td>
+    <td><%= f.shop_name %></td>
+  </tr>
+  <tr>
+  <tr>
+    <td>店舗ホームページURL</td>
+    <td><%= f.url %></td>
+  </tr>
+  <tr>
+    <td>都道府県</td>
+    <td><%= f.prefecture.name %></td>
+  </tr>
+  <tr>
+    <td>エリア</td>
+    <td><%= f.city.name %></td>
+  </tr>
+  <tr>
+    <td>エリア詳細</td>
+    <td><%= f.house_number %></td>
+  </tr>
+
+  <tr>
+    <td>時給</td>
+    <td><%= f.payment_hour_low %>円〜<%= f.payment_hour_high %>円</td>
+  </tr>
+
+  <tr>
+    <td>日給</td>
+    <td><%= f.payment_day %></td>
+  </tr>
+
+  <tr>
+    <td>業種</td>
+    <td><%= f.category.name %></td>
+  </tr>
+  <tr>
+    <td>電車路線名</td>
+    <td><%= f.route.name %></td>
+  </tr>
+
+  <tr>
+    <td>最寄り駅名</td>
+    <td><%= f.station.name %></td>
+  </tr>
+  <tr>
+    <td>求人見出しタイトル</td>
+    <td><%= f.title %></td>
+  </tr>
+  <tr>
+    <td>お仕事を一言で紹介</td>
+    <td><%= f.summary %></td>
+  </tr>
+  <tr>
+    <td>求人時間帯</td>
+    <td><%= '朝' if f.time_morning %>&nbsp;&nbsp;<%= '昼' if f.time_noon %>&nbsp;&nbsp;
+      <%= '夕' if f.time_afternoon %>&nbsp;&nbsp;<%= '夜' if f.time_night %>&nbsp;&nbsp;<%= '夜中' if f.time_midnight %>
+    </td>
+  </tr>
+  <tr>
+    <td>お仕事内容紹介</td>
+    <td><%= f.job_content %></td>
+  </tr>
+  <tr>
+    <td>お祝い金</td>
+    <td><%= f.congratulation_money %></td>
+  </tr>
+  <tr>
+    <td>お店からのメッセージ</td>
+    <td><%= f.message %></td>
+  </tr>
+  <tr>
+    <td>ラインID</td>
+    <td><%= f.line_id %></td>
+  </tr>
+  <tr>
+    <td>主な特徴</td>
+    <td><%= '日払い可' if f.feature.daily %>&nbsp;&nbsp;<%= '給与保証' if f.feature.guarantee %>&nbsp;&nbsp;
+      <%= '交通費支給' if f.feature.carfare %>&nbsp;&nbsp;<%= '初心者歓迎' if f.feature.beginner %>
+      &nbsp;&nbsp;<%= '体験入店可' if f.feature.experience %></br>
+      <%= '生理休暇' if f.feature.menstruation %>&nbsp;&nbsp;<%= '寮完備' if f.feature.dormitory %>
+      &nbsp;&nbsp;<%= '個室待機' if f.feature.room %></br>
+      <%= '託児所' if f.feature.nursery %>&nbsp;&nbsp;<%= '送迎' if f.feature.pickup %>
+      &nbsp;&nbsp;<%= 'アリバイ対策' if f.feature.alibi %></br>
+      <%= '在宅勤務可' if f.feature.home %>&nbsp;&nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td>その他待遇や備考</td>
+    <td><%= f.note %></td>
+  </tr>
+  <tr>
+    <td>見出し，メイン画像</td>
+    <% if @shop_show.main_image? %>
+      <td></td><%= image_tag @shop_show.main_image.url %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>店舗イメージ画像１</td>
+    <% if @shop_show.image1? %>
+      <td></td><%= image_tag @shop_show.image1.url %></td>
+    <% end %>  </tr>
+  <tr>
+    <td>店舗イメージ画像2</td>
+    <% if @shop_show.image2? %>
+      <td></td><%= image_tag @shop_show.image2.url %></td>
+    <% end %>  </tr>
+  <tr>
+    <td>店舗イメージ画像3</td>
+    <% if @shop_show.image3? %>
+      <td></td><%= image_tag @shop_show.image3.url %></td>
+    <% end %>  </tr>
+
+</table>

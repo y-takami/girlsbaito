@@ -1,0 +1,107 @@
+<div class="form-group">
+  項目は全て必須入力です。
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :comfirm, 'よくある質問に記載のない質問ですか？' %>
+  </div>
+  <div class="col-sm-3">
+    <div class="checkbox-inline">
+      <%= f.check_box :comfirm %><label>よくある質問では解決しなかった質問です。</label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :belong, '所属' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.select :belong, ['個人', '法人'] %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :name, '名前' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :name, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :name_kana, '名前（フリガナ）' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :name_kana, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :company_name, '会社名' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :company_name, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :company_name_kana, '会社名（カタカナ）' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :company_name_kana, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :mail, 'メールアドレス' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :mail, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :tel, '連絡先電話番号' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :tel, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :homepage, 'ホームページ' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :homepage, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :content, 'お問い合わせ内容' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_area :content, {:class => "form-control"} %>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :policy, '個人情報保護に関する事項に同意します' %>
+  </div>
+  <div class="col-sm-3">
+    <div class="checkbox-inline">
+      <%= f.check_box :policy %><label>同意する</label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+
+<%= render 'shared/script_prefecture_change' %>
+
+<% @title = '店舗情報編集' %>
+
+<div>
+  <h1><%= @title %></h1>
+  <%= render 'shared/errors', f: @shop_show %>
+  <div class="form-horizontal" role="form">
+    <%= form_for @shop_show, url: shop_recruit_path(@shop_show.id) do |f| %>
+      <%= render 'form_shop_show', f: f %>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+          <%= f.submit '更新', :class => "btn btn-default" %>
+          <%= link_to 'キャンセル', shop_recruit_path(params[:id]) %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,230 @@
+<div class="form-group">
+  <%= f.label :shop_name, {:class => "col-sm-3 control-label"} do %>
+    店名<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :shop_name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :prefecture_id, {:class => "col-sm-3 control-label"} do %>
+    都道府県<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.collection_select :prefecture_id, @prefectures, :id, :name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :city_id, {:class => "col-sm-3 control-label"} do %>
+    市町村<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.collection_select :city_id, @prefecture.cities, :id, :name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :house_number, {:class => "col-sm-3 control-label"} do %>
+    番地<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :house_number, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :payment_hour_low, {:class => "col-sm-3 control-label"} do %>
+    時給<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-3">
+    <%= f.text_field :payment_hour_low, {:class => "form-control"} %>
+  </div>
+  <div class="col-sm-1">
+    〜
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :payment_hour_high, {:class => "form-control"} %>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <%= f.label :payment_day, {:class => "col-sm-3 control-label"} do %>
+    日給<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :payment_day, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :category_id, {:class => "col-sm-3 control-label"} do %>
+    業種<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.collection_select :category_id, @categories, :id, :name, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :route_id, {:class => "col-sm-3 control-label"} do %>
+    最寄り駅の線<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.collection_select :route_id, @routes, :id, :name, {:class => "form-control"} %>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <%= f.label :station_id, {:class => "col-sm-3 control-label"} do %>
+    最寄り駅の線<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.collection_select :station_id, @stations, :id, :name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :title, {:class => "col-sm-3 control-label"} do %>
+    求人タイトル<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :title, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :summary, {:class => "col-sm-3 control-label"} do %>
+    お仕事内容，要約版<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_area :summary, {rows: 3, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :time_morning, {:class => "col-sm-3 control-label"} do %>
+    時間帯<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <div class="checkbox-inline">
+      <%= f.check_box :time_morning %>
+      <%= f.label :time_morning, '朝' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :time_noon %>
+      <%= f.label :time_noon, '昼' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :time_afternoon %>
+      <%= f.label :time_afternoon, '夕方' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :time_night %>
+      <%= f.label :time_night, '夜' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :time_midnight %>
+      <%= f.label :time_midnight, '深夜' %>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :job_content, {:class => "col-sm-3 control-label"} do %>
+    お仕事内容<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_area :job_content, {rows: 8, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :congratulation_money, {:class => "col-sm-3 control-label"} do %>
+    お祝い金<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :congratulation_money, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :message, {:class => "col-sm-3 control-label"} do %>
+    お店からのメッセージ<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_area :message, {rows: 5, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :line_id, {:class => "col-sm-3 control-label"} do %>
+    求人用ラインID<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :line_id, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :payment_day_flag, {:class => "col-sm-3 control-label"} do %>
+    店舗特徴<span class="text-danger">※</span>
+  <% end %>
+
+
+    <%= f.fields_for :feature  do |ff| %>
+      <%= render 'shared/form_feature', ff: ff %>
+    <% end %>
+
+</div>
+<div class="form-group">
+  <%= f.label :note, {:class => "col-sm-3 control-label"} do %>
+    その他アピールポイント<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_area :note, {rows: 5, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :main_image, {:class => "col-sm-3 control-label"} do %>
+    メイン画像<span class="text-danger">※</p>
+  <% end %>
+
+  <% if @shop_show.main_image? %>
+    <%= image_tag @shop_show.main_image.url %>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.file_field :main_image %><%= @shop_show.main_image %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :image1, {:class => "col-sm-3 control-label"} do %>
+    サブイメージ１<span class="text-danger">※</p>
+  <% end %>
+
+  <% if @shop_show.main_image? %>
+    <%= image_tag @shop_show.image1.url %>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.file_field :image1 %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :image2, {:class => "col-sm-3 control-label"} do %>
+    サブイメージ２<span class="text-danger">※</p>
+  <% end %>
+
+  <% if @shop_show.image2? %>
+    <%= image_tag @shop_show.image2.url %>
+  <% end %>
+
+  <div class="col-sm-7">
+    <%= f.file_field :image2 %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :image3, {:class => "col-sm-3 control-label"} do %>
+    サブイメージ３<span class="text-danger">※</p>
+  <% end %>
+
+  <% if @shop_show.image3? %>
+    <%= image_tag @shop_show.image3.url %>
+  <% end %>
+
+  <div class="col-sm-7">
+    <%= f.file_field :image3 %>
+  </div>
+</div>

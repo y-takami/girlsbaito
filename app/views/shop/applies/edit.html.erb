@@ -1,0 +1,17 @@
+<% @title = '店舗情報編集' %>
+<%= render 'shared/errors', f: @apply %>
+<div class="table-responsive">
+  <%= render 'table_apply', f: @apply %></br></br>
+</div>
+
+<div class="form-horizontal" role="form">
+  <%= form_for @apply, url: :shop_apply do |f| %>
+    <%= render 'form_apply', f: f %>
+
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-10">
+        <%= f.submit '採用可否決定', data: {confirm: '一度入力を行うと変更できません。よろしいですか？'}, :class => "btn btn-default" %>
+      </div>
+    </div>
+  <% end %>
+</div>

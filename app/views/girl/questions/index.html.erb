@@ -1,0 +1,48 @@
+<% @title = 'よくある質問一覧' %> <h1><%= @title %></h1>
+
+<h3>会員登録について</h3>
+<% @question_category_1.each do |f| %>
+  <%= link_to f.question, girl_question_path(f.id) %>
+  <br>
+<% end %>
+
+<h3>応募について</h3>
+<% @question_category_2.each do |f| %>
+  <%= link_to f.question, girl_question_path(f.id) %>
+  <br>
+<% end %>
+
+<h3>求人広告について</h3>
+<% @question_category_3.each do |f| %>
+  <%= link_to f.question, girl_question_path(f.id) %>
+    <br>
+<% end %>
+
+<h3>女子高生バイトについて</h3>
+<% @question_category_4.each do |f| %>
+  <%= link_to f.question, girl_question_path(f.id) %>
+    <br>
+<% end %>
+
+<h3>勤務について</h3>
+<% @question_category_5.each do |f| %>
+  <%= link_to f.question, girl_question_path(f.id) %>
+    <br>
+<% end %>
+
+<h3>選考・採用について</h3>
+<% @question_category_6.each do |f| %>
+  <%= link_to f.question, girl_question_path(f.id) %>
+    <br>
+<% end %>
+
+<h3>採用お祝い金について</h3>
+<% @question_category_7.each do |f| %>
+  <%= link_to f.question, girl_question_path(f.id) %>
+    <br>
+<% end %>
+
+<h5>もしこれらのＱ＆Ａでも分からない点がある場合には、
+  <%= link_to 'お問い合わせフォーム', new_girl_contact_path %>
+  から質問して下さい。
+</h5>

@@ -1,0 +1,69 @@
+<header>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+      <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
+      <div class="navbar-header">
+
+        <!--
+
+          メニューボタン
+
+          data-toggle : ボタンを押したときにNavbarを開かせるために必要
+          data-target : 複数navbarを作成する場合、ボタンとナビを紐づけるために必要
+
+        -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- タイトルなどのテキスト -->
+        <%= link_to @site_name, admin_root_path, :class => "navbar-brand" %>
+
+      </div>
+
+      <!-- グローバルナビの中身 -->
+      <div class="collapse navbar-collapse" id="nav-menu-1">
+
+        <!-- 各ナビゲーションメニュー -->
+        <ul class="nav navbar-nav">
+
+          <!-- 通常のリンク -->
+          <li class="active"><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+
+          <!-- ドロップダウンのメニューも配置可能 -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+
+
+          <li class="navbar-right">
+            <%= if current_admin
+                  link_to 'ログアウト', :admin_session, method: :delete
+                else
+                  link_to 'ログイン', :new_admin_session
+                end
+            %>
+          </li>
+
+        </ul>
+
+      </div>
+      <%= content_tag(:div, flash.notice, class: 'alert alert-success') if flash.notice %>
+      <%= content_tag(:div, flash.alert, class: 'alert alert-danger') if flash.alert %>
+    </div>
+  </nav>
+</header>

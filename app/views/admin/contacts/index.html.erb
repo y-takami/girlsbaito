@@ -1,0 +1,35 @@
+<% @title = '採用管理' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+
+  <%= paginate @contacts %>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>所属</th>
+      <th>名前</th>
+      <th>会社名</th>
+      <th>メールアドレス</th>
+      <th>内容</th>
+      <th>質問日時</th>
+    </tr>
+    <% @contacts.each do |m| %>
+      <tr>
+        <td><%= m.belong %></td>
+        <td><%= m.name %></td>
+        <td><%= m.company_name %></td>
+        <td><%= m.mail %></td>
+        <td><%= truncate(m.content) %></td>
+        <td><%= m.created_at %></td>
+
+        <td>
+          <%= link_to '詳細', admin_contact_path(m.id) %>｜
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @contacts %>
+
+</div>

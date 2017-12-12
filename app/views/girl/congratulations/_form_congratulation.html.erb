@@ -1,0 +1,166 @@
+<div class="form-group">
+  項目は全て必須入力です。
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :first_work_flag, '初日勤務の有無' %>
+  </div>
+  <div class="col-sm-3">
+    <div class="checkbox-inline">
+      <%= f.check_box :first_work_flag %><label>完了しました。</label>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :interview, '面接日' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.date_field :interview, {:class => "form-control"} %>
+  </div>
+  例：2014-12-31
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :first_work_day, '初出勤日' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.date_field :first_work_day, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :method, 'お祝い金受け取り方法' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.select :method, ['', '銀行振込', 'アマゾンギフトカード', 'iTunesカード'] %>
+  </div>
+</div>
+
+<div class="form-group">
+住所
+</div>
+
+<div class="form-group" id="postal_code" style="display: none">
+  <div class="col-sm-3 control-label">
+    <%= f.label :postal_first, '郵便番号' %>
+  </div>
+  <div class="col-sm-3 form-inline">
+    <%= f.text_field :postal_first, {:class => "form-control"} %>-
+    <%= f.text_field :postal_last, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group" id="prefecture" style="display: none">
+  <div class="col-sm-3 control-label">
+    <%= f.label :prefecture, '都道府県名' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :prefecture, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group" id="city" style="display: none">
+  <div class="col-sm-3 control-label">
+    <%= f.label :city, '市町村' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :city, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group" id="house_number" style="display: none">
+  <div class="col-sm-3 control-label">
+    <%= f.label :house_number, '番地その他' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :house_number, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group" id="bank_name" style="display: none">
+  <div class="col-sm-3 control-label">
+    <%= f.label :bank_name, '振込先銀行名' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :bank_name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group" id="bank_branch_name" style="display: none">
+  <div class="col-sm-3 control-label">
+    <%= f.label :bank_branch_name, '銀行支店名' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :bank_branch_name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group" id="bank_type" style="display: none">
+  <div class="col-sm-3 control-label">
+    <%= f.label :bank_type, '口座種別' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.select :bank_type, ['普通', '当座'] %>
+  </div>
+</div>
+<div class="form-group" id="bank_number" style="display: none">
+  <div class="col-sm-3 control-label">
+    <%= f.label :bank_number, '口座番号' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :bank_number, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :name, '氏名（フルネーム）' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :name_sei_kana, 'フリガナ（姓）' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :name_sei_kana, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :name_mei_kana, 'フリガナ（名）' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :name_mei_kana, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :email, 'メールアドレス' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :email, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :tel, '電話番号' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :tel, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :note, '備考' %>
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :note, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :policy, '利用規約に同意します' %>
+  </div>
+  <div class="col-sm-3">
+    <div class="checkbox-inline">
+      <%= f.check_box :policy %><label>同意する</label>
+    </div>
+  </div>
+</div>

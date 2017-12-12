@@ -1,0 +1,44 @@
+<% @title = '料金内訳詳細' %>
+<h1><%= @title %></h1>
+
+<br>
+<div class="table-wrapper">
+  <table class="table table-bordered">
+    <tr>
+      <td>今月（<%= Date.today.beginning_of_month %>〜<%= Date.today %>の合計請求額予定</td>
+      <td><%= count_fee(@shop.id) %>円</td>
+    </tr>
+    <tr>
+      <td>先月（<%= Time.now.prev_month.beginning_of_month %>〜<%= Time.now.prev_month.end_of_month %>の合計請求額</td>
+      <td><%= count_fee_last_month(@shop.id) %>円</td>
+    </tr>
+  </table>
+</div>
+
+<div class="table-wrapper">
+
+  <%= paginate @applies %>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>氏名</th>
+      <th>採用店舗名</th>
+      <th>採用決定日時</th>
+      <th>お祝い金設定額</th>
+      <th>採用単価</th>
+    </tr>
+    <% @applies.each do |m| %>
+      <tr>
+        <td><%= m.girl.name %></td>
+        <td><%= m.shop_show.shop_name %></td>
+        <td><%= m.employment_day %></td>
+        <td><%= m.congratulation_money %>円</td>
+        <td><%= m.congratulation_money*2 %>円</td>
+
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @applies %>
+
+</div>

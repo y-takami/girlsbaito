@@ -1,0 +1,14 @@
+<% @title = @prefecture.name %> <h1><%= @title %></h1>
+
+<ul class="breadcrumb">
+  <li><%= link_to 'HOME', :new_girl_prefecture %><span class="divider"></span></li>
+  <li class="active"><%= @prefecture.name %></li>
+</ul>
+
+<% @routes.each do |f| %>
+
+  <div class="list-group">
+    <%= link_to "#{f.name}（#{@shop_shows.where(route_id: f.id).where(examine: true).count}）", girl_prefecture_route_path(@prefecture.id, f.id), {:class => "list-group-item col-sm-4"} %>
+  </div>
+
+<% end %>

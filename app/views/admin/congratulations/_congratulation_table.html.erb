@@ -1,0 +1,67 @@
+<table class="table col-sm-8">
+
+  <tr>
+    <td>お祝い金申請日</td>
+    <td><%= f.created_at %></td>
+  </tr>
+
+  <tr>
+    <td>氏名</td>
+    </td>
+    <td><%= f.apply.girl.name %></td>
+  </tr>
+  <tr>
+    <td>応募店舗</td>
+    <td><%= f.apply.shop_show.shop_name %></td>
+  </tr>
+  <tr>
+    <td>初出勤フラグ</td>
+    <td><%= f.first_work_flag %></td>
+  </tr>
+
+  <tr>
+    <td>支払い方法</td>
+    </td>
+    <td><%= f.method %></td>
+  </tr>
+  <tr>
+    <td>住所</td>
+    <td><%= f.postal_first %>-<%= f.postal_first %>
+      <%= f.prefecture %> <%= f.city %> <%= f.house_number %></td>
+  </tr>
+  <tr>
+    <td>名前</td>
+    <td><%= f.name %> <%= f.name_sei_kana %> <%= f.name_mei_kana %></td>
+  </tr>
+
+  <tr>
+    <td>銀行口座</td>
+    </td>
+    <td><%= f.bank_name %><%= f.bank_branch_name %>
+      <%= f.bank_type %><%= f.bank_number %></td>
+  </tr>
+  <tr>
+    <td>メールアドレス</td>
+    <td><%= f.email %></td>
+  </tr>
+  <tr>
+    <td>電話</td>
+    </td>
+    <td><%= f.tel %></td>
+  </tr>
+  <tr>
+    <td>面接日</td>
+    <td><%= f.interview %></td>
+  </tr>
+  <tr>
+    <td>初出勤日</td>
+    <td><%= f.first_work_day %></td>
+  </tr>
+
+  <tr>
+    <td>備考</td>
+    </td>
+    <td><%= f.note %></td>
+  </tr>
+
+</table>

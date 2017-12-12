@@ -1,0 +1,40 @@
+<% @title = '登録店舗管理' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+  <div class="links">
+    <%= link_to '新規登録', :new_admin_shop %>
+  </div>
+
+  <%= paginate @shop %>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>代表店名</th>
+      <th>メールアドレス</th>
+      <th>求人店舗登録数</th>
+      <th>審査済み？</th>
+      <th>アカウント停止？</th>
+    </tr>
+    <% @shop.each do |m| %>
+      <tr>
+        <td><%= m.shop_name %></td>
+        <td><%= m.admin_email %></td>
+        <td><%= m.shop_shows.count %></td>
+        <td><%= m.examine %></td>
+        <td><%= m.suspended %></td>
+        <td>
+          <%= link_to '編集', edit_admin_shop_path(m.id) %>｜
+          <%= link_to '削除', admin_shop_path(m.id), method: :delete,
+                      data: {confirm: '本当に削除しますか？'} %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @shop %>
+
+  <div class="links">
+    <%= link_to '新規登録', :new_admin_shop %>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="col-sm-12 form-group">
+  項目は全て必須入力です。必ず採用・不採用どちらかにのみチェックを入れて下さい。
+</div>
+
+<div class="form-group">
+  <div class="col-sm-3 control-label">
+    <%= f.label :employment, '採用可否入力' %>
+  </div>
+  <div class="col-sm-7">
+    <div class="checkbox-inline">
+      <div class="col-sm-7">
+        <%= f.check_box :employment, {}, true, false %><label>採用する</label>
+      </div>
+      <div class="col-sm-7">
+        <%= f.check_box :employment, {}, false, false %><label>採用しない</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3 control-label">
+    <%= f.label :interview, '面接日' %>
+  </div>
+  <div class="col-sm-9">
+    <%= f.date_field :interview %>
+    <span>例：2014/06/09 不採用で面接を行っていない場合にも上記応募日を入力してください</span>
+  </div>
+</div>

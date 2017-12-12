@@ -1,0 +1,36 @@
+<% @title = '採用詳細・お祝い金審査入力' %>
+<h1><%= @title %></h1>
+
+<h2>採用応募詳細</h2>
+<div class="table-responsive">
+  <%= render 'congratulation_table_apply', f: @apply %>
+</div>
+<h2>お祝い金申請詳細</h2>
+<% if @congratulation %>
+  <div class="table-responsive">
+    <%= render 'congratulation_table', f: @congratulation %>
+  </div>
+
+
+  <div class="form-horizontal" role="form">
+    <%= form_for @congratulation, url: :admin_congratulation do |f| %>
+      <div class="form-group">
+        <div class="col-sm-3 control-label">
+          <%= f.label :examine, 'お祝い金審査' %>
+        </div>
+        <div class="col-sm-3">
+          <div class="checkbox-inline">
+            <%= f.check_box :examine %><label>審査完了</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+          <%= f.submit '更新', :class => "btn btn-default" %>
+          <%= link_to 'キャンセル', :admin_applies %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+

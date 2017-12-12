@@ -1,0 +1,20 @@
+<% @title = '店舗詳細' %> <h1><%= @title %></h1>
+
+<%= render 'girl/shared/breadcrumb' %>
+
+<div class="table-responsive">
+
+  <%= render 'table_shop_show', f: @shop %>
+
+  <div class="text-center">
+    <% if cookies[:favorite] && cookies[:favorite].split(" ").include?(@shop.id.to_s) %>
+      <%= link_to '気になる解除', girl_favorite_delete_path(:shop_id => @shop.id), {:class => "btn btn-primary"} %>
+    <% else %>
+      <%= link_to '気になるに追加', girl_favorite_add_path(:shop_id => @shop.id), {:class => "btn btn-primary"} %>
+    <% end %>
+    <% if @apply_button==true %>
+    <%= link_to '応募する', new_girl_shop_apply_path(@shop.id), {:class => "btn btn-primary"} %>
+      <% end %>
+  </div>
+
+</div>

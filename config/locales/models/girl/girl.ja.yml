@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      girl:
+        nickname: ニックネーム
+        name: 氏名（フルネーム）
+        email: メールアドレス
+        email_confirmation: メールアドレス再確認
+        tel: 電話番号
+        station: 最寄り駅名
+        line_id: ラインID
+        password: パスワード
+        password_confirmation: パスワード再確認
+        invitation_code: 招待コード

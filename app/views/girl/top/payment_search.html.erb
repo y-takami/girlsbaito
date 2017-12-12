@@ -1,0 +1,38 @@
+<% @title = '給料から検索' %> <h1><%= @title %></h1>
+
+
+<%= form_for @search_form, as: 'search', url: :girl_shops, html: {method: :get, class: 'search'} do |f| %>
+
+  <table class="table table-bordered">
+    <tr>
+      <td>
+        <div class="form-group">
+          <%= f.label :payment_hour, {:class => "col-sm-12 control-label"} do %>
+            時給<span class="text-danger">※</span>
+          <% end %>
+          <div class="col-sm-12">
+
+            <div class="col-sm-3">
+              <%= f.select(:payment_hour, [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000,
+                                           9000, 10000]) %>円以上
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <%= f.hidden_field 'prefecture', :value => cookies[:prefecture] %>
+
+    <tr>
+      <td>
+        <div class="form-group">
+          <div class="col-sm-offset-6">
+            <%= f.submit '検索', :class => "btn btn-default" %>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+<% end %>
+
+

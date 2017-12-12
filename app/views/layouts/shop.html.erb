@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<% @site_name = '女子ジョブ' %>
+<% @email = 'girls-job.jp@email.com' %>
+<% @email_girl = 'girls-job_girl@email.com' %>
+<% @email_shop = 'girls-job_shop@email.com' %>
+<head>
+  <title><%= document_title %></title>
+  <%= stylesheet_link_tag 'shop', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'shop', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <%= render 'shop/shared/header' %>
+  <%= yield %>
+  <%= render 'shop/shared/footer' %>
+</div>
+</body>
+</html>

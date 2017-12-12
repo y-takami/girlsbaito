@@ -1,0 +1,244 @@
+<div class="form-group">
+  <%= ff.label :shop_name, {:class => "col-sm-3 control-label"} do %>
+    店名<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :shop_name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :prefecture, {:class => "col-sm-3 control-label"} do %>
+    都道府県<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :prefecture, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :city, {:class => "col-sm-3 control-label"} do %>
+    市町村<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :city, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :house_number, {:class => "col-sm-3 control-label"} do %>
+    番地<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :house_number, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :payment_hour, {:class => "col-sm-3 control-label"} do %>
+    時給<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :payment_hour, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :payment_day, {:class => "col-sm-3 control-label"} do %>
+    日給<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :payment_day, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :category, {:class => "col-sm-3 control-label"} do %>
+    業種<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.select :category, ShopInfo::CATEGORY_NAMES, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :station_line, {:class => "col-sm-3 control-label"} do %>
+    最寄り駅の線<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :station_line, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :station, {:class => "col-sm-3 control-label"} do %>
+    最寄り駅の線<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :station, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :title, {:class => "col-sm-3 control-label"} do %>
+    求人タイトル<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :title, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :summary, {:class => "col-sm-3 control-label"} do %>
+    お仕事内容，要約版<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_area :summary, {rows: 3, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :time_morning, {:class => "col-sm-3 control-label"} do %>
+    時間帯<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <div class="checkbox-inline">
+      <%= ff.check_box :time_morning %>
+      <%= ff.label :time_morning, '朝' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :time_noon %>
+      <%= ff.label :time_noon, '昼' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :time_afternoon %>
+      <%= ff.label :time_afternoon, '夕方' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :time_night %>
+      <%= ff.label :time_night, '夜' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :time_midnight %>
+      <%= ff.label :time_midnight, '深夜' %>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :job_content, {:class => "col-sm-3 control-label"} do %>
+    お仕事内容<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_area :job_content, {rows: 8, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :congratulation_money, {:class => "col-sm-3 control-label"} do %>
+    お祝い金<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :congratulation_money, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :message, {:class => "col-sm-3 control-label"} do %>
+    お店からのメッセージ<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_area :message, {rows: 5, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :line_id, {:class => "col-sm-3 control-label"} do %>
+    求人用ラインID<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_field :line_id, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :payment_day_flag, {:class => "col-sm-3 control-label"} do %>
+    店舗特徴<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <div class="checkbox-inline">
+      <%= ff.check_box :daily %>
+      <%= ff.label :daily, '日払い可' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :guarantee %>
+      <%= ff.label :guarantee, '給与保証' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :carfare %>
+      <%= ff.label :carfare, '交通費支給' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :beginner %>
+      <%= ff.label :beginner, '初心者歓迎' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :experience %>
+      <%= ff.label :experience, '体験入店可' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :menstruation %>
+      <%= ff.label :menstruation, '生理休暇' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :dormitory %>
+      <%= ff.label :dormitory, '寮完備' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :room %>
+      <%= ff.label :room, '個室待機' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :nursery %>
+      <%= ff.label :nursery, '託児所' %>
+    </div>
+
+    <div class="checkbox-inline">
+      <%= ff.check_box :pickup %>
+      <%= ff.label :pickup, '送迎' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :alibi %>
+      <%= ff.label :alibi, 'アリバイ対策' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= ff.check_box :home %>
+      <%= ff.label :home, '在宅勤務可' %>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :note, {:class => "col-sm-3 control-label"} do %>
+    その他アピールポイント<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.text_area :note, {rows: 5, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :main_image, {:class => "col-sm-3 control-label"} do %>
+    メイン画像<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.file_field :main_image %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :image1, {:class => "col-sm-3 control-label"} do %>
+    サブイメージ１<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.file_field :image1 %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :image2, {:class => "col-sm-3 control-label"} do %>
+    サブイメージ２<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.file_field :image2 %>
+  </div>
+</div>
+<div class="form-group">
+  <%= ff.label :image3, {:class => "col-sm-3 control-label"} do %>
+    サブイメージ３<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= ff.file_field :image3 %>
+  </div>
+</div>
+<%= ff.hidden_field :shop_info_id, :value => @shop.id %>

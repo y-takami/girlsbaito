@@ -1,0 +1,37 @@
+<% @title = '採用詳細・お祝い金審査入力' %>
+<h1><%= @title %></h1>
+
+<h2>お祝い金申請詳細</h2>
+<% if @invitation %>
+  <div class="table-responsive">
+    <%= render 'invitation_table', f: @invitation %>
+  </div>
+
+  <h2>ポイント付与履歴</h2>
+  <div class="table-responsive">
+    <%= render 'point_table', f: @girl %>
+  </div>
+
+  <div class="form-horizontal" role="form">
+    <%= form_for @invitation, url: :admin_invitation do |f| %>
+      <div class="form-group">
+        <div class="col-sm-3 control-label">
+          <%= f.label :examine, '換金審査' %>
+        </div>
+        <div class="col-sm-3">
+          <div class="checkbox-inline">
+            <%= f.check_box :examine %><label>審査完了</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+          <%= f.submit '更新', :class => "btn btn-default" %>
+          <%= link_to 'キャンセル', :admin_invitations %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<% end %>
+

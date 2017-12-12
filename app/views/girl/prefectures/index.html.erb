@@ -1,0 +1,145 @@
+<% @title = '都道府県選択' %> <h1><%= @title %></h1>
+<h2>総登録件数<%= @shops_count %>件</h2>
+
+<div class="container col-sm-2">
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapsehokkaido" aria-expanded="false" aria-controls="collapsehokkaido">
+    北海道・東北
+  </button>
+  <div class="collapse" id="collapsehokkaido">
+
+    <div class="list-group">
+      <%= link_to "北海道", girl_prefecture_path(1), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "青森県", girl_prefecture_path(2), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "岩手県", girl_prefecture_path(3), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "宮城県", girl_prefecture_path(4), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "秋田県", girl_prefecture_path(5), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "山形県", girl_prefecture_path(6), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "福島県", girl_prefecture_path(7), {:class => "list-group-item col-sm-2"} %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container col-sm-2">
+
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapsekanto" aria-expanded="false" aria-controls="collapsekanto">
+    関東
+  </button>
+  <div class="collapse" id="collapsekanto">
+
+    <div class="list-group">
+      <%= link_to "茨城県", girl_prefecture_path(8), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "栃木県", girl_prefecture_path(9), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "群馬県", girl_prefecture_path(10), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "埼玉県", girl_prefecture_path(11), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "千葉県", girl_prefecture_path(12), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "東京都", girl_prefecture_path(13), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "神奈川県", girl_prefecture_path(14), {:class => "list-group-item col-sm-2"} %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container col-sm-2">
+
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapsehokuriku" aria-expanded="false" aria-controls="collapsehokuriku">
+    甲信越・北陸
+  </button>
+  <div class="collapse" id="collapsehokuriku">
+
+    <div class="list-group">
+      <%= link_to "新潟県", girl_prefecture_path(15), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "富山県", girl_prefecture_path(16), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "石川県", girl_prefecture_path(17), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "福井県", girl_prefecture_path(18), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "山梨県", girl_prefecture_path(19), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "長野県", girl_prefecture_path(20), {:class => "list-group-item col-sm-2"} %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container col-sm-2">
+
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapsetokai" aria-expanded="false" aria-controls="collapsetokai">
+    東海
+  </button>
+  <div class="collapse" id="collapsetokai">
+
+    <div class="list-group">
+      <%= link_to "岐阜県", girl_prefecture_path(21), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "静岡県", girl_prefecture_path(22), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "愛知県", girl_prefecture_path(23), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "三重県", girl_prefecture_path(24), {:class => "list-group-item col-sm-2"} %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container col-sm-2">
+
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapsekansai" aria-expanded="false" aria-controls="collapsekansai">
+    関西
+  </button>
+  <div class="collapse" id="collapsekansai">
+
+    <div class="list-group">
+      <%= link_to "滋賀県", girl_prefecture_path(25), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "京都府", girl_prefecture_path(26), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "大阪府", girl_prefecture_path(27), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "兵庫県", girl_prefecture_path(28), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "奈良県", girl_prefecture_path(29), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "和歌山県", girl_prefecture_path(30), {:class => "list-group-item col-sm-2"} %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container col-sm-2">
+
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapseshikoku" aria-expanded="false" aria-controls="collapseshikoku">
+    中国・四国
+  </button>
+  <div class="collapse" id="collapseshikoku">
+
+    <div class="list-group">
+      <%= link_to "鳥取県", girl_prefecture_path(31), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "島根県", girl_prefecture_path(32), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "岡山県", girl_prefecture_path(33), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "広島県", girl_prefecture_path(34), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "山口県", girl_prefecture_path(35), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "徳島県", girl_prefecture_path(36), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "香川県", girl_prefecture_path(37), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "愛媛県", girl_prefecture_path(38), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "高知県", girl_prefecture_path(39), {:class => "list-group-item col-sm-2"} %>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container col-sm-2">
+
+  <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapsekyushu" aria-expanded="false" aria-controls="collapsekyushu">
+    九州・沖縄
+  </button>
+  <div class="collapse" id="collapsekyushu">
+
+    <div class="list-group">
+      <%= link_to "福岡県", girl_prefecture_path(40), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "佐賀県", girl_prefecture_path(41), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "長崎県", girl_prefecture_path(42), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "熊本県", girl_prefecture_path(43), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "大分県", girl_prefecture_path(44), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "宮崎県", girl_prefecture_path(45), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "鹿児島県", girl_prefecture_path(46), {:class => "list-group-item col-sm-2"} %>
+      <%= link_to "沖縄県", girl_prefecture_path(47), {:class => "list-group-item col-sm-2"} %>
+
+    </div>
+  </div>
+</div>
+
+<table class="table table-bordered">
+  <tr>
+    <td><h3>お祝い金の申請はこちらから！</h3>
+
+      <div class="list-group col-sm-8">
+        <%= link_to 'お祝い金申請', :girl_applies, {:class => "list-group-item col-sm-4"} %>
+      </div>
+    </td>
+  </tr>
+</table>
+

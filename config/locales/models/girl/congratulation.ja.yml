@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      congratulation:
+        interview: 面接日
+        first_work_day: 初出勤日
+        first_work_flag: 初出勤完了のチェック
+        method: お祝い金受け取り方法
+        policy: 利用規約のチェック
+    errors:
+      models:
+        congratulation:
+          attributes:
+            interview:
+              invalid_date: 日付の入力が正しくありません
+            first_work_day:
+              invalid_date: 日付の入力が正しくありません

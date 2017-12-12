@@ -1,0 +1,52 @@
+<% @title = '料金請求' %>
+<h1><%= @title %></h1>
+<h2>料金は月末締め，請求予定日は翌月５日前後<br>
+  また，お支払い期限は翌月末まで</h2>
+<% unless request.fullpath.match("admin/fee_last_month") %>
+  <%= link_to '前月分を表示', admin_fee_last_month_path, {:class => "list-group-item col-sm-3"} %>
+<% else %>
+  <%= link_to '今月分を表示', admin_fee_path, {:class => "list-group-item col-sm-3"} %>
+<% end %>
+<br><br><br>
+<div class="table-wrapper">
+  <table class="table table-bordered">
+    <tr>
+      <% unless request.fullpath.match("admin/fee_last_month") %>
+        <td>今月（<%= Date.today.beginning_of_month %>〜<%= Date.today %>の合計請求額予定</td>
+      <% else %>
+        <td>先月（<%= Time.now.prev_month.beginning_of_month %>〜<%= Time.now.prev_month.end_of_month %>の合計請求額</td>
+      <% end %>
+    </tr>
+  </table>
+</div>
+
+<div class="table-wrapper">
+
+  <%= paginate @shops %>
+  <table class="table table-bordered">
+    <tr>
+      <th>代表店名</th>
+      <th>メールアドレス</th>
+      <th>求人店舗登録数</th>
+      <th>合計請求額</th>
+      <th></th>
+    </tr>
+    <% @shops.each do |m| %>
+      <tr>
+        <td><%= m.shop_name %></td>
+        <td><%= m.admin_email %></td>
+        <td><%= m.shop_shows.count %></td>
+        <% unless request.fullpath.match("admin/fee_last_month") %>
+          <td><%= count_fee(m.id) %></td>
+        <% else %>
+          <td><%= count_fee_last_month(m.id) %></td>
+        <% end %>
+        <td><%= link_to '詳細', admin_fee_shop_path(id: m.id) %></td>
+
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @shops %>
+
+</div>

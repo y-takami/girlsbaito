@@ -1,0 +1,50 @@
+<% @title = '料金照会' %>
+<h1><%= @title %></h1>
+<h2>料金は月末締め，請求予定日は翌月５日前後となります。<br>
+  また，お支払い期限は翌月末までとなります。</h2>
+<% unless request.fullpath.match("shop/fee_last_month") %>
+  <%= link_to '前月分を表示', shop_fee_last_month_path, {:class => "list-group-item col-sm-3"} if current_shop %>
+<% else %>
+  <%= link_to '今月分を表示', shop_fee_path, {:class => "list-group-item col-sm-3"} if current_shop %>
+<% end %>
+<br><br><br>
+<div class="table-wrapper">
+  <table class="table table-bordered">
+    <tr>
+      <% unless request.fullpath.match("shop/fee_last_month") %>
+        <td>今月（<%= Date.today.beginning_of_month %>〜<%= Date.today %>の合計請求額予定</td>
+      <% else %>
+        <td>先月（<%= Time.now.prev_month.beginning_of_month %>〜<%= Time.now.prev_month.end_of_month %>の合計請求額</td>
+      <% end %>
+      <td><%= @fee_sum %>円</td>
+    </tr>
+  </table>
+</div>
+
+<div class="table-wrapper">
+
+  <%= paginate @applies %>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>氏名</th>
+      <th>採用店舗名</th>
+      <th>採用決定日時</th>
+      <th>お祝い金設定額</th>
+      <th>採用単価</th>
+    </tr>
+    <% @applies.each do |m| %>
+      <tr>
+        <td><%= m.girl.name %></td>
+        <td><%= m.shop_show.shop_name %></td>
+        <td><%= m.employment_day %></td>
+        <td><%= m.congratulation_money %>円</td>
+        <td><%= m.congratulation_money*2 %>円</td>
+
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @applies %>
+
+</div>

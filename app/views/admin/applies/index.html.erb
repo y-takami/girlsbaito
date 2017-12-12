@@ -1,0 +1,35 @@
+<% @title = '採用管理' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+
+  <%= paginate @applies %>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>氏名</th>
+      <th>応募店舗名</th>
+      <th>採用応募日</th>
+      <th>採用可否</th>
+      <th>お祝い金申請日</th>
+      <th>お祝い金申請審査</th>
+    </tr>
+    <% @applies.each do |m| %>
+      <tr>
+        <td><%= m.girl.name %></td>
+        <td><%= m.shop_show.shop_name %></td>
+        <td><%= m.created_at.to_s %></td>
+        <td><%= m.employment %></td>
+        <td><%= m.congratulation.created_at.to_s if m.congratulation %></td>
+        <td><%= m.congratulation.examine if m.congratulation %></td>
+
+        <td>
+          <%= link_to '詳細', edit_admin_congratulation_path(m.id) %>｜
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @applies %>
+
+</div>

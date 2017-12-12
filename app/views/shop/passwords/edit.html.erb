@@ -1,0 +1,38 @@
+<% @title = 'パスワード変更' %>
+<div>
+  <h1><%= @title %></h1>
+
+  <div class="form-horizontal" role="form">
+    <%= form_for @change_password_form, url: :shop_password, method: :patch |f| %>
+      <div class="form-group">
+        項目は全て必須入力です。
+      </div>
+      <div class="form-group">
+        <%= f.label :current_password, '現在のパスワード', {:class => "col-sm-3 control-label"} %>
+        <div class="col-sm-7">
+          <%= f.password_field :current_password, {:class => "form-control"} %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :new_password, '新しいパスワード', {:class => "col-sm-3 control-label"} %>
+
+        <div class="col-sm-7">
+          <%= f.password_field :new_password, {:class => "form-control"} %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :new_password_confirmation, '新しいパスワード（確認用）', {:class => "col-sm-3 control-label"} %>
+        <div class="col-sm-7">
+          <%= f.password_field :new_password_confirmation, {:class => "form-control"} %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+          <%= f.submit '変更', {:class => "btn btn-default"} %>
+          <%= link_to 'キャンセル', :shop_account %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

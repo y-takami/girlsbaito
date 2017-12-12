@@ -1,0 +1,194 @@
+<div class="form-group">
+  <span class="text-danger">※</span>印の付いた項目は必須です。
+</div>
+<div class="form-group">
+  <%= f.label :group_number, {:class => "col-sm-3 control-label"} do %>
+    グループ店舗数<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :group_number, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :shop_name, {:class => "col-sm-3 control-label"} do %>
+    代表店舗名<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :shop_name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :url, {:class => "col-sm-3 control-label"} do %>
+    代表店舗サイトURL<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :url, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :admin_name, {:class => "col-sm-3 control-label"} do %>
+    求人管理者氏名（フルネーム）<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :admin_name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :admin_name_sei, {:class => "col-sm-3 control-label"} do %>
+    フリガナ（姓）<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :admin_name_sei, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :admin_name_mei, {:class => "col-sm-3 control-label"} do %>
+    フリガナ（名）<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :admin_name_mei, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :admin_email, {:class => "col-sm-3 control-label"} do %>
+    管理者メールアドレス<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :admin_email, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :admin_tel, {:class => "col-sm-3 control-label"} do %>
+    管理者電話番号<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :admin_tel, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :billing_company, {:class => "col-sm-3 control-label"} do %>
+    料金等請求先会社名<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :billing_company, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :manager_name, {:class => "col-sm-3 control-label"} do %>
+    貴社代表者氏名<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :manager_name, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :manager_name_sei, {:class => "col-sm-3 control-label"} do %>
+    フリガナ（姓）<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :manager_name_sei, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :manager_name_mei, {:class => "col-sm-3 control-label"} do %>
+    フリガナ（名）<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :manager_name_mei, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :billing_email, {:class => "col-sm-3 control-label"} do %>
+    料金等請求先メールアドレス<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :billing_email, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :billing_tel, {:class => "col-sm-3 control-label"} do %>
+    料金等請求先電話番号<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :billing_tel, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :postal_first, {:class => "col-sm-3 control-label"} do %>
+    郵便番号<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7 form-inline">
+    <%= f.text_field :postal_first, {:class => "form-control"} %>-
+    <%= f.text_field :postal_last, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :prefecture, {:class => "col-sm-3 control-label"} do %>
+    都道府県<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :prefecture, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :city, {:class => "col-sm-3 control-label"} do %>
+    市町村<span class="text-danger">※</span>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :city, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :house_number, {:class => "col-sm-3 control-label"} do %>
+    番地<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.text_field :house_number, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :suspended, {:class => "col-sm-3 control-label"} do %>
+    アカウント停止<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.check_box :suspended %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :examine, {:class => "col-sm-3 control-label"} do %>
+    審査OK<span class="text-danger">※</p>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.check_box :examine %>
+  </div>
+</div>
+
+<div class="form-group">
+  <% if @shop.new_record? %>
+    <%= f.label :password, {:class => "col-sm-3 control-label"} do %>
+      パス<span class="text-danger">※</p>
+    <% end %>
+    <div class="col-sm-7">
+      <%= f.password_field :password %>
+    </div>
+  <% else %>
+    <%= f.label :password, {:class => "col-sm-3 control-label"} do %>
+      パスワード<span class="text-danger">※</p>
+    <% end %>
+    <div class="col-sm-7">
+      <%= f.password_field :password, disabled: true %>
+      <button type="button" class="btn btn-primary btn-sm" id="enable-password-field">
+        変更する
+      </button>
+      <button type="button" class="btn btn-primary btn-sm" id="disable-password-field" style="display: none">
+        変更しない
+      </button>
+    </div>
+  <% end %>
+</div>

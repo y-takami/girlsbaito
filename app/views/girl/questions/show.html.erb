@@ -1,0 +1,24 @@
+<% @title = 'よくある質問' %> <h1><%= @title %></h1>
+
+
+<div class="table-responsive">
+
+  <table class="table col-sm-8">
+
+    <tr>
+      <td><%= @question.question %></td>
+    </tr>
+    <tr>
+      <td><%= @question.answer %></td>
+    </tr>
+    <tr>
+      <td><%= @question.category %></td>
+    </tr>
+
+  </table>
+
+  <div class="text-center">
+      <%= link_to '一覧に戻る', girl_question_path, {:class => "btn btn-primary"} %>
+  </div>
+
+</div>

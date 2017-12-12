@@ -1,0 +1,21 @@
+<%= render 'js_congratulation' %>
+
+<% @title = 'お祝い金申請フォーム' %> <h1><%= @title %></h1>
+
+<h2>採用されたら必ずもらえるお祝い金　<%= @apply.congratulation_money %>円</h2>
+
+<%= render 'shared/errors', f: @congratulation %>
+<div class="form-horizontal col-sm-12" role="form">
+  <%= form_for @congratulation, url: :girl_apply_congratulations do |f| %>
+    <%= render 'form_congratulation', f: f %>
+
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-10">
+        <%= f.submit 'お祝い金申請', :class => "btn btn-default" %>
+        <%= link_to 'キャンセル', :girl_applies %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

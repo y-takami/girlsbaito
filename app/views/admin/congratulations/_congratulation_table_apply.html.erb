@@ -1,0 +1,58 @@
+<table class="table col-sm-8">
+
+  <tr>
+    <td>応募日</td>
+    <td><%= f.created_at %></td>
+  </tr>
+  <tr>
+    <td>氏名</td>
+    </td>
+    <td><%= f.girl.name %></td>
+  </tr>
+  <tr>
+    <td>応募店舗</td>
+    <td><%= f.shop_show.shop_name %></td>
+  </tr>
+  <tr>
+    <td>採用可否</td>
+    <td><%= f.employment %></td>
+  </tr>
+
+  <tr>
+    <td>お祝い金</td>
+    </td>
+    <td><%= f.congratulation_money %></td>
+  </tr>
+  <tr>
+    <td>紹介者コード</td>
+    </td>
+    <td><%= f.invitation_code %></td>
+  </tr>
+  <tr>
+    <td>紹介者氏名</td>
+    <td>
+      <% if Girl.find_by(invitation_code: f.invitation_code) %>
+        <%= Girl.find_by(invitation_code: f.invitation_code).name %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>連絡方法</td>
+    <td><%= f.method %></td>
+  </tr>
+  <tr>
+    <td>備考</td>
+    <td><%= f.note %></td>
+  </tr>
+
+  <tr>
+    <td>面接日</td>
+    </td>
+    <td><%= f.interview %></td>
+  </tr>
+  <tr>
+    <td>初出勤日</td>
+    <td><%= f.first_work_day %></td>
+  </tr>
+
+</table>

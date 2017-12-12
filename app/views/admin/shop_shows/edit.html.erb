@@ -1,0 +1,37 @@
+<% @title = '求人情報編集' %>
+
+<div>
+  <h1><%= @title %></h1>
+  <%= render 'shared/errors', f: @shop_show %>
+  <div class="form-horizontal" role="form">
+    <%= form_for @shop_show, url: admin_shop_show_path(@shop_show.id) do |f| %>
+      <%= render 'form_shop_show', f: f %>
+
+      <div class="form-group">
+        <%= f.label :stop_flag, {:class => "col-sm-3 control-label"} do %>
+          募集停止<span class="text-danger">※</p>
+        <% end %>
+        <div class="col-sm-7">
+          <%= f.check_box :stop_flag %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :examine, {:class => "col-sm-3 control-label"} do %>
+          審査OK<span class="text-danger">※</p>
+        <% end %>
+        <div class="col-sm-7">
+          <%= f.check_box :examine %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+          <%= f.submit '更新', :class => "btn btn-default" %>
+          <%= link_to 'キャンセル', shop_recruit_path(params[:id]) %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    attributes:
+      shop_show:
+        shop_name: 店名
+        url: 店舗ホームページURL
+        payment_hour: 時給
+        payment_hour_low: 最低時給
+        payment_hour_high: 最高時給
+        payment_day: 日給
+        category: 業種
+        station_line: 最寄り駅線名
+        station: 最寄り駅名
+        title: 求人タイトル
+        summary: お仕事内容，要約版
+        job_content: お仕事内容紹介
+        congratulation_money: お祝い金
+        message: お店からのメッセージ
+        line_id: ラインID
+        note: その他アピールポイント
+        main_image: メイン画像
+        image1: サブイメージ１
+        image2: サブイメージ２
+        image3: サブイメージ３
+        prefecture: 都道府県
+        city: 市町村
+        house_number: 番地その他

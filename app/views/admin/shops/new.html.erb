@@ -1,0 +1,19 @@
+<% @title = '職員の新規登録だよ' %>
+
+<div>
+  <h1><%= @title %></h1>
+  <%= render 'shared/errors', f: @shop %>
+  <div class="form-horizontal" role="form">
+    <%= form_for @shop, url: :admin_shops do |f| %>
+      <%= render 'form_shop_info', f: f %>
+
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-10">
+            <%= f.submit '登録', {:class => "btn btn-default"} %>
+            <%= link_to 'キャンセル', :admin_shops %>
+          </div>
+        </div>
+
+    <% end %>
+  </div>
+</div>

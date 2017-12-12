@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<% @site_name = '女子ジョブ' %>
+<% @email_girl = 'girls-job_girl@email.com' %>
+<% @email_shop = 'girls-job_shop@email.com' %>
+<head>
+  <title><%= document_title %></title>
+  <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <%= render 'admin/shared/header' %>
+  <%= yield %>
+  <%= render 'admin/shared/footer' %>
+</div>
+</body>
+</html>

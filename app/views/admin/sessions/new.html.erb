@@ -1,0 +1,27 @@
+<% @title = 'ログイン' %>
+
+<div>
+  <h1><%= @title %></h1>
+
+  <div class="form-horizontal" role="form">
+    <%= form_for @form, url: :admin_session do |f| %>
+      <div class="form-group">
+        <%= f.label :email, 'メールアドレス', {:class => "col-sm-3 control-label"} %>
+        <div class="col-sm-7">
+          <%= f.text_field :email, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :password, 'パスワード', {:class => "col-sm-3 control-label"} %>
+        <div class="col-sm-7">
+          <%= f.password_field :password, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+          <%= f.submit 'ログイン', :class => "btn btn-default" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

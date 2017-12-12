@@ -1,0 +1,53 @@
+<script>
+  $("select#shop_show_prefecture_id").change(function(){
+    $.ajax({
+      url: "/shop/shop_shows/cities_select",
+      type: "GET",
+      data: {
+        prefecture_id: $(":selected").attr("value"),
+      },
+      dataType: "html",
+      success: function(data) {
+        $("#cities_select").html(data);
+      },
+      error: function(data) {
+        alert("errror");
+      }
+    });
+  });
+
+  $("select#shop_show_prefecture_id").change(function(){
+    $.ajax({
+      url: "/shop/shop_shows/routes_select",
+      type: "GET",
+      data: {
+        prefecture_id: $(":selected").attr("value"),
+      },
+      dataType: "html",
+      success: function(data) {
+        $("#routes_select").html(data);
+      },
+      error: function(data) {
+        alert("errror");
+      }
+    });
+  });
+
+  $('#routes_select').on('change', "select#shop_show_route_id", function(){
+    $.ajax({
+      url: "/shop/shop_shows/stations_select",
+      type: "GET",
+      data: {
+        route_id: $("select#shop_show_route_id option:selected").attr("value"),
+      },
+      dataType: "html",
+      success: function(data) {
+        $("#stations_select").html(data);
+      },
+      error: function(data) {
+        alert("errror");
+      }
+    });
+  });
+
+</script>

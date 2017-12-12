@@ -1,0 +1,17 @@
+<% @title = '店舗トップページ' %>
+<h1><%= @title %></h1>
+
+<% unless current_shop %>
+<div class='list-group'>
+<%= link_to '新規登録申請', new_shop_account_path, {:class => "list-group-item col-sm-3"} %>
+</div>
+  <% end %>
+
+<div class='list-group'>
+  <%= link_to '求人ページ管理', shop_recruit_index_path, {:class => "list-group-item col-sm-3"} if current_shop %>
+  <%= link_to '採用管理', :shop_applies, {:class => "list-group-item col-sm-3"} if current_shop %>
+  <%= link_to '料金照会', :shop_fee, {:class => "list-group-item col-sm-3"} if current_shop %>
+
+  <%= link_to '登録情報管理', :shop_account, {:class => "list-group-item col-sm-3"} if current_shop %>
+
+</div>

@@ -1,0 +1,26 @@
+<table class="table col-sm-8">
+  <tr>
+    <td>氏名</td>
+    </td>
+    <td><%= f.name %></td>
+  </tr>
+  <tr>
+    <td>メールアドレス</td>
+    <td><%= f.email %></td>
+  </tr>
+  <tr>
+    <td>電話番号</td>
+    <td><%= f.tel %></td>
+  </tr>
+  <tr>
+    <td>紹介コード</td>
+    <td><%= f.invitation_code %></td>
+  </tr>
+
+  <tr>
+    <td>紹介用URL</td>
+    <td>http://girlsbaito.example.com:3000/intro?code=<%= f.invitation_code %></td>
+  </tr>
+
+
+</table>

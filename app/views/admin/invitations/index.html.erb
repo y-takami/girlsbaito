@@ -1,0 +1,41 @@
+<% @title = 'ポイント換金申請一覧' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+
+  <%= paginate @invitations %>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>氏名</th>
+      <th>換金申請日</th>
+      <th>換金額</th>
+      <th>換金方法</th>
+      <th>現在のポイント</th>
+      <th>今までの合計換金額</th>
+      <th>お祝い金申請審査</th>
+    </tr>
+    <% @invitations.each do |m| %>
+      <tr>
+        <td><%= m.girl.name %></td>
+        <td><%= m.created_at.to_s %></td>
+        <td><%= m.application_amount %></td>
+        <td><%= m.method %></td>
+        <td><%= m.girl.invitation_point %></td>
+        <% invitation_sum = 0 %>
+        <% m.girl.invitations.each do |f|
+          invitation_sum = invitation_sum + f.application_amount
+        end %>
+        <td><%= invitation_sum %></td>
+
+        <td><%= m.examine %></td>
+        <td>
+          <%= link_to '詳細', edit_admin_invitation_path(m.id) %>｜
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @invitations %>
+
+</div>

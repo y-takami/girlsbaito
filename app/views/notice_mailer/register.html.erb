@@ -1,0 +1,16 @@
+<br>
+<%= @girl.name %>さま
+<br><br>
+この度は，女子高生バイトドットコムへご登録頂きましてありがとうございます。<br>
+以下は，ご登録いただいたユーザ情報です。<br><br>
+
+ユーザ名：<%= @girl.nickname %><br>
+メールアドレス：<%= @girl.email %><br><br>
+
+お友達紹介用アドレス：<a href= <%= "girlsbaito.example.com:4000/invitation/#{@girl.invitation_code}" %>>
+  <%= "girlsbaito.example.com:4000/invitation/#{@girl.invitation_code}" %>
+</a><br>
+このアドレスをコピーしてお友達に紹介し，そのお友達が応募・採用されたら必ず５０００円以上の現金またはギフトカードをプレゼント致します。
+<br><br>
+女子高生バイトドットコム<br>
+<a href="http://www.girlsbaito.example.com:4000">http://www.girlsbaito.example.com:4000</a><br>

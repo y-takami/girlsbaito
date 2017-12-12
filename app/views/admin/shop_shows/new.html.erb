@@ -1,0 +1,19 @@
+<% @title = '求人情報作成' %>
+
+<div>
+  <h1><%= @title %></h1>
+  <%= render 'shared/errors', f: @shop_show %>
+  <div class="form-horizontal" role="form">
+    <%= form_for @shop_show, url: :new_admin_shop_show do |f| %>
+      <%= render 'form_shop_show', f: f %>
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-10">
+          <%= f.submit '作成', :class => "btn btn-default" %>
+          <%= link_to 'キャンセル', shop_recruit_index_path %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

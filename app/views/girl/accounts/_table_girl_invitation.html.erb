@@ -1,0 +1,22 @@
+<table class="table col-sm-8">
+
+  <tr>
+    <td>招待した人数</td>
+    <td><%= f.invitation_num %></td>
+  </tr>
+  <tr>
+    <td>招待して応募した人数</td>
+    <td><%= Apply.where(invitation_code: f.invitation_code).count %></td>
+  </tr>
+  <tr>
+    <td>招待して採用された人数</td>
+    <td><%= Congratulation.where(apply_id: Apply.where(invitation_code: f.invitation_code), examine: true).count %></td>
+  </tr>
+
+  <tr>
+    <td>現在のポイント</td>
+    <td><%= f.invitation_point %></td>
+  </tr>
+
+
+</table>

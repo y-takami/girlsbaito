@@ -1,0 +1,29 @@
+<%= render 'js_invitation' %>
+
+<% @title = '招待ポイント換金申請' %> <h1><%= @title %></h1>
+
+<h2>現在の招待ポイント　<%= @girl.invitation_point %>ポイント</h2>
+
+<%= render 'shared/errors', f: @invitation %>
+<div class="form-group">
+  項目は全て必須入力です。
+</div>
+<div class="form-horizontal col-sm-12" role="form">
+  <%= form_for @invitation, url: :girl_account_invitations do |f| %>
+
+    <%= render 'form_invitation', f: f %>
+
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-10">
+        <% if @girl.invitation_point>=5000 %>
+        <%= f.submit '換金申請', :class => "btn btn-default" %>
+        <%= link_to 'キャンセル', :girl_account %>
+          <% else %>
+          <%= f.submit '換金申請', {:class => "btn btn-default", :disabled => "disabled"} %>
+          <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

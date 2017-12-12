@@ -1,0 +1,88 @@
+<button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#collapse_search" aria-expanded="false" aria-controls="collapse_search">
+  <% if request.fullpath.match("/prefectures") %>
+    まとめて検索
+    <% else %>
+  検索条件を変える
+    <% end %>
+</button>
+
+<div class="collapse" id="collapse_search">
+
+  <%= form_for @search_form, as: 'search', url: :girl_shops, html: {method: :get, class: 'search'} do |f| %>
+
+    <table class="table table-bordered">
+      <tr>
+        <td>
+          <div class="form-group">
+            <%= f.label :city, 'エリア選択', {:class => "col-sm-12 control-label"} %>
+
+            <div class="col-sm-12 checkbox">
+              <% City.where(prefecture_id: cookies[:prefecture]).order(:id).each do |g| %>
+                <label><%= f.check_box(:city, {multiple: true}, g.name) %><%= g.name %></label>
+              <% end %>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <%= f.label :category, '業種', {:class => "col-sm-12 control-label"} %>
+
+            <div class="col-sm-12 checkbox">
+              <% Category.all.order(:id).each do |g| %>
+                <div class="col-sm-3">
+                  <label><%= f.check_box(:category, {multiple: true}, g.name) %><%= g.name %></label>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <%= f.label :feature, '特徴', {:class => "col-sm-12 control-label"} %>
+
+            <div class="col-sm-12">
+
+              <% FEATURE_NAMES.count.times do |n| %>
+                <div class="col-sm-3 checkbox">
+                  <label><%= f.check_box(:feature, {multiple: true}, FEATURE_NAMES_EN[n]) %>
+                    <%= FEATURE_NAMES[n] %></label>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="form-group">
+            <%= f.label :payment_hour, '時給', {:class => "col-sm-12 control-label"} %>
+
+            <div class="col-sm-12">
+
+              <div class="col-sm-3">
+                <%= f.select(:payment_hour, [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000,
+                                             9000, 10000]) %>円以上
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <%= f.hidden_field 'prefecture', :value => cookies[:prefecture] %>
+
+      <tr>
+        <td>
+          <div class="form-group">
+            <div class="col-sm-offset-6">
+              <%= f.submit '検索', :class => "btn btn-default" %>
+            </div>
+          </div>
+        </td>
+      </tr>
+  <% end %>
+  </table>
+</div><br>

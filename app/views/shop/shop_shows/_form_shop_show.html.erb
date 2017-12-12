@@ -1,0 +1,233 @@
+<div class="form-group">
+  項目は全て必須入力です。
+</div>
+
+<div class="form-group">
+  <%= f.label :shop_name , '店舗名', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :shop_name, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :url , '店舗ホームページURL', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :url, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :prefecture_id , '都道府県', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.collection_select :prefecture_id, @prefectures, :id, :name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :city_id , 'エリア', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <div id="cities_select">
+      <%= render 'cities' %>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :house_number , 'エリア詳細', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :house_number, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :payment_hour_low , '時給', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-3">
+    <%= f.text_field :payment_hour_low, {:class => "form-control"} %>
+  </div>
+  <div class="col-sm-1">
+    〜
+  </div>
+  <div class="col-sm-3">
+    <%= f.text_field :payment_hour_high, {:class => "form-control"} %>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <%= f.label :payment_day , '日給', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :payment_day, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :category_id , '業種', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.collection_select :category_id, @categories, :id, :name, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :route_id , '最寄り駅の線', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <div id="routes_select">
+      <%= render 'routes' %>
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <%= f.label :station_id , '最寄り駅', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <div id="stations_select">
+      <%= render 'stations' %>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :title , '求人タイトル', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :title, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :summary , 'お仕事内容，要約版', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_area :summary, {rows: 3, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :time_morning , '時間帯', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <div class="checkbox-inline">
+      <%= f.check_box :time_morning %>
+      <%= f.label :time_morning, '朝' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :time_noon %>
+      <%= f.label :time_noon, '昼' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :time_afternoon %>
+      <%= f.label :time_afternoon, '夕方' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :time_night %>
+      <%= f.label :time_night, '夜' %>
+    </div>
+    <div class="checkbox-inline">
+      <%= f.check_box :time_midnight %>
+      <%= f.label :time_midnight, '深夜' %>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :job_content , 'お仕事内容', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_area :job_content, {rows: 8, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :congratulation_money , 'お祝い金', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :congratulation_money, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :message , 'お店からのメッセージ', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_area :message, {rows: 5, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :line_id , '求人用ラインID', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :line_id, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :payment_day_flag , '店舗特徴', {:class => "col-sm-3 control-label"} %>
+
+  <%= f.fields_for :feature do |ff| %>
+    <%= render 'shared/form_feature', ff: ff %>
+  <% end %>
+
+</div>
+<div class="form-group">
+  <%= f.label :note , 'その他アピールポイント', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_area :note, {rows: 5, :class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :main_image , 'メイン画像', {:class => "col-sm-3 control-label"} %>
+
+  <% if @shop_show.main_image? %>
+    <%= image_tag @shop_show.main_image.url %>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.file_field :main_image %>
+    <%= f.hidden_field :main_image_cache %>
+
+  </div>
+</div>
+
+<div class="form-group">
+  サブイメージ画像は必須ではありませんが，登録をおすすめいたします。
+</div>
+
+<div class="form-group">
+  <%= f.label :image1 , 'サブイメージ１', {:class => "col-sm-3 control-label"} %>
+
+  <% if @shop_show.image1? %>
+    <%= image_tag @shop_show.image1.url %>
+  <% end %>
+  <div class="col-sm-7">
+    <%= f.file_field :image1 %>
+    　<%= f.hidden_field :image1_cache %>
+
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :image2 , 'サブイメージ２', {:class => "col-sm-3 control-label"} %>
+
+  <% if @shop_show.image2? %>
+    <%= image_tag @shop_show.image2.url %>
+    　<%= f.hidden_field :image2_cache %>
+  <% end %>
+
+  <div class="col-sm-7">
+    <%= f.file_field :image2 %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :image3 , 'サブイメージ３', {:class => "col-sm-3 control-label"} %>
+
+  <% if @shop_show.image3? %>
+    <%= image_tag @shop_show.image3.url %>
+  <% end %>
+
+  <div class="col-sm-7">
+    <%= f.file_field :image3 %>
+    　<%= f.hidden_field :image3_cache %>
+
+  </div>
+</div>

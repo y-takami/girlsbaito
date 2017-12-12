@@ -1,0 +1,23 @@
+<% @title = '店舗選択' %> <h1><%= @title %></h1>
+
+
+<% @shop_shows.each do |f| %>
+  <div class="list-group">
+    <%= link_to f.shop_name, shop_recruit_path(f.id), {:class => "list-group-item col-sm-3"} %>
+
+
+    <% if f.stop_flag_shop==false %>
+      現在この店舗は求人募集中です。
+      <%= link_to '募集を一時停止する', shop_stop_flag_true_path(:shop_id => f.id), {:class => "btn btn-primary"} %>
+    <% else %>
+      現在この店舗は求人一時停止中です。
+      <%= link_to '募集を再開する', shop_stop_flag_false_path(:shop_id => f.id), {:class => "btn btn-primary"} %>
+    <% end %>
+  </div>
+
+<% end %>
+
+<br><br>
+<div class="list-group">
+  <%= link_to "新店舗登録", new_shop_recruit_path, {:class => "list-group-item col-sm-3"} %>
+</div>

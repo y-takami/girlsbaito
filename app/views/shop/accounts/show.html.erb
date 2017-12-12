@@ -1,0 +1,11 @@
+<% @title = '登録情報情報' %>
+<h1><%= @title %></h1>
+
+<div class="list-group">
+  <%= link_to '登録情報変更', :edit_shop_account, {:class => "list-group-item col-sm-2"} %>
+  <%= link_to 'パスワード変更', :edit_shop_password, {:class => "list-group-item col-sm-2"} %>
+</div></br></br>
+
+<div class="table-responsive">
+  <%= render 'table_shop_info', f: @shop %></br></br>
+</div>

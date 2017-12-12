@@ -1,0 +1,33 @@
+<% if @city %>
+  <% @title = "#{@city.name}の風俗求人" %> <h1><%= @title %></h1>
+
+<% elsif @station %>
+  <% @title = "#{@station.name}の風俗求人" %> <h1><%= @title %></h1>
+
+<% elsif @category %>
+  <% @title = "#{@prefecture.name}の#{@category.name}求人" %> <h1><%= @title %></h1>
+
+<% elsif @prefecture %>
+  <% @title = "#{@prefecture.name}の求人" %> <h1><%= @title %></h1>
+
+<% else %>
+
+  <% @title = '店舗一覧' %> <h1><%= @title %></h1>
+
+<% end %>
+
+<%= render 'girl/shared/breadcrumb' %>
+<%= render 'girl/shared/search_form' %>
+
+<h3><%= @shops_count %>件ありました</h3>
+<div class="table-responsive">
+  <%= paginate @shops %>
+  <% @shops.each do |n| %>
+    <%= render 'girl/shops/table_shop_index', f: n %>
+    <div class="text-center">
+      <%= link_to '詳しく見る', girl_shop_path(n.id), {:class => "btn btn-primary"} %>
+    </div>
+    </br></br></br>
+  <% end %>
+  <%= paginate @shops %>
+</div>

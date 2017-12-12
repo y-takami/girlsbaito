@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      apply:
+        interview: 面接日
+        employment: 採用可否
+    errors:
+      models:
+        apply:
+          attributes:
+            interview:
+              invalid_date: 日付の入力が正しくありません

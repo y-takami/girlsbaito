@@ -1,0 +1,49 @@
+<% @title = '求人情報管理' %>
+<h1><%= @title %></h1>
+
+<div class="table-wrapper">
+  <div class="links">
+    <%= link_to '新規登録', :new_admin_shop_show %>
+  </div>
+
+  <%= paginate @shop_shows %>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>店名</th>
+      <th>代表店名</th>
+      <th>メールアドレス</th>
+      <th>都道府県名</th>
+      <th>エリア名</th>
+      <th>お祝い金額</th>
+      <th>募集停止中？</th>
+      <th>審査OK？</th>
+      <th>ショップポイント</th>
+
+    </tr>
+    <% @shop_shows.each do |m| %>
+      <tr>
+        <td><%= m.shop_name %></td>
+        <td><%= m.shop_info.shop_name %></td>
+        <td><%= m.shop_info.admin_email %></td>
+        <td><%= m.prefecture.name %></td>
+        <td><%= m.city.name %></td>
+        <td><%= m.congratulation_money %></td>
+        <td><%= m.stop_flag %></td>
+        <td><%= m.examine %></td>
+        <td><%= m.shop_point %></td>
+        <td>
+          <%= link_to '編集', edit_admin_shop_show_path(m.id) %>｜
+          <%= link_to '削除', admin_shop_show_path(m.id), method: :delete,
+                      data: {confirm: '本当に削除しますか？'} %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= paginate @shop_shows %>
+
+  <div class="links">
+    <%= link_to '新規登録', :new_admin_shop_show %>
+  </div>
+</div>
