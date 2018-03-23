@@ -53,7 +53,7 @@
     :image3 => open('images/image3.jpg')
   )
 end
-30.times do |n|
+35.times do |n|
   c = ShopInfo.create!(
     group_number: '1',
     shop_name: "女子高生会社#{n+30}",
