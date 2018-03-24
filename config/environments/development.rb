@@ -45,8 +45,8 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   config.girlsbaito = {
-    shop: { host: 'girlsbaito.example.com', path: 'shop' },
-    admin: { host: 'girlsbaito.example.com', path: 'admin' },
-    girl: { host: 'girlsbaito.example.com', path: '' }
+    shop: { host: 'localhost', path: 'shop' },
+    admin: { host: 'localhost', path: 'admin' },
+    girl: { host: 'localhost', path: '' }
   }
 end
