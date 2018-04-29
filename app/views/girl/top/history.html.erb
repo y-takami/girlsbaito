@@ -3,11 +3,13 @@
 
 <h3><%= @shops_count %>件あります</h3>
 <div class="table-responsive">
-  <% @shops.each do |n| %>
-    <%= render 'girl/shops/table_shop_index', f: n %>
-    <div class="text-center">
-      <%= link_to '詳しく見る', girl_shop_path(n.id), {:class => "btn btn-primary"} %>
-    </div>
-    </br></br></br>
+  <% if @shops %>
+    <% @shops.each do |n| %>
+      <%= render 'girl/shops/table_shop_index', f: n %>
+      <div class="text-center">
+        <%= link_to '詳しく見る', girl_shop_path(n.id), {:class => "btn btn-primary"} %>
+      </div>
+      </br></br></br>
+    <% end %>
   <% end %>
 </div>

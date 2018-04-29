@@ -63,56 +63,57 @@ class Girl::TopController < Girl::Base
 
   def history
     if current_girl
-      history = current_girl.history.split(" ")
-
-      @shops = ShopShow.find(history)
-      @shops_count = @shops.count
-
-    else
-      if cookies[:history]
-        history = cookies[:history].split(" ")
+      if current_girl.history
+        history = current_girl.history.split(" ")
 
         @shops = ShopShow.find(history)
         @shops_count = @shops.count
       end
-    end
 
-  end
-
-  def favorite
-    if current_girl
-      if current_girl.favorite
-      favorite = current_girl.favorite.split(" ")
-      @shops = ShopShow.find(favorite)
+    elsif cookies[:history]
+      history = cookies[:history].split(" ")
+      @shops = ShopShow.find(history)
       @shops_count = @shops.count
-        end
-    elsif cookies[:favorite]
-        favorite = cookies[:favorite].split(" ")
-        @shops = ShopShow.find(favorite)
-        @shops_count = @shops.count
     else
 
     end
+  end
+
+
+def favorite
+  if current_girl
+    if current_girl.favorite
+      favorite = current_girl.favorite.split(" ")
+      @shops = ShopShow.find(favorite)
+      @shops_count = @shops.count
+    end
+  elsif cookies[:favorite]
+    favorite = cookies[:favorite].split(" ")
+    @shops = ShopShow.find(favorite)
+    @shops_count = @shops.count
+  else
 
   end
 
-  def job_category
-  end
+end
 
-  def advertisement
-  end
+def job_category
+end
 
-  def contact
-  end
+def advertisement
+end
 
-  def policy
-  end
+def contact
+end
 
-  def personal_info
-  end
+def policy
+end
 
-  def site_map
-  end
+def personal_info
+end
+
+def site_map
+end
 
 
 end

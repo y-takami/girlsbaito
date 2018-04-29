@@ -140,7 +140,7 @@
 
 <div class="form-group">
   <div class="col-sm-3 control-label">
-    <%= f.label :policy, '利用規約に同意します' %>
+    <%= f.label :policy, ("#{link_to '利用規約', girl_policy_path }に同意します").html_safe %>
   </div>
   <div class="col-sm-3">
     <div class="checkbox-inline">

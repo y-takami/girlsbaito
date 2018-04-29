@@ -37,10 +37,6 @@
   </div>
 </div>
 
-<div class="form-group">
-住所
-</div>
-
 <div class="form-group" id="postal_code" style="display: none">
   <div class="col-sm-3 control-label">
     <%= f.label :postal_first, '郵便番号' %>
@@ -156,7 +152,7 @@
 </div>
 <div class="form-group">
   <div class="col-sm-3 control-label">
-    <%= f.label :policy, '利用規約に同意します' %>
+    <%= f.label :policy, ("#{link_to '利用規約', girl_policy_path }に同意します").html_safe %>
   </div>
   <div class="col-sm-3">
     <div class="checkbox-inline">

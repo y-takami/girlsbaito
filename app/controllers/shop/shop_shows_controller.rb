@@ -10,6 +10,12 @@ class Shop::ShopShowsController < Shop::Base
   end
 
   def new
+
+    if ShopShow.all.where(shop_info_id: current_shop.id).count >= current_shop.group_number
+      flash.notice = 'これ以上は求人情報を作成できません。作成する場合には登録情報管理からグループ店舗数の変更を行って下さい。'
+      redirect_to :shop_recruit_index
+    end
+
     @shop_show = ShopShow.new
     @shop_show.build_feature
     @categories = Category.all
@@ -20,6 +26,7 @@ class Shop::ShopShowsController < Shop::Base
   end
 
   def create
+
     @shop_show = ShopShow.new(shop_params)
     @shop_show.shop_info_id = current_shop.id
     @categories = Category.all
