@@ -43,10 +43,12 @@ class Admin::ShopShowsController < Admin::Base
     end
     if @shop_show.update(shop_show_params)
       flash.notice ='求人情報を更新しました。'
+
       if @shop_show.examine == true
         if examin_check == 100
-          ExamineShopShowMailWorker.perform_async(@shop_show.id)
+          ExamineShowMailWorker.perform_async(@shop_show.shop_info.id)
           flash.notice ='求人情報を更新して，メールを送信しました。'
+
         end
       end
       redirect_to :admin_shop_shows

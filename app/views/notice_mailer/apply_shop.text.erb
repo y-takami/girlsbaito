@@ -1,13 +1,33 @@
-<%= @girl.name %>さま
+<br>
+<%= @shop.shop_name %>採用担当者さま
+<br><br>
+平素より女子高生バイトドットコムのご利用まことにありがとうございます。<br>
+貴店，<%= @shop.shop_name %>へ応募がありました。<br>
+可能でありましたら本日中に応募者への連絡を行い，面接日程等の設定をお願い致します。<br>
+また，面接後は必ず店舗管理画面より採用の可否の入力を行ってください。<br>
+以下，応募者の情報でございます。<br><br>
 
-この度は，女子高生バイトドットコムへご登録頂きましてありがとうございます。
-以下は，ご登録いただいたユーザ情報です。
+氏名：<%= @girl.name %><br>
+連絡希望手段：<%= @shop.applies.find_by(girl_id: @girl.id).method %>
+<br>
 
-ユーザ名：<%= @girl.nickname %>
-メールアドレス：<%= @girl.email %>
+<% if @shop.applies.find_by(girl_id: @girl.id).method=='メール'||@shop.applies.find_by(girl_id: @girl.id).method=='どれでもいい'  %>
+  メールアドレス：<%= @girl.email %>
+  <br>
+<% end %>
+<% if @shop.applies.find_by(girl_id: @girl.id).method=='電話'||@shop.applies.find_by(girl_id: @girl.id).method=='どれでもいい'  %>
+  電話番号：<%= @girl.tel %>
+  <br>
+<% end %>
+<% if @shop.applies.find_by(girl_id: @girl.id).method=='LINE'||@shop.applies.find_by(girl_id: @girl.id).method=='どれでもいい'  %>
+  ラインID：<%= @girl.line_id %>
+  <br><br>
+<% end %>
 
-お友達紹介用アドレス：girlsbaito.com/invitation/<%= @girl.invitation_code %>
-このアドレスをコピーしてお友達に紹介し，そのお友達が応募・採用されたら必ず５０００円以上の現金またはギフトカードをプレゼント致します。
-
-女子高生バイトドットコム
-http://www.girlsbaito.com
+詳細情報につきましては，店舗管理画面へログインしてご確認ください。<br>
+店舗管理画面：<a href= <%= "girlsbaito.example.com:4000/shop" %>>
+  <%= "girlsbaito.example.com:4000/shop" %>
+</a><br>
+<br><br>
+女子高生バイトドットコム<br>
+<a href="http://www.girlsbaito.example.com:4000">http://www.girlsbaito.example.com:4000</a><br>

@@ -15,7 +15,8 @@ class Admin::InvitationsController < Admin::Base
 
     ActiveRecord::Base.transaction do
       if @invitation.update(invitation_params)
-        flash.notice ='換金審査を完了しました'
+        flash.notice ='換金審査を完了してメールを送信しました。'
+        ExamineInvitationMailWorker.perform_async(@invitation.id)
         redirect_to :admin_invitations
       else
         render action: 'edit'

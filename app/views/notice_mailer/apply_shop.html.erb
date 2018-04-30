@@ -8,8 +8,21 @@
 以下，応募者の情報でございます。<br><br>
 
 氏名：<%= @girl.name %><br>
-メールアドレス：<%= @girl.email %><br>
-ラインID：<%= @girl.line_id %><br><br>
+連絡希望手段：<%= @shop.applies.find_by(girl_id: @girl.id).method %>
+<br>
+
+<% if @shop.applies.find_by(girl_id: @girl.id).method=='メール'||@shop.applies.find_by(girl_id: @girl.id).method=='どれでもいい'  %>
+  メールアドレス：<%= @girl.email %>
+  <br>
+<% end %>
+<% if @shop.applies.find_by(girl_id: @girl.id).method=='電話'||@shop.applies.find_by(girl_id: @girl.id).method=='どれでもいい'  %>
+  電話番号：<%= @girl.tel %>
+  <br>
+<% end %>
+<% if @shop.applies.find_by(girl_id: @girl.id).method=='LINE'||@shop.applies.find_by(girl_id: @girl.id).method=='どれでもいい'  %>
+  ラインID：<%= @girl.line_id %>
+  <br><br>
+<% end %>
 
 詳細情報につきましては，店舗管理画面へログインしてご確認ください。<br>
 店舗管理画面：<a href= <%= "girlsbaito.example.com:4000/shop" %>>

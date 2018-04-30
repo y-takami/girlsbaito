@@ -11,16 +11,18 @@ class Admin::CongratulationsController < Admin::Base
       if @congratulation.update(congratulation_params)
         if @congratulation.apply.invitation_code
           @girl = Girl.find_by(invitation_code: @congratulation.apply.invitation_code)
-          @point = Point.new(girl_id: @girl.id, amount: 5000)#この数字で招待ポイントを決める
+          @point = Point.new(girl_id: @girl.id, amount: 5000) #この数字で招待ポイントを決める
           @point.save
           invitation_point = @girl.invitation_point
           invitation_point = invitation_point+@point.amount
           if @girl.update(invitation_point: invitation_point)
-            flash.notice ='お祝い金審査を完了し，招待ポイントを招待者に付与しました'
+            flash.notice ='お祝い金審査を完了し，メールを送信しました。招待ポイントを招待者に付与しました。'
+            ExamineCongratulationMailWorker.perform_async(@congratulation.id)
           else
             render action: 'edit' and return
           end
-          flash.notice ='お祝い金審査を完了しました。' unless @girl
+          flash.notice ='お祝い金審査を完了し，メールを送信しました' unless @girl
+          ExamineCongratulationMailWorker.perform_async(@congratulation.id)
         end
         redirect_to :admin_applies
       else

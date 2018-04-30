@@ -1,5 +1,6 @@
 <div class="col-sm-12 form-group">
   項目は全て必須入力です。必ず採用・不採用どちらかにのみチェックを入れて下さい。
+  採用した場合には，初勤務（体験入店を含む）が終了した時点で料金が発生いたします。必ず初勤務が完了した時点で入力を行って下さい。
 </div>
 
 <div class="form-group">
@@ -9,10 +10,10 @@
   <div class="col-sm-7">
     <div class="checkbox-inline">
       <div class="col-sm-7">
-        <%= f.check_box :employment, {}, true, false %><label>採用する</label>
+        <%= f.check_box :employment, {}, true, false %><label>採用</label>
       </div>
       <div class="col-sm-7">
-        <%= f.check_box :employment, {}, false, false %><label>採用しない</label>
+        <%= f.check_box :employment, {}, false, false %><label>不採用</label>
       </div>
     </div>
   </div>
@@ -22,6 +23,15 @@
   </div>
   <div class="col-sm-9">
     <%= f.date_field :interview %>
-    <span>例：2014/06/09 不採用で面接を行っていない場合にも上記応募日を入力してください</span>
+    <span>例：2014/06/09 不採用で面接を行っていない場合には上記応募日を入力してください</span>
   </div>
+
+  <div class="col-sm-3 control-label">
+    <%= f.label :first_work_day, '初出勤日（体験入店含む）' %>
+  </div>
+  <div class="col-sm-9">
+    <%= f.date_field :first_work_day %>
+    <span>例：2014/06/09 不採用で初出勤を行っていない場合には空欄で構いません。採用した場合には入力は必須です。</span>
+  </div>
+
 </div>

@@ -29,6 +29,16 @@ class NoticeMailer < ActionMailer::Base
     mail to: invitation.girl.email, subject: "換金申請が完了しました。"
   end
 
+  def examine_congratulation(congratulation)
+    @congratulation = congratulation
+    mail to: congratulation.email, subject: "お祝い金申請が完了しました。"
+  end
+
+  def examine_invitation(invitation)
+    @invitation = invitation
+    mail to: invitation.email, subject: "招待ポイント換金申請が完了しました。"
+  end
+
   def register_shop(shop)
     @shop = shop
     mail to: shop.admin_email, subject: "登録申請が完了しました。"
@@ -38,9 +48,10 @@ class NoticeMailer < ActionMailer::Base
     @shop = shop
     mail to: shop.admin_email, subject: "登録申請審査が完了しました。"
   end
-  def examine_shop_show(shop_show)
-    @shop_show = shop_show
-    mail to: shop_show.shop_info.admin_email, subject: "求人情報掲載の審査が完了しました"
+
+  def examine_show(shop)
+    @shop = shop
+    mail to: shop.admin_email, subject: "求人情報掲載の審査が完了しました"
   end
 
 end
