@@ -10,6 +10,8 @@
   <%= stylesheet_link_tag 'girl', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'girl', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  #とりあえず本番環境用にブートストラップ読み込み。本番ではダウンロードして使用すること
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -17,5 +19,9 @@
   <%= yield %>
   <%= render 'girl/shared/footer' %>
 </div>
+#とりあえず本番環境用にブートストラップ読み込み。本番ではダウンロードして使用すること
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>
