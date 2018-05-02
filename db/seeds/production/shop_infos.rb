@@ -27,6 +27,7 @@
   )
   c.shop_shows.create!(
     shop_name: "女子高生バイト#{n}",
+    url: "baito.com",
     prefecture_id: rand(1..5),
     city_id: rand(1..20),
     house_number: '秋葉原',
@@ -52,7 +53,7 @@
     :image3 => open('images/image3.jpg')
   )
 end
-30.times do |n|
+35.times do |n|
   c = ShopInfo.create!(
     group_number: '1',
     shop_name: "女子高生会社#{n+30}",
@@ -81,6 +82,7 @@ end
   )
   c.shop_shows.create!(
     shop_name: "女子高生バイト#{n}",
+    url: "baito.com",
     prefecture_id: rand(1..5),
     city_id: rand(1..20),
     house_number: '秋葉原',

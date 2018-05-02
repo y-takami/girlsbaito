@@ -6,7 +6,12 @@
     employment: true,
     employment_day: Time.now-10.minutes,
     method: '電話',
-    invitation_code: 1000000+n*100000
+    invitation_code: 1000000+n*100000,
+    tel: '09088888888',
+    name: 'ああああ',
+    line_id: 'lineline',
+    email: 'apply_email'
+
   )
 end
 
@@ -16,7 +21,11 @@ end
     shop_show_id: rand(1..20),
     congratulation_money: rand(2000),
     method: '電話',
-    invitation_code: 1000000+n*100000
+    invitation_code: 1000000+n*100000,
+    tel: '09088888888',
+    name: 'ああああ',
+    line_id: 'lineline',
+    email: 'apply_email'
   )
 end
 10.times do |n|
@@ -26,6 +35,10 @@ end
     congratulation_money: rand(2000),
     employment: false,
     method: '電話',
-    invitation_code: 1000000+n*100000
+    invitation_code: 1000000+n*100000,
+    tel: '09088888888',
+    name: 'ああああ',
+    line_id: 'lineline',
+    email: 'apply_email'
   )
 end
