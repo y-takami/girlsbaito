@@ -1,4 +1,4 @@
-@app_path = '/home/ec2-user/girlsbaito'
+@app_path = '/home/ec2-user/girlbaito'
 
 worker_processes 2
 working_directory "#{@app_path}/"
