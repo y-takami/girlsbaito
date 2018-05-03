@@ -5,4 +5,3 @@
 //= require jquery-ui/datepicker-ja
 //= require_tree ./shared
 //= require_tree ./shop
-//= require bootstrap

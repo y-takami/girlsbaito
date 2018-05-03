@@ -11,7 +11,10 @@
   <%= javascript_include_tag 'girl', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <% #とりあえず本番環境用にブートストラップ読み込み。本番ではダウンロードして使用すること %>
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <% #スマホ表示用に必要か %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 <div class="container">
@@ -22,6 +25,5 @@
 <% #とりあえず本番環境用にブートストラップ読み込み。本番ではダウンロードして使用すること %>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</body>
 </body>
 </html>

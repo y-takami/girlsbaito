@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.10'#ほんとは2.1.3
+ruby '2.1.3'#ほんとは2.1.3
 gem 'rails', '4.1.6'
 gem 'mysql2'
 gem 'sass-rails', '~> 4.0.3'
