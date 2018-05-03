@@ -7,6 +7,9 @@
   <title><%= document_title %></title>
   <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+  <% #とりあえず本番環境用にブートストラップ読み込み。本番ではダウンロードして使用すること %>
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,5 +18,8 @@
   <%= yield %>
   <%= render 'admin/shared/footer' %>
 </div>
+<% #とりあえず本番環境用にブートストラップ読み込み。本番ではダウンロードして使用すること %>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
