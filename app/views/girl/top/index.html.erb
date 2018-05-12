@@ -1,79 +1,124 @@
-<% @title = 'トップページ' %> <h1><%= @title %></h1>
-<h2><%= @prefecture.name %></h2>
-<h2>総登録件数<%= @shops_count %>件</h2>
+<% @title = 'トップページ' %>
+
+<%= render 'girl/shared/top_bannar' %>
 
 <ul class="breadcrumb">
   <li><%= link_to 'HOME', :new_girl_prefecture %><span class="divider"></span></li>
-  <li class="active"><%= @prefecture.name %></li>
+  <li class="active"><%= @prefecture.name %></li><%= "  (総登録件数#{@shops_count}件)" %>
 </ul>
 
-<div class="list-group　col-sm-10">
-  <%= link_to '店舗一覧', girl_prefecture_shop_pref_path(@prefecture.id), {:class => "list-group-item col-sm-2"} %>
-  <%= link_to 'エリアから探す', girl_prefecture_cities_path(@prefecture.id), {:class => "list-group-item col-sm-2"} %>
-  <%= link_to '駅から探す', girl_prefecture_routes_path(@prefecture.id), {:class => "list-group-item col-sm-2"} %>
-  <%= link_to '職種から探す', girl_prefecture_categories_path(@prefecture.id), {:class => "list-group-item col-sm-2"} %>
-  <%= link_to '給料から探す', girl_prefecture_payment_search_path(@prefecture.id), {:class => "list-group-item col-sm-2"} %>
-</div>
-<br>
-<br>
-<br>
+<%= render 'girl/shared/top_search' %>
+
 <%= render 'girl/shared/search_form' %>
+
 <% if @new_shops %>
-  <table class="table table-bordered">
-    <tr>
-      <td><h3>新着だよー</h3>
 
-        <div class="list-group col-sm-8">
-          <% @new_shops.each do |f| %>
-            <%= link_to "#{f.shop_name}", girl_shop_path(f.id), {:class => "list-group-item col-sm-4"} %>
-          <% end %>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <%= render 'girl/shared/bar' %>
+
+  <!-- WHITE SECTION -->
+  <section class="whiteSection full-width clearfix newsSection" id="latestNews">
+    <div class="container">
+      <div class="sectionTitle text-center">
+        <h2>
+          <span class="shape shape-left bg-color-4"></span>
+          <span>新着求人</span>
+          <span class="shape shape-right bg-color-4"></span>
+        </h2>
+      </div>
+      <div class="row">
+        <% @new_shops.each do |f| %>
+          <%= render 'girl/shared/shop_card', f: f %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+
 <% end %>
+
 <% if @favorite_shops %>
-  <table class="table table-bordered">
-    <tr>
-      <td><h3>気になるだよー</h3>
 
-        <div class="list-group col-sm-8">
-          <% @favorite_shops.each do |f| %>
-            <%= link_to "#{f.shop_name}", girl_shop_path(f.id), {:class => "list-group-item col-sm-4"} %>
-          <% end %>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <%= render 'girl/shared/bar' %>
+
+  <!-- WHITE SECTION -->
+  <section class="whiteSection full-width clearfix newsSection" id="latestNews">
+    <div class="container">
+      <div class="sectionTitle text-center">
+        <h2>
+          <span class="shape shape-left bg-color-4"></span>
+          <span>気になるリスト</span>
+          <span class="shape shape-right bg-color-4"></span>
+        </h2>
+      </div>
+      <div class="row">
+        <% @favorite_shops.each do |f| %>
+          <%= render 'girl/shared/shop_card', f: f %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
 <% end %>
+
 <% if @history_shops %>
-  <table class="table table-bordered">
-    <tr>
-      <td><h3>履歴だよー</h3>
 
-        <div class="list-group col-sm-8">
-          <% @history_shops.each do |f| %>
-            <%= link_to "#{f.shop_name}", girl_shop_path(f.id), {:class => "list-group-item col-sm-4"} %>
-          <% end %>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <%= render 'girl/shared/bar' %>
+
+  <!-- WHITE SECTION -->
+  <section class="whiteSection full-width clearfix newsSection" id="latestNews">
+    <div class="container">
+      <div class="sectionTitle text-center">
+        <h2>
+          <span class="shape shape-left bg-color-4"></span>
+          <span>閲覧履歴</span>
+          <span class="shape shape-right bg-color-4"></span>
+        </h2>
+      </div>
+      <div class="row">
+        <% @history_shops.each do |f| %>
+          <%= render 'girl/shared/shop_card', f: f %>
+        <% end %>
+      </div>
+    </div>
+  </section>
 <% end %>
 
-<div class="list-group col-sm-8">
-  <%= link_to 'よくある質問', girl_questions_path, {:class => "list-group-item col-sm-4"} %>
-  <%= link_to 'お仕事の種類', {controller: :top, action: :job_category}, {:class => "list-group-item col-sm-4"} %>
-</div>
 
+<section class="whiteSection full-width clearfix">
+
+  <div class="container">
+    <div class="list-group text-center">
+
+      <%= link_to girl_questions_path, {:class => "list-group-item custumicon_circle2"} do %>
+        <span class="icon2 bg-color-6"><i class="fa fa-question"></i></span><h4>よくある質問</h4>
+      <% end %>
+
+      <%= link_to girl_job_category_path, {:class => "list-group-item custumicon_circle2"} do %>
+        <span class="icon2 bg-color-6"><i class="fa fa-list"></i></span><h4>お仕事の種類</h4>
+      <% end %>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="whiteSection full-width clearfix">
+
+  <div class="container">
 <table class="table table-bordered">
   <tr>
     <td><h3>お祝い金の申請はこちらから！</h3>
 
-      <div class="list-group col-sm-8">
-        <%= link_to 'お祝い金申請', :girl_applies, {:class => "list-group-item col-sm-4"} %>
+      <div class="list-group text-center">
+        <%= link_to :girl_applies, {:class => "list-group-item custumicon_circle2"} do %>
+          <span class="icon2 bg-color-6"><i class="fa fa-money"></i></span><h4>お祝い金申請</h4>
+        <% end %>
+
       </div>
     </td>
   </tr>
 </table>
 
+  </div>
+
+</section>

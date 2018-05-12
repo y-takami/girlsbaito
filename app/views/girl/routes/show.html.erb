@@ -1,5 +1,7 @@
 <% @title = @prefecture.name %> <h1><%= @title %></h1>
 
+<%= render 'girl/shared/page_title', f1: "#{@title}の駅から検索", f2: false, f3: false %>
+
 <ul class="breadcrumb">
   <li><%= link_to 'HOME', :girl_prefecture %><span class="divider"></span></li>
   <li><%= link_to '路線選択', girl_prefecture_routes_path(@prefecture.id) %><span class="divider"></span></li>
@@ -8,10 +10,14 @@
 <div class="col-sm-12">
   <h4><%= @route.name %></h4>
 </div>
+
+<div class="container">
+
 <% @stations.each do |f| %>
 
-  <div class="list-group">
-    <%= link_to f.name, girl_prefecture_route_station_path(@prefecture.id, @route.id, f.id), {:class => "list-group-item col-sm-2"} %>
-  </div>
+    <ul class="list-group text-center col-sm-4 col-xs-12">
+    <%= link_to "#{f.name}（#{@shop_shows.where(station_id: f.id).where(examine: true).count}）", girl_prefecture_route_station_path(@prefecture.id, @route.id, f.id), {:class => "list-group-item"} %>
+    </ul>
 
 <% end %>
+</div>

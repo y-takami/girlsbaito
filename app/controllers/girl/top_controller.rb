@@ -80,40 +80,40 @@ class Girl::TopController < Girl::Base
   end
 
 
-def favorite
-  if current_girl
-    if current_girl.favorite
-      favorite = current_girl.favorite.split(" ")
+  def favorite
+    if current_girl
+      if current_girl.favorite
+        favorite = current_girl.favorite.split(" ")
+        @shops = ShopShow.find(favorite)
+        @shops_count = @shops.count
+      end
+    elsif cookies[:favorite]
+      favorite = cookies[:favorite].split(" ")
       @shops = ShopShow.find(favorite)
       @shops_count = @shops.count
+    else
+
     end
-  elsif cookies[:favorite]
-    favorite = cookies[:favorite].split(" ")
-    @shops = ShopShow.find(favorite)
-    @shops_count = @shops.count
-  else
 
   end
 
-end
+  def job_category
+  end
 
-def job_category
-end
+  def advertisement
+  end
 
-def advertisement
-end
+  def contact
+  end
 
-def contact
-end
+  def policy
+  end
 
-def policy
-end
+  def personal_info
+  end
 
-def personal_info
-end
-
-def site_map
-end
+  def site_map
+  end
 
 
 end

@@ -1,43 +1,31 @@
 <% @title = 'パスワード変更' %>
-<div>
+<div class="container">
   <h1><%= @title %></h1>
 
-  <div class="form-horizontal" role="form">
-    <%= form_for @change_password_form, url: :girl_password, method: :patch do |f| %>
-      <div class="form-group">
-        項目は全て必須入力です。
-      </div>
-      <div class="form-group">
-        <%= f.label :current_password, {:class => "col-sm-3 control-label"} do %>
-          現在のパスワード<span class="text-danger">※</span>
-        <% end %>
-        <div class="col-sm-7">
-          <%= f.password_field :current_password, {:class => "form-control"} %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :new_password, {:class => "col-sm-3 control-label"} do %>
-          新しいパスワード<span class="text-danger">※</span>
-        <% end %>
-        <div class="col-sm-7">
-          <%= f.password_field :new_password, {:class => "form-control"} %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :new_password_confirmation, {:class => "col-sm-3 control-label"} do %>
-          新しいパスワード（確認用）<span class="text-danger">※</span>
-        <% end %>
-        <div class="col-sm-7">
-          <%= f.password_field :new_password_confirmation, {:class => "form-control"} %>
-        </div>
-      </div>
+  <%= form_for @change_password_form, url: :girl_password, method: :patch do |f| %>
+    <div class="form-group">
+      項目は全て必須入力です。
+    </div>
 
-      <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-10">
-          <%= f.submit '変更', {:class => "btn btn-default"} %>
-          <%= link_to 'キャンセル', :girl_account %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+    <div class="form-group">
+      <%= f.label :current_password, "現在のパスワード", {:class => "control-label"} %>
+      <%= f.password_field :current_password, placeholder: "現在のパスワード", :class => "form-control border-color-1" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :new_password, "新しいパスワード", {:class => "control-label"} %>
+      <%= f.password_field :new_password, placeholder: "新しいパスワード", :class => "form-control border-color-2" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :new_password_confirmation, "新しいパスワード（確認用）", {:class => "control-label"} %>
+      <%= f.password_field :new_password_confirmation, placeholder: "新しいパスワード（確認用）", :class => "form-control border-color-2" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit '変更する', {:class => "btn btn-outline-primary"} %>
+      <%= link_to 'キャンセル', :girl_account %>
+    </div>
+  <% end %>
+
 </div>

@@ -1,33 +1,32 @@
 <% if @city %>
-  <% @title = "#{@city.name}の風俗求人" %> <h1><%= @title %></h1>
+  <% @title = "#{@city.name}の求人" %>
 
 <% elsif @station %>
-  <% @title = "#{@station.name}の風俗求人" %> <h1><%= @title %></h1>
+  <% @title = "#{@station.name}の求人" %>
 
 <% elsif @category %>
-  <% @title = "#{@prefecture.name}の#{@category.name}求人" %> <h1><%= @title %></h1>
+  <% @title = "#{@prefecture.name}の#{@category.name}求人" %>
 
 <% elsif @prefecture %>
-  <% @title = "#{@prefecture.name}の求人" %> <h1><%= @title %></h1>
+  <% @title = "#{@prefecture.name}の求人" %>
 
 <% else %>
 
-  <% @title = '店舗一覧' %> <h1><%= @title %></h1>
+  <% @title = '店舗一覧' %>
 
 <% end %>
+
+<%= render 'girl/shared/page_title', f1: @title, f2: "#{@shops_count}件ありました", f3: false %>
 
 <%= render 'girl/shared/breadcrumb' %>
 <%= render 'girl/shared/search_form' %>
 
-<h3><%= @shops_count %>件ありました</h3>
 <div class="table-responsive">
   <%= paginate @shops %>
   <% @shops.each do |n| %>
-    <%= render 'girl/shops/table_shop_index', f: n %>
-    <div class="text-center">
-      <%= link_to '詳しく見る', girl_shop_path(n.id), {:class => "btn btn-primary"} %>
-    </div>
-    </br></br></br>
+
+    <%= render 'girl/shared/shop_card', f: n %>
+
   <% end %>
   <%= paginate @shops %>
 </div>

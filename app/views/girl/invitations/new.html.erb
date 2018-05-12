@@ -1,13 +1,25 @@
 <%= render 'js_invitation' %>
 
-<% @title = '招待ポイント換金申請' %> <h1><%= @title %></h1>
+<% @title = '招待ポイント換金申請' %>
 
-<h2>現在の招待ポイント　<%= @girl.invitation_point %>ポイント</h2>
-
+<%= render 'girl/shared/page_title', f1: @title, f2: false, f3: false %>
 <%= render 'shared/errors', f: @invitation %>
+
+<div class="container">
+
+  <div class="sectionTitle text-center">
+    <h2>
+      <span class="shape shape-left bg-color-4"></span>
+      <span>現在の招待ポイント</span>
+      <span class="shape shape-right bg-color-4"></span>
+      <span><%= @girl.invitation_point %>ポイント</span>
+    </h2>
+  </div>
+
 <div class="form-group">
   項目は全て必須入力です。
 </div>
+
 <div class="form-horizontal col-sm-12" role="form">
   <%= form_for @invitation, url: :girl_account_invitations do |f| %>
 
@@ -16,10 +28,10 @@
     <div class="form-group">
       <div class="col-sm-offset-3 col-sm-10">
         <% if @girl.invitation_point>=5000 %>
-        <%= f.submit '換金申請', :class => "btn btn-default" %>
+        <%= f.submit '換金申請', :class => "btn btn-outline-primary" %>
         <%= link_to 'キャンセル', :girl_account %>
           <% else %>
-          <%= f.submit '換金申請', {:class => "btn btn-default", :disabled => "disabled"} %>
+          <%= f.submit '換金申請', {:class => "btn btn-outline-primary", :disabled => "disabled"} %>
           <% end %>
       </div>
     </div>

@@ -1,108 +1,122 @@
-<table class="table col-sm-8">
+<section class="mainContent full-width clearfix courseSingleSection">
+  <div class="container">
+    <div class="row">
 
-  <tr>
-    <td>ポイント</td>
-    <td><%= f.shop_point %></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-  </tr>
-  <tr>
-    <td>店舗名</td>
-    <td><%= f.shop_name %></td>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-  </tr>
-  <tr>
-    <td>都道府県</td>
-    <td><%= f.prefecture.name %></td>
-  </tr>
-  <tr>
-    <td>エリア</td>
-    <td><%= f.city.name %></td>
-  </tr>
-  <tr>
-    <td>エリア詳細</td>
-    <td><%= f.house_number %></td>
-  </tr>
+      <div class="col-xs-12 block pull-right">
+        <div class="thumbnail thumbnailContent alt">
+          <%= image_tag(f.main_image.url, :alt => "image", :class => "img-responsive") %>
+          <div class="sticker bg-color-6"><%= f.congratulation_money %>円</div>
+          <div class="caption border-color-6">
+            <h3 class="color-1"><%= f.shop_name %></h3>
+            <h4><%= f.title %></h4>
+            <h5><%= f.summary %></h5>
+            <h6><%= f.job_content %></h6>
+          </div>
+        </div>
+        <div class="btnPart text-center">
+          <% if cookies[:favorite] && cookies[:favorite].split(" ").include?(@shop.id.to_s) %>
+            <%= link_to '気になる解除', girl_favorite_delete_path(:shop_id => @shop.id), {:class => "btn btn-outline-primary"} %>
+          <% else %>
+            <%= link_to '気になるに追加', girl_favorite_add_path(:shop_id => @shop.id), {:class => "btn btn-outline-primary"} %>
+          <% end %>
+          <% if @apply_button==true %>
+            <%= link_to '応募する', new_girl_shop_apply_path(@shop.id), {:class => "btn btn-outline-primary"} %>
+          <% end %>
+        </div>
+        </br>
+      </div>
 
-  <tr>
-    <td>時給</td>
-    <td><%= f.payment_hour_low %>円〜<%= f.payment_hour_high %>円</td>
-  </tr>
 
-  <tr>
-    <td>日給</td>
-    <td><%= f.payment_day %></td>
-  </tr>
+      <div class="col-xs-12 pull-left">
+        <div class="rightSidebar">
+          <div class="panel panel-default">
+            <div class="panel-heading bg-color-1 border-color-1">
+              <h3 class="panel-title">お店の情報</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="media-list">
+                <li class="media">
+                  <div class="media-left iconContent bg-color-2">
+                    <i class="fa fa-map" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body iconContent">
+                    <h4 class="media-heading color-2">場所</h4>
+                    <p><%= f.city.name %><%= f.house_number %><%= f.route.name %><%= f.station.name %></p>
+                  </div>
+                </li>
+                <li class="media">
+                  <div class="media-left iconContent bg-color-3">
+                    <i class="fa fa-money" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body iconContent">
+                    <h4 class="media-heading color-3">給料</h4>
+                    <p>時給<%= f.payment_hour_low %>円〜<%= f.payment_hour_high %>円，日給<%= f.payment_day %></p>
+                  </div>
+                </li>
+                <li class="media iconContet">
+                  <div class="media-left iconContent bg-color-4">
+                    <i class="fa fa-female" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body iconContent">
+                    <h4 class="media-heading color-4">お仕事の種類</h4>
+                    <p><%= f.category.name %></p>
+                  </div>
+                </li>
+                <li class="media">
+                  <div class="media-left iconContent bg-color-5">
+                    <i class="fa fa-exclamation" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body iconContent">
+                    <h4 class="media-heading color-5">特徴</h4>
+                    <p><%= '日払い可' if f.feature.daily %>&nbsp;&nbsp;<%= '給与保証' if f.feature.guarantee %>&nbsp;&nbsp;
+                      <%= '交通費支給' if f.feature.carfare %>&nbsp;&nbsp;<%= '初心者歓迎' if f.feature.beginner %>
+                      &nbsp;&nbsp;<%= '体験入店可' if f.feature.experience %></br>
+                      <%= '生理休暇' if f.feature.menstruation %>&nbsp;&nbsp;<%= '寮完備' if f.feature.dormitory %>
+                      &nbsp;&nbsp;<%= '個室待機' if f.feature.room %></br>
+                      <%= '託児所' if f.feature.nursery %>&nbsp;&nbsp;<%= '送迎' if f.feature.pickup %>
+                      &nbsp;&nbsp;<%= 'アリバイ対策' if f.feature.alibi %></br>
+                      <%= '在宅勤務可' if f.feature.home %>&nbsp;&nbsp;</p>
+                  </div>
+                </li>
+                <li class="media">
+                  <div class="media-left iconContent bg-color-6">
+                    <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body iconContent">
+                    <h4 class="media-heading color-6">お祝い金</h4>
+                    <p><%= f.congratulation_money %>円</p>
+                  </div>
+                </li>
+                <li class="media">
+                  <div class="media-left iconContent bg-color-7">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                  </div>
+                  <div class="media-body iconContent">
+                    <h4 class="media-heading color-7">その他備考</h4>
+                    <p><%= f.note %></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  <tr>
-    <td>業種</td>
-    <td><%= f.category.name %></td>
-  </tr>
-  <tr>
-    <td>電車路線名</td>
-    <td><%= f.route.name %></td>
-  </tr>
+        <%= image_tag(f.image1.url, :alt => "image", :class => "img-responsive") %>
+        <%= image_tag(f.image2.url, :alt => "image", :class => "img-responsive") %>
+        <%= image_tag(f.image3.url, :alt => "image", :class => "img-responsive") %>
+        </br>
+        <div class="btnPart text-center">
+          <% if cookies[:favorite] && cookies[:favorite].split(" ").include?(@shop.id.to_s) %>
+            <%= link_to '気になる解除', girl_favorite_delete_path(:shop_id => @shop.id), {:class => "btn btn-outline-primary"} %>
+          <% else %>
+            <%= link_to '気になるに追加', girl_favorite_add_path(:shop_id => @shop.id), {:class => "btn btn-outline-primary"} %>
+          <% end %>
+          <% if @apply_button==true %>
+            <%= link_to '応募する', new_girl_shop_apply_path(@shop.id), {:class => "btn btn-outline-primary"} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>>
 
-  <tr>
-    <td>最寄り駅名</td>
-    <td><%= f.station.name %></td>
-  </tr>
-  <tr>
-    <td>求人見出しタイトル</td>
-    <td><%= f.title %></td>
-  </tr>
-  <tr>
-    <td>お仕事を一言で紹介</td>
-    <td><%= f.summary %></td>
-  </tr>
-  <tr>
-    <td>求人時間帯</td>
-    <td><%= '朝' if f.time_morning %>&nbsp;&nbsp;<%= '昼' if f.time_noon %>&nbsp;&nbsp;
-      <%= '夕' if f.time_afternoon %>&nbsp;&nbsp;<%= '夜' if f.time_night %>&nbsp;&nbsp;<%= '夜中' if f.time_midnight %>
-    </td>
-  </tr>
-  <tr>
-    <td>お仕事内容紹介</td>
-    <td><%= f.job_content %></td>
-  </tr>
-  <tr>
-    <td>お祝い金</td>
-    <td><%= f.congratulation_money %></td>
-  </tr>
-  <tr>
-    <td>お店からのメッセージ</td>
-    <td><%= f.message %></td>
-  </tr>
-
-  <tr>
-    <td>主な特徴</td>
-    <td><%= '日払い可' if f.feature.daily %>&nbsp;&nbsp;<%= '給与保証' if f.feature.guarantee %>&nbsp;&nbsp;
-      <%= '交通費支給' if f.feature.carfare %>&nbsp;&nbsp;<%= '初心者歓迎' if f.feature.beginner %>
-      &nbsp;&nbsp;<%= '体験入店可' if f.feature.experience %></br>
-      <%= '生理休暇' if f.feature.menstruation %>&nbsp;&nbsp;<%= '寮完備' if f.feature.dormitory %>
-      &nbsp;&nbsp;<%= '個室待機' if f.feature.room %></br>
-      <%= '託児所' if f.feature.nursery %>&nbsp;&nbsp;<%= '送迎' if f.feature.pickup %>
-      &nbsp;&nbsp;<%= 'アリバイ対策' if f.feature.alibi %></br>
-      <%= '在宅勤務可' if f.feature.home %>&nbsp;&nbsp;
-  </tr>
-  <tr>
-    <td>その他待遇や備考</td>
-    <td><%= f.note %></td>
-  </tr>
-  <tr>
-    <td>見出し，メイン画像</td>
-    <td><%= image_tag f.main_image.url, {:class => "img-responsive center-block"} %></td>
-  </tr>
-  <tr>
-    <td>店舗イメージ画像１</td>
-    <td><%= image_tag f.image1.url %></td>
-  </tr>
-  <tr>
-    <td>店舗イメージ画像2</td>
-    <td><%= image_tag f.image2.url %></td>
-  </tr>
-  <tr>
-    <td>店舗イメージ画像3</td>
-    <td><%= image_tag f.image3.url %></td>
-  </tr>
-
-</table>

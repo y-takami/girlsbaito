@@ -18,6 +18,7 @@ class Girl::RoutesController < Girl::Base
     @route = Route.find(params[:id])
     @stations = Station.where(route_id: params[:id])
     @prefecture = Prefecture.find(params[:prefecture_id])
+    @shop_shows = ShopShow.where(prefecture: params[:prefecture_id])
   end
 
 end

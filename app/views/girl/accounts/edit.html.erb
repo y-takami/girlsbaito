@@ -1,47 +1,39 @@
 <% @title = 'アカウント登録情報更新' %>
 
-<div>
-  <h1><%= @title %></h1>
+<%= render 'girl/shared/page_title', f1: @title, f2: false, f3: false %>
+
+<div class="container">
   <%= render 'shared/errors', f: @girl %>
 
   <div class="form-group">
     項目は全て必須入力です。
   </div>
 
-  <div class="form-horizontal" role="form">
-    <%= form_for @girl, url: :girl_account do |f| %>
-      <div class="form-group">
-        <%= f.label :name, '氏名', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
-          <%= f.text_field :name, :class => "form-control" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :email, 'メールアドレス', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
-          <%= f.text_field :email, :class => "form-control" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= f.label :tel, '電話番号', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
-          <%= f.text_field :tel, :class => "form-control" %>
-        </div>
-      </div>
+  <%= form_for @girl, url: :girl_account do |f| %>
 
-      <div class="form-group">
-        <%= f.label :line_id, 'ラインID', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
-          <%= f.text_field :line_id, :class => "form-control" %>
-        </div>
-      </div>
+    <div class="form-group">
+      <%= f.label :name, "氏名", {:class => "control-label"} %>
+      <%= f.text_field :name, placeholder: "氏名", :class => "form-control border-color-1" %>
+    </div>
 
-      <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-10">
-          <%= f.submit '更新する', :class => "btn btn-default" %>
-        </div>
-      </div>
+    <div class="form-group">
+      <%= f.label :email, "メールアドレス", {:class => "control-label"} %>
+      <%= f.text_field :email, placeholder: "メールアドレス", :class => "form-control border-color-1" %>
+    </div>
 
-    <% end %>
-  </div>
+    <div class="form-group">
+      <%= f.label :tel, "電話番号", {:class => "control-label"} %>
+      <%= f.text_field :tel, placeholder: "電話番号", :class => "form-control border-color-1" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :line_id, "ラインID", {:class => "control-label"} %>
+      <%= f.text_field :line_id, placeholder: "ラインID", :class => "form-control border-color-1" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit '更新する', :class => "btn btn-outline-primary" %>
+    </div>
+
+  <% end %>
 </div>

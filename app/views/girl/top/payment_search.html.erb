@@ -1,5 +1,6 @@
-<% @title = '給料から検索' %> <h1><%= @title %></h1>
+<% @title = '給料から検索' %>
 
+<%= render 'girl/shared/page_title', f1: @title, f2: false, f3: false %>
 
 <%= form_for @search_form, as: 'search', url: :girl_shops, html: {method: :get, class: 'search'} do |f| %>
 
@@ -26,8 +27,8 @@
     <tr>
       <td>
         <div class="form-group">
-          <div class="col-sm-offset-6">
-            <%= f.submit '検索', :class => "btn btn-default" %>
+          <div class="text-center">
+            <%= f.submit '検索', :class => "btn btn-outline-primary" %>
           </div>
         </div>
       </td>

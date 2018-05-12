@@ -1,24 +1,25 @@
-<% @title = 'よくある質問' %> <h1><%= @title %></h1>
+<% @title = 'よくある質問' %>
 
+<%= render 'girl/shared/page_title', f1: @title, f2: @question.category, f3: false %>
 
-<div class="table-responsive">
+<div class="container">
 
-  <table class="table col-sm-8">
+  <div class="alt-table-responsive">
 
-    <tr>
-      <td><%= @question.question %></td>
-    </tr>
-    <tr>
-      <td><%= @question.answer %></td>
-    </tr>
-    <tr>
-      <td><%= @question.category %></td>
-    </tr>
+    <table class="table table-curved">
 
-  </table>
+      <tr>
+        <td><p>質問：<%= @question.question %></p></td>
+      </tr>
+      <tr>
+        <td><p>回答：<%= @question.answer %></p></td>
+      </tr>
 
-  <div class="text-center">
-      <%= link_to '一覧に戻る', girl_question_path, {:class => "btn btn-primary"} %>
+    </table>
   </div>
+
+    <div class="text-center">
+      <%= link_to '一覧に戻る', girl_question_path, {:class => "btn btn-outline-primary"} %>
+    </div>
 
 </div>

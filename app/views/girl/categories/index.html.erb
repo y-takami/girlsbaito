@@ -1,13 +1,17 @@
-<% @title = '職種選択' %> <h1><%= @title %></h1>
+<% @title = '職種選択' %>
+
+<%= render 'girl/shared/page_title', f1: @title, f2: false, f3: false %>
 
 <ul class="breadcrumb">
   <li><%= link_to 'HOME', :new_girl_prefecture %><span class="divider"></span></li>
   <li class="active"><%= @prefecture.name %></li>
 </ul>
 
-<% @categories.each do |f| %>
-  <div class="list-group">
-    <%= link_to "#{f.name}（#{@shop_shows.where(category_id: f.id).where(examine: true).count}）", girl_prefecture_category_path(@prefecture.id, f.id), {:class => "list-group-item col-sm-3"} %>
-  </div>
 
-<% end %>
+<div class="container">
+  <% @categories.each do |f| %>
+    <ul class="list-group text-center col-sm-4 col-xs-12">
+      <%= link_to "#{f.name}（#{@shop_shows.where(category_id: f.id).where(examine: true).count}）", girl_prefecture_category_path(@prefecture.id, f.id), {:class => "list-group-item"} %>
+    </ul>
+  <% end %>
+</div>

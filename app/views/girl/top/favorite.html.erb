@@ -7,7 +7,7 @@
     <% @shops.each do |n| %>
       <%= render 'girl/shops/table_shop_index', f: n %>
       <div class="text-center">
-        <%= link_to '詳しく見る', girl_shop_path(n.id), {:class => "btn btn-primary"} %>
+        <%= link_to '詳しく見る', girl_shop_path(n.id), {:class => "btn btn-outline-primary"} %>
       </div>
       </br></br></br>
     <% end %>

@@ -1,35 +1,67 @@
 <% @title = 'アカウント情報' %>
-<h1><%= @title %></h1>
 
-<div class="list-group">
-  <%= link_to '登録情報編集', :edit_girl_account, {:class => "list-group-item col-sm-2"} %>
-  <%= link_to 'パスワード変更', :edit_girl_password, {:class => "list-group-item col-sm-2"} %>
-  <%= link_to '応募状況確認，お祝い金申請', :girl_applies, {:class => "list-group-item col-sm-2"} %>
+<%= render 'girl/shared/page_title', f1: @title, f2: false, f3: false %>
 
-</div></br></br>
+<div class="container">
 
-<div class="table-responsive">
-  <%= render 'table_girl_account', f: @girl %>
+  <ul class="list-group text-center">
+
+    <li>
+      <%= link_to :edit_girl_account, {:class => "list-group-item custumicon_circle2"} do %>
+        <span class="icon2 bg-color-1"><i class="fa fa-list"></i></span><h4>登録情報変更</h4>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to :edit_girl_password, {:class => "list-group-item custumicon_circle2"} do %>
+        <span class="icon2 bg-color-1"><i class="fa fa-list"></i></span><h4>パスワード変更</h4>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to :girl_applies, {:class => "list-group-item custumicon_circle2"} do %>
+        <span class="icon2 bg-color-1"><i class="fa fa-list"></i></span><h4>応募状況確認，お祝い金申請</h4>
+      <% end %>
+    </li>
+  </ul>
+
+  <div class="table-responsive">
+    <%= render 'table_girl_account', f: @girl %>
+  </div>
+
+  <div class="sectionTitle text-center">
+    <h2>
+      <span class="shape shape-left bg-color-4"></span>
+      <span>お友達紹介プログラム</span>
+      <span class="shape shape-right bg-color-4"></span>
+    </h2>
+  </div>
+
+  <h4>紹介用アドレス（こちらをコピーしてご使用下さい）</h4>
+  <p>http://girlsbaito.example.com:3000/intro?code=<%= @girl.invitation_code %></p>
+
+  <p>※紹介した方が採用されてお祝い金を受け取ると，お祝い金の20％の金額（最大5万円）がポイントとして受け取れます。
+    ポイントは1ポイント1円としてアマゾンギフトカード等に交換できます。</p>
+
+
+  <div class="table-responsive">
+    <%= render 'table_girl_invitation', f: @girl %>
+
+  </div>
+  <div class="text-center">
+    <% if @girl.invitation_point>=5000 %>
+      <%= link_to 'ポイントを換金する', new_girl_account_invitation_path, {:class => "btn btn-outline-primary"} %>
+    <% else %>
+      <%= link_to '換金できません', girl_root_path, {:class => "btn btn-outline-primary", :disabled => "disabled"} %>
+      換金には最低5000ポイントが必要です。
+    <% end %>
+  </div>
+
+
+  </br></br>
+  <h5>ご不明な点は下記のよくある質問集からお問い合わせ下さい。</h5>
+
+  <div class="list-group">
+    <%= link_to 'よくある質問', girl_questions_path, {:class => "list-group-item text-center"} %>
+  </div>
 </div>
 
-紹介用アドレス
-http://girlsbaito.example.com:3000/intro?code=<%= @girl.invitation_code %>
-<h3>お友達紹介プログラム</h3>
-<div class="table-responsive">
-  <%= render 'table_girl_invitation', f: @girl %>
-
-</div>
-<div class="text-center">
-  <% if @girl.invitation_point>=5000 %>
-    <%= link_to 'ポイントを換金する', new_girl_account_invitation_path, {:class => "btn btn-primary"} %>
-  <% else %>
-    <%= link_to '換金できません', girl_root_path, {:class => "btn btn-default", :disabled => "disabled"} %>
-    換金には最低5000ポイントが必要です。
-  <% end %>
-</div>
-
-<h3>ご不明な点は下記のよくある質問集からお問い合わせ下さい。</h3>
-
-<div class="list-group col-sm-8">
-  <%= link_to 'よくある質問', girl_questions_path, {:class => "list-group-item col-sm-4"} %>
-</div>

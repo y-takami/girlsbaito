@@ -1,71 +1,98 @@
-<header>
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
+<header id="pageTop" class="header-wrapper">
 
-      <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
+  <%= render 'girl/shared/bar' %>
+
+  <!-- TOP INFO BAR -->
+  <div class="top-info-bar bg-color-7 hidden-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7">
+          <ul class="list-inline topList">
+            <li><i class="fa fa-envelope bg-color-1" aria-hidden="true"></i>
+              <a href="mailto:info@yourdomain.com">◯◯@◯◯.com</a></li>
+            <li><i class="fa fa-phone bg-color-2" aria-hidden="true"></i> ◯◯</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- NAVBAR -->
+  <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-
-        <!--
-
-        メニューボタン
-
-        data-toggle : ボタンを押したときにNavbarを開かせるために必要
-        data-target : 複数navbarを作成する場合、ボタンとナビを紐づけるために必要
-
-        -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-1">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-
-        <!-- タイトルなどのテキスト -->
-        <%= link_to @site_name, girl_root_path, :class => "navbar-brand" %>
-
+        <%= link_to image_tag("img/logo-school.png", :alt => "Kidz School"), girl_root_path, {:class => "navbar-brand"} %>
       </div>
 
-      <!-- グローバルナビの中身 -->
-      <div class="collapse navbar-collapse" id="nav-menu-1">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown color-1">
 
-        <!-- 各ナビゲーションメニュー -->
-        <ul class="nav navbar-nav">
-
-
-          <li class="navbar-right">
-            <%= if current_girl
-                  link_to 'ログアウト', :girl_session, method: :delete
-                else
-                  link_to 'ログイン', :new_girl_session
-                end %>
+            <%= link_to :girl_root, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+              <i class="fa fa-list-ul bg-color-3" aria-hidden="true"></i><span>トップページ</span>
+            <% end %>
 
           </li>
-          <li class="navbar-right">
-            <%= unless current_girl
-                  link_to '新規アカウント登録', :new_girl_account
-                end %>
-          </li>
-          <li class="navbar-right">
-            <%= link_to '都道府県変更', :new_girl_prefecture %>
-          </li>
-          <li class="navbar-right">
-            <%= if current_girl
-                  link_to 'マイメニュー', :girl_account
-                end %>
+
+          <li class=" dropdown color-2 ">
+            <%= link_to :new_girl_prefecture, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+              <i class="fa fa-file-text-o bg-color-2" aria-hidden="true"></i><span>都道府県変更</span>
+            <% end %>
           </li>
 
-          <li class="navbar-right">
-            <%= link_to '気になるリスト', :girl_favorite %>
+          <li class="dropdown color-4 ">
+            <% if current_girl %>
+              <%= link_to :girl_account, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+                <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true"></i><span>アカウント情報</span>
+              <% end %>
+            <% end %>
           </li>
 
-          <li class="navbar-right">
-            <%= link_to '最近見た履歴', :girl_history %>
+          <li class="dropdown color-5  ">
+            <%= link_to :girl_favorite, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+              <i class="fa fa-calendar bg-color-5" aria-hidden="true"></i><span>気になるリスト</span>
+            <% end %>
           </li>
 
+          <li class="dropdown color-6 ">
+            <%= link_to :girl_history, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+              <i class="fa fa-gg bg-color-6" aria-hidden="true"></i><span>閲覧履歴</span>
+            <% end %>
+          </li>
+
+          <li class="dropdown color-1 ">
+            <% if current_girl %>
+              <%= link_to :girl_session, method: :delete, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>ログアウト</span>
+              <% end %>
+            <% else %>
+              <%= link_to :new_girl_session, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>ログイン</span>
+              <% end %>
+            <% end %>
+          </li>
+
+          <li class="dropdown singleDrop color-1 ">
+            <% unless current_girl %>
+              <%= link_to :new_girl_account, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>新規登録</span>
+              <% end %>
+            <% end %>
+          </li>
         </ul>
-
       </div>
     </div>
+    　
   </nav>
 </header>
 <%= content_tag(:div, flash.notice, class: 'alert alert-success') if flash.notice %>

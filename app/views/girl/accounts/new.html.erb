@@ -1,43 +1,34 @@
 <% @title = 'アカウント作成' %>
 
-<div>
-  <h1><%= @title %></h1>
+<%= render 'girl/shared/page_title', f1: @title, f2: false, f3: false %>
+
+<div class="container">
+
   <%= render 'shared/errors', f: @girl %>
 
-
-  <div class="form-horizontal" role="form">
-    <div class="form-group">
-      項目は全て必須入力です。
-    </div>
-    <%= form_for @girl, url: :girl_account do |f| %>
-
-      <div class="form-group">
-        <%= f.label :email, 'メールアドレス', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
-          <%= f.text_field :email, :class => "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password, 'パスワード', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
-          <%= f.password_field :password, :class => "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :password_confirmation, 'パスワード再確認', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
-          <%= f.password_field :password_confirmation, :class => "form-control" %>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-10">
-          <%= f.submit 'アカウント作成', :class => "btn btn-default" %>
-        </div>
-      </div>
-
-    <% end %>
+  <div class="form-group">
+    項目は全て必須入力です。
   </div>
+  <%= form_for @girl, url: :girl_account do |f| %>
+
+    <div class="form-group">
+      <%= f.label :email, "メールアドレス", {:class => "control-label"} %>
+      <%= f.text_field :email, placeholder: "メールアドレス", :class => "form-control border-color-1" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password, "パスワード", {:class => "control-label"} %>
+      <%= f.password_field :password, placeholder: "パスワード", :class => "form-control border-color-2" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, "パスワード再確認", {:class => "control-label"} %>
+      <%= f.password_field :password_confirmation, placeholder: "パスワード再確認", :class => "form-control border-color-2" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit 'アカウント作成', :class => "btn btn-outline-primary" %>
+    </div>
+
+  <% end %>
 </div>
