@@ -215,6 +215,20 @@ $('.cart-dropdown a').on("click",function() {
 var minimum = 20;
 var maximum = 300;
 
+$( "#price-range" ).slider({
+  range: true,
+  min: minimum,
+  max: maximum,
+  values: [ minimum, maximum ],
+  slide: function( event, ui ) {
+    $( "#price-amount-1" ).val( "$" + ui.values[ 0 ] );
+    $( "#price-amount-2" ).val( "$" + ui.values[ 1 ] );
+  }
+});
+
+$( "#price-amount-1" ).val( "$" + $( "#price-range" ).slider( "values", 0 ));
+$( "#price-amount-2" ).val( "$" + $( "#price-range" ).slider( "values", 1 ));
+
 //============================== ACCORDION OR COLLAPSE ICON CHANGE =========================
 
     var allIcons = $("#faqAccordion .panel-heading i.fa");
