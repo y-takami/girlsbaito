@@ -1,0 +1,51 @@
+/* tableの文字列を折り返すため*/
+
+.alt-table-responsive {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+}
+
+h3.color-original1{
+    font-size: 36px;
+    line-height: 4px1;
+    color: #3ecdc6;
+    text-transform: capitalize;
+    font-family: 'Dosis', sans-serif;
+    margin: 0 0 20px 0;
+}
+
+.color-1,
+.courseList .media-body .list-inline.btnPart.btn-yellow > li a.btn-link:hover {
+    color: #3ecdc6 !important;
+}
+
+.color-2,
+.courseList .media-body .list-inline.btnPart.btn-green > li a.btn-link:hover {
+    color: #8f74f6 !important;
+}
+.color-3,
+.block .list-inline.btn-red .btn-link:hover,
+.courseList .media-body .list-inline.btnPart.btn-red > li a.btn-link:hover {
+    color: #ff9907 !important;
+}
+
+.color-4,
+.courseList .media-body .list-inline.btnPart.btn-sky > li a.btn-link:hover,
+.coursesCounter .counterInner > .btn-primary {
+    color: #ff6962 !important;
+}
+
+.color-5,
+.formPanel.panel .panel-body .media-list.blogListing li .media-heading a:hover,
+.courseList .media-body .list-inline.btnPart.btn-purple > li a.btn-link:hover,
+.rightSidebar .panel .panel-body .media-list.blogListing li .media-heading a:hover,
+.eventSidebar.panel .panel-body .media-list.blogListing li .media-heading a:hover {
+    color: #a5d03c !important;
+}
+.color-6,
+.courseList .media-body .list-inline.btnPart.btn-pink > li a.btn-link:hover {
+    color: #f0d128 !important;
+}

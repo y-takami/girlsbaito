@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  layout :set_layout
-
   class Forbidden < ActionController::ActionControllerError;
   end
   class IpAddressRejected < ActionController::ActionControllerError;
@@ -13,6 +11,8 @@ class ApplicationController < ActionController::Base
   include ErrorHandlers if Rails.env.production?
 
   helper_method :current_girl
+
+  layout :set_layout
 
   private
 
@@ -29,4 +29,5 @@ class ApplicationController < ActionController::Base
       'girl'
     end
   end
+
 end
