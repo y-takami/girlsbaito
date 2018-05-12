@@ -1,0 +1,30 @@
+<div class="col-sm-4 col-xs-12 block">
+  <div class="thumbnail thumbnailContent">
+    <%= link_to image_tag(f.main_image.url, :alt => "image"), girl_shop_path(f.id), {:class => "img-responsive"} %>
+
+    <div class="sticker bg-color-6">お祝い金<%= f.congratulation_money %>円</div>
+
+    <div class="caption border-color-6">
+
+      <h3>
+        <%= link_to "#{f.shop_name}", girl_shop_path(f.id), {:class => "color-6"} %>
+      </h3>
+
+      <ul class="list-unstyled">
+        <li><i class="fa fa-calendar-o" aria-hidden="true"></i><%= f.city.name %></li>
+        <li><i class="fa fa-clock-o" aria-hidden="true"></i><%= f.payment_hour_low %>円〜<%= f.payment_hour_high %>円</li>
+      </ul>
+      <p><%= f.title %></p>
+      <p><%= f.summary %></p>
+      <ul class="list-inline btn-yellow">
+        <li>
+          <%= link_to girl_shop_path(f.id), :class => "btn btn-link" do %>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>詳しく見る
+          <% end %>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
