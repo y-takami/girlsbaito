@@ -1,9 +1,7 @@
 <% @title = '都道府県選択' %>
-<h2>総登録件数<%= @shops_count %>件</h2>
-<%= render 'girl/shared/page_title', f1: @title, f2: "総登録件数<%= @shops_count %>件", f3: false %>
-
 
 <%= render 'girl/shared/top_bannar' %>
+
 <br>
 <br>
 <div class="sectionTitle text-center">
@@ -13,8 +11,9 @@
     <span class="shape shape-right bg-color-4"></span>
   </h2>
 </div>
-
+（総登録件数<%= @shops_count %>件）
 <div class="container">
+
   <div class="container">
     <div class="row">
 
@@ -171,16 +170,17 @@
       </div>
     </div>
   </div>
+
+
+  <table class="table table-bordered">
+    <tr>
+      <td><h3>お祝い金の申請はこちらから！</h3>
+
+        <div class="list-group col-sm-8">
+          <%= link_to 'お祝い金申請', :girl_applies, {:class => "list-group-item col-sm-4"} %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
 </div>
-
-<table class="table table-bordered">
-  <tr>
-    <td><h3>お祝い金の申請はこちらから！</h3>
-
-      <div class="list-group col-sm-8">
-        <%= link_to 'お祝い金申請', :girl_applies, {:class => "list-group-item col-sm-4"} %>
-      </div>
-    </td>
-  </tr>
-</table>
-

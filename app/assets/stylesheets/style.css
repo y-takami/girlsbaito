@@ -1033,7 +1033,7 @@ aside {
 }
 
 .pageTitleSection {
-  background-image: url("/images/page-title-bg.jpg");
+  background-image: url("page-title-bg.jpg");
   width: 100%;
   background-size: cover;
   background-position: center center;
