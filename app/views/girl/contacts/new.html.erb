@@ -1,24 +1,22 @@
-<% @title = 'お問い合わせフォーム' %> <h1><%= @title %></h1>
-
+<% @title = 'お問い合わせフォーム' %>
+<%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
 
 <%= render 'shared/errors', f: @contact %>
 
-<div class="form-horizontal col-sm-12" role="form">
-  <%= form_for @contact, url: :girl_contact do |f| %>
+<div class="container">
+  <div class="form-horizontal col-sm-12" role="form">
 
-    <div class="form-group">
-      項目は全て必須入力です。
-    </div>
+    <%= form_for @contact, url: :girl_contact do |f| %>
 
-    <%= render 'form_contact', f: f %>
+      <%= render 'form_contact', f: f %>
 
-    <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-10">
+      <div class="form-group">
+
         <%= f.submit '送信する', data: {confirm: 'この内容で送信します。よろしいですか？'}, :class => "btn btn-outline-primary" %>
         <%= link_to 'キャンセル', :girl_questions %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 

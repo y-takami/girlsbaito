@@ -75,7 +75,6 @@ Rails.application.routes.draw do
 
       get '/job_category' => 'top#job_category'
       get '/advertisement' => 'top#advertisement'
-      get '/contact' => 'top#contact'
       get '/policy' => 'top#policy'
       get '/personal_info' => 'top#personal_info'
       get '/favorite_add' => 'top#favorite_add'

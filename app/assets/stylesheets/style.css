@@ -4548,16 +4548,16 @@ footer .color-bar {
 
 .sticker {
   position: absolute;
-  left: 20px;
-  top: 20px;
-  width: 65px;
-  height: 65px;
+  left: 25px;
+  top: 25px;
+  width: 85px;
+  height: 85px;
   border-radius: 100%;
   text-align: center;
-  line-height: 65px;
+  line-height: 22px;
   color: #ffffff;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -9156,26 +9156,4 @@ footer .color-bar {
   position: absolute;
   right: 0;
   top: 0;
-}
-.custumicon_circle2{
-
-}
-.custumicon_circle2 .icon2{
-  border-radius: 50%;
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  font-size: 21px;
-  line-height: 30px;
-  vertical-align: middle;
-}
-
-.custumicon_circle2 .icon2 .fa {
-  line-height: 30px;
-color: white;
-}
-.custumicon_circle2 h4{
-  display:inline;
-  vertical-align: middle;
 }

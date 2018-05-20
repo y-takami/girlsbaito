@@ -17,35 +17,25 @@ h3.color-original1{
     margin: 0 0 20px 0;
 }
 
-.color-1,
-.courseList .media-body .list-inline.btnPart.btn-yellow > li a.btn-link:hover {
-    color: #3ecdc6 !important;
+.custumicon_circle2{
+
+}
+.custumicon_circle2 .icon2{
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 21px;
+    line-height: 30px;
+    vertical-align: middle;
 }
 
-.color-2,
-.courseList .media-body .list-inline.btnPart.btn-green > li a.btn-link:hover {
-    color: #8f74f6 !important;
+.custumicon_circle2 .icon2 .fa {
+    line-height: 30px;
+    color: white;
 }
-.color-3,
-.block .list-inline.btn-red .btn-link:hover,
-.courseList .media-body .list-inline.btnPart.btn-red > li a.btn-link:hover {
-    color: #ff9907 !important;
-}
-
-.color-4,
-.courseList .media-body .list-inline.btnPart.btn-sky > li a.btn-link:hover,
-.coursesCounter .counterInner > .btn-primary {
-    color: #ff6962 !important;
-}
-
-.color-5,
-.formPanel.panel .panel-body .media-list.blogListing li .media-heading a:hover,
-.courseList .media-body .list-inline.btnPart.btn-purple > li a.btn-link:hover,
-.rightSidebar .panel .panel-body .media-list.blogListing li .media-heading a:hover,
-.eventSidebar.panel .panel-body .media-list.blogListing li .media-heading a:hover {
-    color: #a5d03c !important;
-}
-.color-6,
-.courseList .media-body .list-inline.btnPart.btn-pink > li a.btn-link:hover {
-    color: #f0d128 !important;
+.custumicon_circle2 h4{
+    display:inline;
+    vertical-align: middle;
 }

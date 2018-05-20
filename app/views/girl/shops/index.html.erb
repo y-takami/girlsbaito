@@ -16,7 +16,7 @@
 
 <% end %>
 
-<%= render 'girl/shared/page_title', f1: @title, f2: "#{@shops_count}件ありました", f3: false %>
+<%= render 'shared/page_title', f1: @title, f2: "#{@shops_count}件ありました", f3: false %>
 
 <%= render 'girl/shared/breadcrumb' %>
 <%= render 'girl/shared/search_form' %>
@@ -25,7 +25,7 @@
   <%= paginate @shops %>
   <% @shops.each do |n| %>
 
-    <%= render 'girl/shared/shop_card', f: n %>
+    <%= render 'shared/shop_card', f: n %>
 
   <% end %>
   <%= paginate @shops %>

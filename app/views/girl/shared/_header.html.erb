@@ -1,6 +1,6 @@
 <header id="pageTop" class="header-wrapper">
 
-  <%= render 'girl/shared/bar' %>
+  <%= render 'shared/bar' %>
 
   <!-- TOP INFO BAR -->
   <div class="top-info-bar bg-color-7 hidden-xs">
@@ -94,6 +94,6 @@
     </div>
     　
   </nav>
+  <%= content_tag(:div, flash.notice, class: 'alert alert-success') if flash.notice %>
+  <%= content_tag(:div, flash.alert, class: 'alert alert-danger') if flash.alert %>
 </header>
-<%= content_tag(:div, flash.notice, class: 'alert alert-success') if flash.notice %>
-<%= content_tag(:div, flash.alert, class: 'alert alert-danger') if flash.alert %>

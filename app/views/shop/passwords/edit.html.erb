@@ -1,6 +1,6 @@
 <% @title = 'パスワード変更' %>
 <div>
-  <h1><%= @title %></h1>
+  <%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
 
   <div class="form-horizontal" role="form">
     <%= form_for @change_password_form, url: :shop_password, method: :patch |f| %>

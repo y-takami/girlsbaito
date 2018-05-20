@@ -1,5 +1,6 @@
 <% @title = '料金照会' %>
-<h1><%= @title %></h1>
+<%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
+
 <h2>料金は月末締め，請求予定日は翌月５日前後となります。<br>
   また，お支払い期限は翌月末までとなります。</h2>
 <% unless request.fullpath.match("shop/fee_last_month") %>

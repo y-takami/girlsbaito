@@ -58,7 +58,7 @@
 
 <% if @new_shops %>
 
-  <%= render 'girl/shared/bar' %>
+  <%= render 'shared/bar' %>
 
   <!-- WHITE SECTION -->
   <section class="whiteSection full-width clearfix newsSection" id="latestNews">
@@ -72,7 +72,7 @@
       </div>
       <div class="row">
         <% @new_shops.each do |f| %>
-          <%= render 'girl/shared/shop_card', f: f %>
+          <%= render 'shared/shop_card', f: f %>
         <% end %>
       </div>
     </div>
@@ -83,7 +83,7 @@
 
 <% if @favorite_shops %>
 
-  <%= render 'girl/shared/bar' %>
+  <%= render 'shared/bar' %>
 
   <!-- WHITE SECTION -->
   <section class="whiteSection full-width clearfix newsSection" id="latestNews">
@@ -97,7 +97,7 @@
       </div>
       <div class="row">
         <% @favorite_shops.each do |f| %>
-          <%= render 'girl/shared/shop_card', f: f %>
+          <%= render 'shared/shop_card', f: f %>
         <% end %>
       </div>
     </div>
@@ -107,7 +107,7 @@
 
 <% if @history_shops %>
 
-  <%= render 'girl/shared/bar' %>
+  <%= render 'shared/bar' %>
 
   <!-- WHITE SECTION -->
   <section class="whiteSection full-width clearfix newsSection" id="latestNews">
@@ -121,7 +121,7 @@
       </div>
       <div class="row">
         <% @history_shops.each do |f| %>
-          <%= render 'girl/shared/shop_card', f: f %>
+          <%= render 'shared/shop_card', f: f %>
         <% end %>
       </div>
     </div>

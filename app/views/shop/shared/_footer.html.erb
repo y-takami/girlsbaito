@@ -1,36 +1,52 @@
-</br></br>
+<!-- FOOTER -->
+<footer class="footer-2">
+  <!-- COLOR BAR -->
+  <%= render 'shared/bar' %>
 
-<div id="footer">
-  <div class="logo">
-    LOGO
+  <!-- FOOTER INFO AREA -->
+  <div class="footerInfoArea full-width clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-xs-12">
+          <div class="footerTitle">
+            <%= link_to image_tag("logov2.png"), girl_root_path %>
+          </div>
+          <div class="footerInfo">
+            ◯◯
+          </div>
+        </div>
+        <div class="col-sm-3 col-xs-12">
+
+          <ul class="navbar-nav list-inline">
+            <li><%= link_to 'お問い合わせ', shop_contact_path %></li>
+            <li><%= link_to '利用規約', shop_policy_path %></li>
+            <li><%= link_to '個人情報保護方針', shop_personal_info_path %></li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
   </div>
-  <!-- /footer-logo -->
-
-  <ul class="navbar-nav list-inline">
-    <li class="first"><%= link_to 'お問い合わせ', {controller: :top, action: :contact} %></li>
-    <li><%= link_to '利用規約', {controller: :top, action: :policy} %></li>
-    <li><%= link_to '個人情報保護方針', {controller: :top, action: :personal_info} %></li>
-  </ul>
-
-  <!-- /nav -->
-
-  <div class="clearfix"></div>
-
-  <ul class="sns-icon list-inline">
-    <li>
-      <i class="fa fa-twitter fa-2x"></i>
-    </li>
-    <li>
-      <i class="fa fa-facebook fa-2x"></i>
-    </li>
-  </ul>
-  <!-- /sns-icon -->
-
-  <div class="copy">
-    <span>Copyright © 2014 girlsbaito.com All Rights Reserved.</span>
+  <!-- COPY RIGHT -->
+  <div class="copyRight clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 col-sm-push-7 col-xs-12">
+          <ul class="list-inline">
+            <li><a href="#" class="bg-color-1"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="bg-color-2"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="bg-color-3"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="bg-color-4"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="bg-color-5"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-7 col-sm-pull-5 col-xs-12">
+          <div class="copyRightText">
+            <p>© 2018 Copyright 女子バイト All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- /copy -->
-
-</div>
-
-<!-- /footer -->
+</footer>

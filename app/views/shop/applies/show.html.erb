@@ -1,5 +1,6 @@
 <% @title = '応募詳細' %>
-<h1><%= @title %></h1>
+<%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
+
 
 <div class="table-responsive">
   <%= render 'table_apply', f: @apply %></br></br>

@@ -1,52 +1,73 @@
-<header>
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
+<header id="pageTop" class="header-wrapper">
 
-      <!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
+  <%= render 'shared/bar' %>
+
+  <!-- TOP INFO BAR -->
+  <div class="top-info-bar bg-color-7 hidden-xs">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7">
+          <ul class="list-inline topList">
+            <li><i class="fa fa-envelope bg-color-1" aria-hidden="true"></i>
+              <a href="mailto:info@yourdomain.com">◯◯@◯◯.com</a></li>
+            <li><i class="fa fa-phone bg-color-2" aria-hidden="true"></i> ◯◯</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- NAVBAR -->
+  <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-
-        <!--
-
-          メニューボタン
-
-          data-toggle : ボタンを押したときにNavbarを開かせるために必要
-          data-target : 複数navbarを作成する場合、ボタンとナビを紐づけるために必要
-
-        -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-1">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-
-        <!-- タイトルなどのテキスト -->
-        <%= link_to @site_name, shop_root_path, :class => "navbar-brand" %>
-
+        <%= link_to image_tag("logo-school.png", :alt => "Kidz School"), shop_root_path, {:class => "navbar-brand"} %>
       </div>
 
-      <!-- グローバルナビの中身 -->
-      <div class="collapse navbar-collapse" id="nav-menu-1">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown color-1">
 
-        <!-- 各ナビゲーションメニュー -->
-        <ul class="nav navbar-nav">
+            <%= link_to :shop_root, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+              <i class="fa fa-list-ul bg-color-3" aria-hidden="true"></i><span>トップページ</span>
+            <% end %>
 
-          <li class="navbar-right">
-            <%= if current_shop
-                  link_to 'ログアウト', :shop_session, method: :delete
-                else
-                  link_to 'ログイン', :new_shop_session
-                end
-            %>
           </li>
-          <li class="navbar-right">
-            <%= link_to 'アカウント', :shop_account if current_shop %>
+
+          <li class="dropdown color-1 ">
+            <% if current_shop %>
+              <%= link_to :shop_session, method: :delete, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>ログアウト</span>
+              <% end %>
+            <% else %>
+              <%= link_to :new_shop_session, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>ログイン</span>
+              <% end %>
+            <% end %>
+          </li>
+
+          <li class="dropdown singleDrop color-1 ">
+            <% unless current_shop %>
+              <%= link_to :new_shop_account, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
+                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>新規登録</span>
+              <% end %>
+            <% end %>
           </li>
         </ul>
-
       </div>
-      <%= content_tag(:div, flash.notice, class: 'alert alert-success') if flash.notice %>
-      <%= content_tag(:div, flash.alert, class: 'alert alert-danger') if flash.alert %>
     </div>
+    　
   </nav>
+  <%= content_tag(:div, flash.notice, class: 'alert alert-success') if flash.notice %>
+  <%= content_tag(:div, flash.alert, class: 'alert alert-danger') if flash.alert %>
 </header>

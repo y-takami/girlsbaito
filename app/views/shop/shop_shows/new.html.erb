@@ -2,6 +2,8 @@
 <%= render 'shared/script_prefecture_change' %>
 
 <% @title = '求人情報作成' %>
+<%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
+
 <div>
   <h1><%= @title %></h1>
   <%= render 'shared/errors', f: @shop_show %>

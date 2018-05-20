@@ -1,10 +1,11 @@
-<% @title = '求人情報情報' %>
-<h1><%= @title %></h1>
+<% @title = '求人情報' %>
+<%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
+
 
 <div class="list-group">
   <%= link_to '求人情報編集', :edit_shop_recruit, {:class => "list-group-item col-sm-2"} %>
 </div></br></br>
 
 <div class="table-responsive">
-    <%= render 'table_shop_show', f: @shop_show %>
+    <%= render 'shared/table_shop_show', f: @shop_show %>
 </div>

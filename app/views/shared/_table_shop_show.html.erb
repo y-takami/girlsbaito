@@ -5,7 +5,7 @@
       <div class="col-xs-12 block pull-right">
         <div class="thumbnail thumbnailContent alt">
           <%= image_tag(f.main_image.url, :alt => "image", :class => "img-responsive") %>
-          <div class="sticker bg-color-6"><%= f.congratulation_money %>円</div>
+          <div class="sticker bg-color-6"><br>お祝い金<br><%= f.congratulation_money %>円</div>
           <div class="caption border-color-6">
             <h3 class="color-1"><%= f.shop_name %></h3>
             <h4><%= f.title %></h4>
@@ -13,17 +13,7 @@
             <h6><%= f.job_content %></h6>
           </div>
         </div>
-        <div class="btnPart text-center">
-          <% if cookies[:favorite] && cookies[:favorite].split(" ").include?(@shop.id.to_s) %>
-            <%= link_to '気になる解除', girl_favorite_delete_path(:shop_id => @shop.id), {:class => "btn btn-outline-primary"} %>
-          <% else %>
-            <%= link_to '気になるに追加', girl_favorite_add_path(:shop_id => @shop.id), {:class => "btn btn-outline-primary"} %>
-          <% end %>
-          <% if @apply_button==true %>
-            <%= link_to '応募する', new_girl_shop_apply_path(@shop.id), {:class => "btn btn-outline-primary"} %>
-          <% end %>
-        </div>
-        </br>
+
       </div>
 
 
@@ -104,19 +94,9 @@
         <%= image_tag(f.image1.url, :alt => "image", :class => "img-responsive") %>
         <%= image_tag(f.image2.url, :alt => "image", :class => "img-responsive") %>
         <%= image_tag(f.image3.url, :alt => "image", :class => "img-responsive") %>
-        </br>
-        <div class="btnPart text-center">
-          <% if cookies[:favorite] && cookies[:favorite].split(" ").include?(@shop.id.to_s) %>
-            <%= link_to '気になる解除', girl_favorite_delete_path(:shop_id => @shop.id), {:class => "btn btn-outline-primary"} %>
-          <% else %>
-            <%= link_to '気になるに追加', girl_favorite_add_path(:shop_id => @shop.id), {:class => "btn btn-outline-primary"} %>
-          <% end %>
-          <% if @apply_button==true %>
-            <%= link_to '応募する', new_girl_shop_apply_path(@shop.id), {:class => "btn btn-outline-primary"} %>
-          <% end %>
-        </div>
+
       </div>
     </div>
   </div>
-</section>>
+</section>
 

@@ -9,7 +9,7 @@ class MainImageUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "assets/uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
   # 画像の上限を700pxにする

@@ -1,6 +1,6 @@
 <% @title = 'アカウント登録情報更新' %>
 
-<%= render 'girl/shared/page_title', f1: @title, f2: false, f3: false %>
+<%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
 
 <div class="container">
   <%= render 'shared/errors', f: @girl %>
@@ -18,17 +18,17 @@
 
     <div class="form-group">
       <%= f.label :email, "メールアドレス", {:class => "control-label"} %>
-      <%= f.text_field :email, placeholder: "メールアドレス", :class => "form-control border-color-1" %>
+      <%= f.text_field :email, placeholder: "メールアドレス", :class => "form-control border-color-2" %>
     </div>
 
     <div class="form-group">
       <%= f.label :tel, "電話番号", {:class => "control-label"} %>
-      <%= f.text_field :tel, placeholder: "電話番号", :class => "form-control border-color-1" %>
+      <%= f.text_field :tel, placeholder: "電話番号", :class => "form-control border-color-3" %>
     </div>
 
     <div class="form-group">
       <%= f.label :line_id, "ラインID", {:class => "control-label"} %>
-      <%= f.text_field :line_id, placeholder: "ラインID", :class => "form-control border-color-1" %>
+      <%= f.text_field :line_id, placeholder: "ラインID", :class => "form-control border-color-4" %>
     </div>
 
     <div class="form-group">

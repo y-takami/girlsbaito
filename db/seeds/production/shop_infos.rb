@@ -1,14 +1,14 @@
 20.times do |n|
   c = ShopInfo.create!(
     group_number: '1',
-    shop_name: "女子高生会社#{n}",
+    shop_name: "統括会社#{n}",
     url: 'example.com',
     admin_name: '山田太郎',
     admin_name_sei: 'ヤマダ',
     admin_name_mei: 'タロウ',
     admin_email: "shop#{n}@email.com",
     admin_tel: '09012345678',
-    billing_company: '東芝',
+    billing_company: '支払い会社',
     manager_name: '山田花子',
     manager_name_sei: 'ヤマダ',
     manager_name_mei: 'ハナコ',
@@ -26,7 +26,7 @@
 
   )
   c.shop_shows.create!(
-    shop_name: "女子高生バイト#{n}",
+    shop_name: "女子バイト#{n}",
     url: "baito.com",
     prefecture_id: rand(1..5),
     city_id: rand(1..20),
@@ -53,17 +53,17 @@
     :image3 => open('images/image3.jpg')
   )
 end
-35.times do |n|
+40.times do |n|
   c = ShopInfo.create!(
     group_number: '1',
-    shop_name: "女子高生会社#{n+30}",
+    shop_name: "統括会社#{n+30}",
     url: 'example.com',
     admin_name: '山田太郎',
     admin_name_sei: 'ヤマダ',
     admin_name_mei: 'タロウ',
     admin_email: "shop#{n+30}@email.com",
     admin_tel: '09012345678',
-    billing_company: '東芝',
+    billing_company: '支払い会社',
     manager_name: '山田花子',
     manager_name_sei: 'ヤマダ',
     manager_name_mei: 'ハナコ',
@@ -81,7 +81,7 @@ end
 
   )
   c.shop_shows.create!(
-    shop_name: "女子高生バイト#{n}",
+    shop_name: "女子バイト#{n}",
     url: "baito.com",
     prefecture_id: rand(1..5),
     city_id: rand(1..20),
