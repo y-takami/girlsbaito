@@ -4546,18 +4546,20 @@ footer .color-bar {
   padding-bottom: 80px;
 }
 
+/* お祝い金のバッジ。ステッカー。画像左上にでるやつ*/
+
 .sticker {
   position: absolute;
-  left: 25px;
-  top: 25px;
-  width: 85px;
-  height: 85px;
+  left: 14px;
+  top: 14px;
+  width: 65px;
+  height: 65px;
   border-radius: 100%;
   text-align: center;
-  line-height: 22px;
+  line-height: 18px;
   color: #ffffff;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }

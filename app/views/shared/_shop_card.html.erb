@@ -11,11 +11,14 @@
       </h3>
 
       <ul class="list-unstyled">
-        <li><i class="fa fa-calendar-o" aria-hidden="true"></i><%= f.city.name %></li>
-        <li><i class="fa fa-clock-o" aria-hidden="true"></i><%= f.payment_hour_low %>円〜<%= f.payment_hour_high %>円</li>
+        <li>
+          <span><i class="fa fa-map-o" aria-hidden="true"></i><%= f.city.name %></span>
+          <span><i class="fa fa-list" aria-hidden="true"></i><%= f.category.name %></span>
+          <span><i class="fa fa-money" aria-hidden="true"></i><%= f.payment_hour_low %>円〜<%= f.payment_hour_high %>円</span>
+        </li>
       </ul>
-      <p><%= f.title %></p>
-      <p><%= f.summary %></p>
+      <h4><%= f.title %></h4>
+      <h5><%= f.summary %></h5>
       <ul class="list-inline btn-yellow">
         <li>
           <%= link_to girl_shop_path(f.id), :class => "btn btn-link" do %>

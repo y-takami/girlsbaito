@@ -21,7 +21,7 @@
         <div class="rightSidebar">
           <div class="panel panel-default">
             <div class="panel-heading bg-color-1 border-color-1">
-              <h3 class="panel-title">お店の情報</h3>
+              <h3 class="panel-title"><font color="black">お店の情報</font></h3>
             </div>
             <div class="panel-body">
               <ul class="media-list">
@@ -58,14 +58,18 @@
                   </div>
                   <div class="media-body iconContent">
                     <h4 class="media-heading color-5">特徴</h4>
-                    <p><%= '日払い可' if f.feature.daily %>&nbsp;&nbsp;<%= '給与保証' if f.feature.guarantee %>&nbsp;&nbsp;
-                      <%= '交通費支給' if f.feature.carfare %>&nbsp;&nbsp;<%= '初心者歓迎' if f.feature.beginner %>
-                      &nbsp;&nbsp;<%= '体験入店可' if f.feature.experience %></br>
-                      <%= '生理休暇' if f.feature.menstruation %>&nbsp;&nbsp;<%= '寮完備' if f.feature.dormitory %>
-                      &nbsp;&nbsp;<%= '個室待機' if f.feature.room %></br>
-                      <%= '託児所' if f.feature.nursery %>&nbsp;&nbsp;<%= '送迎' if f.feature.pickup %>
-                      &nbsp;&nbsp;<%= 'アリバイ対策' if f.feature.alibi %></br>
-                      <%= '在宅勤務可' if f.feature.home %>&nbsp;&nbsp;</p>
+                    <span class="featurebox bg-color-1"><%= '日払い可' if f.feature.daily %><font color="#a9a9a9"><%= '☓日払い可' unless f.feature.daily %></font></font></span>
+                    <span class="featurebox bg-color-2"><%= '給与保証' if f.feature.guarantee %><font color="#a9a9a9"><%= '☓給与保証' unless f.feature.guarantee %></font></font></span>
+                    <span class="featurebox bg-color-3"><%= '交通費支給' if f.feature.carfare %><font color="#a9a9a9"><%= '☓交通費支給' unless f.feature.carfare %></font></font></span>
+                    <span class="featurebox bg-color-4"><%= '初心者歓迎' if f.feature.beginner %><font color="#a9a9a9"><%= '☓初心者歓迎' unless f.feature.beginner %></font></font></span>
+                    <span class="featurebox bg-color-5"><%= '体験入店可' if f.feature.experience %><font color="#a9a9a9"><%= '☓体験入店可' unless f.feature.experience %></font></font></span>
+                    <span class="featurebox bg-color-6"><%= '生理休暇' if f.feature.menstruation %><font color="#a9a9a9"><%= '☓生理休暇' unless f.feature.menstruation %></font></font></span>
+                    <span class="featurebox bg-color-1"><%= '寮完備' if f.feature.dormitory %><font color="#a9a9a9"><%= '☓寮完備' unless f.feature.dormitory %></font></font></span>
+                    <span class="featurebox bg-color-2"><%= '個室待機' if f.feature.room %><font color="#a9a9a9"><%= '☓個室待機' unless f.feature.room %></font></font></span>
+                    <span class="featurebox bg-color-3"><%= '託児所' if f.feature.nursery %><font color="#a9a9a9"><%= '☓託児所' unless f.feature.nursery %></font></font></span>
+                    <span class="featurebox bg-color-4"><%= '送迎' if f.feature.pickup %><font color="#a9a9a9"><%= '☓送迎' unless f.feature.pickup %></font></font></span>
+                    <span class="featurebox bg-color-5"><%= 'アリバイ対策' if f.feature.alibi %><font color="#a9a9a9"><%= '☓アリバイ対策' unless f.feature.alibi %></font></font></span>
+                    <span class="featurebox bg-color-6"><%= '在宅勤務可' if f.feature.home %><font color="#a9a9a9"><%= '☓在宅勤務可' unless f.feature.home %></font></font></span>
                   </div>
                 </li>
                 <li class="media">
