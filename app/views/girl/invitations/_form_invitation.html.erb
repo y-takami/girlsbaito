@@ -1,4 +1,9 @@
 <div class="form-group">
+  <%= f.label :application_amount, "申請金額", {:class => "control-label"} %>
+  <%= f.text_field :application_amount, placeholder: "5000", :class => "form-control border-color-1" %>
+</div>
+
+<div class="form-group">
   <div class="control-label">
     <%= f.label :method, '招待ポイント受け取り方法' %>
   </div>

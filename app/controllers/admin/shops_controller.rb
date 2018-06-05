@@ -35,7 +35,7 @@ class Admin::ShopsController < Admin::Base
       examin_check = 100
     end
     if @shop.update(shop_params)
-      flash.notice ='店舗情報を更新しました。'
+      flash.notice ='店舗情報を更新しました。審査完了の場合にはメールを送信しました。'
       if @shop.examine == true
         if examin_check == 100
           ExamineShopMailWorker.perform_async(@shop.id)

@@ -30,7 +30,7 @@ gem 'rmagick'
 gem 'validates_timeliness', '~> 3.0.14'
 gem 'sidekiq', '~> 3.3.0'
 gem 'slim'
-gem 'sinatra', :require => nil
+gem 'sinatra', require: false
 gem 'sidekiq-failures'
 gem 'font-awesome-rails'
 

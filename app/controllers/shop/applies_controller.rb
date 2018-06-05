@@ -34,7 +34,7 @@ class Shop::AppliesController < Shop::Base
   private
   def apply_params
     params.require(:apply).permit(
-      :employment, :interview
+      :employment, :interview, :first_work_day
     )
   end
 end

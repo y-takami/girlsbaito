@@ -58,18 +58,30 @@
                   </div>
                   <div class="media-body iconContent">
                     <h4 class="media-heading color-5">特徴</h4>
-                    <span class="featurebox bg-color-1"><%= '日払い可' if f.feature.daily %><font color="#a9a9a9"><%= '☓日払い可' unless f.feature.daily %></font></font></span>
-                    <span class="featurebox bg-color-2"><%= '給与保証' if f.feature.guarantee %><font color="#a9a9a9"><%= '☓給与保証' unless f.feature.guarantee %></font></font></span>
-                    <span class="featurebox bg-color-3"><%= '交通費支給' if f.feature.carfare %><font color="#a9a9a9"><%= '☓交通費支給' unless f.feature.carfare %></font></font></span>
-                    <span class="featurebox bg-color-4"><%= '初心者歓迎' if f.feature.beginner %><font color="#a9a9a9"><%= '☓初心者歓迎' unless f.feature.beginner %></font></font></span>
-                    <span class="featurebox bg-color-5"><%= '体験入店可' if f.feature.experience %><font color="#a9a9a9"><%= '☓体験入店可' unless f.feature.experience %></font></font></span>
-                    <span class="featurebox bg-color-6"><%= '生理休暇' if f.feature.menstruation %><font color="#a9a9a9"><%= '☓生理休暇' unless f.feature.menstruation %></font></font></span>
-                    <span class="featurebox bg-color-1"><%= '寮完備' if f.feature.dormitory %><font color="#a9a9a9"><%= '☓寮完備' unless f.feature.dormitory %></font></font></span>
-                    <span class="featurebox bg-color-2"><%= '個室待機' if f.feature.room %><font color="#a9a9a9"><%= '☓個室待機' unless f.feature.room %></font></font></span>
-                    <span class="featurebox bg-color-3"><%= '託児所' if f.feature.nursery %><font color="#a9a9a9"><%= '☓託児所' unless f.feature.nursery %></font></font></span>
-                    <span class="featurebox bg-color-4"><%= '送迎' if f.feature.pickup %><font color="#a9a9a9"><%= '☓送迎' unless f.feature.pickup %></font></font></span>
-                    <span class="featurebox bg-color-5"><%= 'アリバイ対策' if f.feature.alibi %><font color="#a9a9a9"><%= '☓アリバイ対策' unless f.feature.alibi %></font></font></span>
-                    <span class="featurebox bg-color-6"><%= '在宅勤務可' if f.feature.home %><font color="#a9a9a9"><%= '☓在宅勤務可' unless f.feature.home %></font></font></span>
+                    <span class="featurebox bg-color-1"><%= '日払い可' if f.feature.daily %>
+                      <font color="#a9a9a9"><%= '☓日払い可' unless f.feature.daily %></font></font></span>
+                    <span class="featurebox bg-color-2"><%= '給与保証' if f.feature.guarantee %>
+                      <font color="#a9a9a9"><%= '☓給与保証' unless f.feature.guarantee %></font></font></span>
+                    <span class="featurebox bg-color-3"><%= '交通費支給' if f.feature.carfare %>
+                      <font color="#a9a9a9"><%= '☓交通費支給' unless f.feature.carfare %></font></font></span>
+                    <span class="featurebox bg-color-4"><%= '初心者歓迎' if f.feature.beginner %>
+                      <font color="#a9a9a9"><%= '☓初心者歓迎' unless f.feature.beginner %></font></font></span>
+                    <span class="featurebox bg-color-5"><%= '体験入店可' if f.feature.experience %>
+                      <font color="#a9a9a9"><%= '☓体験入店可' unless f.feature.experience %></font></font></span>
+                    <span class="featurebox bg-color-6"><%= '生理休暇' if f.feature.menstruation %>
+                      <font color="#a9a9a9"><%= '☓生理休暇' unless f.feature.menstruation %></font></font></span>
+                    <span class="featurebox bg-color-1"><%= '寮完備' if f.feature.dormitory %>
+                      <font color="#a9a9a9"><%= '☓寮完備' unless f.feature.dormitory %></font></font></span>
+                    <span class="featurebox bg-color-2"><%= '個室待機' if f.feature.room %>
+                      <font color="#a9a9a9"><%= '☓個室待機' unless f.feature.room %></font></font></span>
+                    <span class="featurebox bg-color-3"><%= '託児所' if f.feature.nursery %>
+                      <font color="#a9a9a9"><%= '☓託児所' unless f.feature.nursery %></font></font></span>
+                    <span class="featurebox bg-color-4"><%= '送迎' if f.feature.pickup %>
+                      <font color="#a9a9a9"><%= '☓送迎' unless f.feature.pickup %></font></font></span>
+                    <span class="featurebox bg-color-5"><%= 'アリバイ対策' if f.feature.alibi %>
+                      <font color="#a9a9a9"><%= '☓アリバイ対策' unless f.feature.alibi %></font></font></span>
+                    <span class="featurebox bg-color-6"><%= '在宅勤務可' if f.feature.home %>
+                      <font color="#a9a9a9"><%= '☓在宅勤務可' unless f.feature.home %></font></font></span>
                   </div>
                 </li>
                 <li class="media">
@@ -95,9 +107,103 @@
           </div>
         </div>
 
-        <%= image_tag(f.image1.url, :alt => "image", :class => "img-responsive") %>
-        <%= image_tag(f.image2.url, :alt => "image", :class => "img-responsive") %>
-        <%= image_tag(f.image3.url, :alt => "image", :class => "img-responsive") %>
+        <!-- BANNER -->
+        <section class="bannercontainer bannercontainerV1">
+          <div class="fullscreenbanner-container">
+            <div class="fullscreenbanner">
+              <ul>
+                <% if f.image1.url %>
+                  <li data-transition="fade" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
+                    <%= image_tag(f.image1.url, :alt => "slidebg1", :'data-bgfit' => "cover", :'data-bgposition' => "center center", :'data-bgrepeat' => "no-repeat") %>
+                    <div class="slider-caption container">
+                      <div class="tp-caption rs-caption-1 sft start"
+                           data-hoffset="0"
+                           data-y="200"
+                           data-speed="800"
+                           data-start="1000"
+                           data-easing="Back.easeInOut"
+                           data-endspeed="300">
+
+                      </div>
+
+                      <div class="tp-caption rs-caption-2 sft"
+                           data-hoffset="0"
+                           data-y="265"
+                           data-speed="1000"
+                           data-start="1500"
+                           data-easing="Power4.easeOut"
+                           data-endspeed="300"
+                           data-endeasing="Power1.easeIn"
+                           data-captionhidden="off">
+
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+                <% if f.image2.url %>
+                  <li data-transition="fade" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
+                    <%= image_tag(f.image2.url, :alt => "slidebg1", :'data-bgfit' => "cover", :'data-bgposition' => "center center", :'data-bgrepeat' => "no-repeat") %>
+
+                    <div class="slider-caption container">
+                      <div class="tp-caption rs-caption-1 sft start text-center"
+                           data-hoffset="0"
+                           data-x="center"
+                           data-y="200"
+                           data-speed="800"
+                           data-start="1000"
+                           data-easing="Back.easeInOut"
+                           data-endspeed="300">
+                      </div>
+
+                      <div class="tp-caption rs-caption-2 sft text-center"
+                           data-hoffset="0"
+                           data-x="center"
+                           data-y="265"
+                           data-speed="1000"
+                           data-start="1500"
+                           data-easing="Power4.easeOut"
+                           data-endspeed="300"
+                           data-endeasing="Power1.easeIn"
+                           data-captionhidden="off">
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+
+                <% if f.image3.url %>
+                  <li data-transition="fade" data-slotamount="5" data-masterspeed="700" data-title="Slide 3">
+                    <%= image_tag(f.image3.url, :alt => "slidebg1", :'data-bgfit' => "cover", :'data-bgposition' => "center center", :'data-bgrepeat' => "no-repeat") %>
+
+                    <div class="slider-caption container">
+                      <div class="tp-caption rs-caption-1 sft start text-right"
+                           data-hoffset="0"
+                           data-y="200"
+                           data-x="right"
+                           data-speed="800"
+                           data-start="1000"
+                           data-easing="Back.easeInOut"
+                           data-endspeed="300">
+                      </div>
+
+                      <div class="tp-caption rs-caption-2 sft text-right"
+                           data-hoffset="0"
+                           data-y="265"
+                           data-x="right"
+                           data-speed="1000"
+                           data-start="1500"
+                           data-easing="Power4.easeOut"
+                           data-endspeed="300"
+                           data-endeasing="Power1.easeIn"
+                           data-captionhidden="off">
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+
+              </ul>
+            </div>
+          </div>
+        </section>
 
       </div>
     </div>

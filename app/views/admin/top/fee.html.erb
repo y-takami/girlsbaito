@@ -28,7 +28,8 @@
       <th>代表店名</th>
       <th>メールアドレス</th>
       <th>求人店舗登録数</th>
-      <th>合計請求額</th>
+      <th>合計請求額（前月分）</th>
+      <th>合計請求額（今月分）</th>
       <th></th>
     </tr>
     <% @shops.each do |m| %>
@@ -36,11 +37,8 @@
         <td><%= m.shop_name %></td>
         <td><%= m.admin_email %></td>
         <td><%= m.shop_shows.count %></td>
-        <% unless request.fullpath.match("admin/fee_last_month") %>
-          <td><%= count_fee(m.id) %></td>
-        <% else %>
-          <td><%= count_fee_last_month(m.id) %></td>
-        <% end %>
+        <td><%= count_fee(m.id) %></td>
+        <td><%= count_fee_last_month(m.id) %></td>
         <td><%= link_to '詳細', admin_fee_shop_path(id: m.id) %></td>
 
       </tr>

@@ -3,7 +3,7 @@ class ExamineInvitationMailWorker
 
   def perform(invitation_id)
     @invitation = Invitation.find(invitation_id)
-    @mail = NoticeMailer.examine_congratulation(@invitation).deliver
+    @mail = NoticeMailer.examine_invitation(@invitation).deliver
   end
 
 end

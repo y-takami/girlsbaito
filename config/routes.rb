@@ -87,6 +87,5 @@ Rails.application.routes.draw do
   end
 
   get '*anything' => 'errors#not_found'
-
-  mount Sidekiq::Web => '/sidekiq'
+  mount Sidekiq::Web, at: "/sidekiq"
 end

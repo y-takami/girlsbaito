@@ -26,17 +26,17 @@ class NoticeMailer < ActionMailer::Base
 
   def invitation_point(invitation)
     @invitation = invitation
-    mail to: invitation.girl.email, subject: "換金申請が完了しました。"
+    mail to: invitation.email, subject: "招待ポイント換金申請が完了しました。"
   end
 
   def examine_congratulation(congratulation)
     @congratulation = congratulation
-    mail to: congratulation.email, subject: "お祝い金申請が完了しました。"
+    mail to: congratulation.email, subject: "お祝い金申請審査が完了しました。"
   end
 
   def examine_invitation(invitation)
     @invitation = invitation
-    mail to: invitation.email, subject: "招待ポイント換金申請が完了しました。"
+    mail to: invitation.email, subject: "招待ポイント換金審査が完了しました。"
   end
 
   def register_shop(shop)

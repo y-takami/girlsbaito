@@ -53,7 +53,7 @@ production:
   pool: 5
   username: girlbaito
   password: girlsbaito-m-p-20180502
-  host: 13.231.23.241
+  host: 13.230.76.50
   socket: /var/lib/mysql/mysql.sock
 
   database: girlbaito_production
