@@ -23,56 +23,6 @@
 </div>
 
 <div class="form-group">
-  <%= f.label :admin_name, '求人管理者氏名（フルネーム）', {:class => "col-sm-3 control-label"} %>
-  <div class="col-sm-7">
-    <%= f.text_field :admin_name, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :admin_name_sei, 'フリガナ（姓）', {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :admin_name_sei, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :admin_name_mei, 'フリガナ（名）', {:class => "col-sm-3 control-label"} %>
-  <div class="col-sm-7">
-    <%= f.text_field :admin_name_mei, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :admin_email,'求人管理者メールアドレス',  {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :admin_email, {:class => "form-control"} %>
-  </div>
-</div>
-
-<% unless current_shop %>
-  <div class="form-group">
-    <%= f.label :admin_email_confirmation, '求人管理者メールアドレス再確認', {:class => "col-sm-3 control-label"} %>
-    <div class="col-sm-7">
-      <%= f.text_field :admin_email_confirmation, :class => "form-control" %>
-    </div>
-  </div>
-<% end %>
-
-<div class="form-group">
-  <%= f.label :admin_tel, '求人管理者電話番号', {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :admin_tel, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :billing_company, '料金等請求先会社名', {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :billing_company, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
   <%= f.label :manager_name, '貴社代表者氏名', {:class => "col-sm-3 control-label"} %>
   <div class="col-sm-7">
     <%= f.text_field :manager_name, {:class => "form-control"} %>
@@ -94,29 +44,24 @@
 </div>
 
 <div class="form-group">
-  <%= f.label :billing_email, '料金等請求先メールアドレス', {:class => "col-sm-3 control-label"} %>
+  <%= f.label :manager_email,'貴社メールアドレス（請求金額お知らせメール等が届きます）',  {:class => "col-sm-3 control-label"} %>
+
   <div class="col-sm-7">
-    <%= f.text_field :billing_email, {:class => "form-control"} %>
+    <%= f.text_field :manager_email, {:class => "form-control"} %>
   </div>
 </div>
+
 <% unless current_shop %>
   <div class="form-group">
-    <%= f.label :billing_email_confirmation, '料金等請求先メールアドレス再確認', {:class => "col-sm-3 control-label"} %>
+    <%= f.label :manager_email_confirmation, '貴社メールアドレス再確認', {:class => "col-sm-3 control-label"} %>
     <div class="col-sm-7">
-      <%= f.text_field :billing_email_confirmation, :class => "form-control" %>
+      <%= f.text_field :manager_email_confirmation, :class => "form-control" %>
     </div>
   </div>
 <% end %>
-<div class="form-group">
-  <%= f.label :billing_tel, '料金等請求先電話番号', {:class => "col-sm-3 control-label"} %>
 
-  <div class="col-sm-7">
-    <%= f.text_field :billing_tel, {:class => "form-control"} %>
-  </div>
-</div>
 <div class="form-group">
-  貴社住所入力欄
-  <%= f.label :postal_first, '郵便番号', {:class => "col-sm-3 control-label"} %>
+  <%= f.label :postal_first, '貴社住所入力欄　郵便番号', {:class => "col-sm-3 control-label"} %>
 
   <div class="col-sm-7 form-inline">
     <%= f.text_field :postal_first, {:class => "form-control"} %>-
@@ -144,3 +89,49 @@
     <%= f.text_field :house_number, {:class => "form-control"} %>
   </div>
 </div>
+
+<div class="form-group">
+  <%= f.label :admin_name, '求人管理者氏名（フルネーム）', {:class => "col-sm-3 control-label"} %>
+  <div class="col-sm-7">
+    <%= f.text_field :admin_name, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :admin_name_sei, 'フリガナ（姓）', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :admin_name_sei, {:class => "form-control"} %>
+  </div>
+</div>
+<div class="form-group">
+  <%= f.label :admin_name_mei, 'フリガナ（名）', {:class => "col-sm-3 control-label"} %>
+  <div class="col-sm-7">
+    <%= f.text_field :admin_name_mei, {:class => "form-control"} %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :admin_email,'求人管理者メールアドレス（求人応募お知らせメール等が届きます）',  {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :admin_email, {:class => "form-control"} %>
+  </div>
+</div>
+
+<% unless current_shop %>
+  <div class="form-group">
+    <%= f.label :admin_email_confirmation, '求人管理者メールアドレス再確認', {:class => "col-sm-3 control-label"} %>
+    <div class="col-sm-7">
+      <%= f.text_field :admin_email_confirmation, :class => "form-control" %>
+    </div>
+  </div>
+<% end %>
+
+<div class="form-group">
+  <%= f.label :admin_tel, '求人管理者電話番号', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :admin_tel, {:class => "form-control"} %>
+  </div>
+</div>
+

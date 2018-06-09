@@ -9,12 +9,10 @@ class CreateShopInfos < ActiveRecord::Migration
       t.string :admin_name_mei
       t.string :admin_email
       t.string :admin_tel
-      t.string :billing_company
+      t.string :manager_email
       t.string :manager_name
       t.string :manager_name_sei
       t.string :manager_name_mei
-      t.string :billing_email
-      t.string :billing_tel
       t.string :postal_first
       t.string :postal_last
       t.string :prefecture

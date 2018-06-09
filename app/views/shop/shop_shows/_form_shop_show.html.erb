@@ -46,22 +46,22 @@
   <%= f.label :payment_hour_low , '時給', {:class => "col-sm-3 control-label"} %>
 
   <div class="col-sm-3">
-    <%= f.text_field :payment_hour_low, {:class => "form-control"} %>
+    <%= f.text_field :payment_hour_low, {:class => "form-control"} %>円
   </div>
   <div class="col-sm-1">
     〜
   </div>
   <div class="col-sm-3">
-    <%= f.text_field :payment_hour_high, {:class => "form-control"} %>
+    <%= f.text_field :payment_hour_high, {:class => "form-control"} %>円
   </div>
 </div>
 
 
 <div class="form-group">
-  <%= f.label :payment_day , '日給', {:class => "col-sm-3 control-label"} %>
+  <%= f.label :payment_day , '日給（平均）', {:class => "col-sm-3 control-label"} %>
 
   <div class="col-sm-7">
-    <%= f.text_field :payment_day, {:class => "form-control"} %>
+    <%= f.text_field :payment_day, {:class => "form-control"} %>円
   </div>
 </div>
 
@@ -141,7 +141,7 @@
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :congratulation_money , 'お祝い金', {:class => "col-sm-3 control-label"} %>
+  <%= f.label :congratulation_money , 'お祝い金（お祝い金設定によって採用時の請求料金が変化いたしますのでご注意ください。）', {:class => "col-sm-3 control-label"} %>
 
   <div class="col-sm-7">
     <%= f.text_field :congratulation_money, {:class => "form-control"} %>

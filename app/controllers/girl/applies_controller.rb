@@ -34,6 +34,11 @@ class Girl::AppliesController < Girl::Base
 
     apply_vali.delete
 
+    if shop_show.stop_flag == true || shop_show.examine == false || shop_show.stop_flag_shop == true
+      flash.alert = "申し訳ございません。この店舗の募集は停止しております。現在応募はできません。"
+      redirect_to girl_root and return
+    end
+
     ActiveRecord::Base.transaction do
       shop_show.lock!
       if shop_show.applies.where(girl_id: current_girl).exists?

@@ -89,8 +89,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   config.girlsbaito = {
-    shop: { host: '13.230.76.50', path: 'shop' },
-    admin: { host: '13.230.76.50', path: 'admin' },
-    girl: { host: '13.230.76.50', path: '' }
+    shop: { host: 'girlbaito.com', path: 'shop' },
+    admin: { host: 'girlbaito.com', path: 'admin' },
+    girl: { host: 'girlbaito.com', path: '' }
   }
 end

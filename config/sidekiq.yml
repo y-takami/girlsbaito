@@ -1,0 +1,6 @@
+:verbose: true
+:daemon: true
+:pidfile: ./tmp/pids/sidekiq.pid
+:logfile: ./log/sidekiq.log
+:concurrency: 3 #並列数
+:retry: 1
