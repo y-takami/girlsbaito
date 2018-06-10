@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-<% @site_name = '女子ジョブ' %>
+<% @site_name = '女子バイト' %>
 <% @email = 'girls-job.jp@email.com' %>
 <% @email_girl = 'girls-job_girl@email.com' %>
 <% @email_shop = 'girls-job_shop@email.com' %>
 <head>
   <title><%= document_title %></title>
+  <%= favicon_link_tag('favicon.ico') %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

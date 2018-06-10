@@ -51,7 +51,9 @@
     <% if @girl.invitation_point>=5000 %>
       <%= link_to 'ポイントを換金する', new_girl_account_invitation_path, {:class => "btn btn-outline-primary"} %>
     <% else %>
-      <%= link_to '換金できません', girl_root_path, {:class => "btn btn-outline-primary", :disabled => "disabled"} %>
+      <div class="btn btn-outline-primary disabled">
+      <%= '換金できません' %>
+      </div>
       換金には最低5000ポイントが必要です。
     <% end %>
   </div>
