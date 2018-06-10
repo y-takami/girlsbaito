@@ -46,7 +46,7 @@ class Admin::ShopShowsController < Admin::Base
 
       if @shop_show.examine == true
         if examin_check == 100
-          ExamineShowMailWorker.perform_async(@shop_show.shop_info.id)
+          ExamineShowMailWorker.perform_async(@shop_show.shop_info.id, @shop_show.id)
           flash.notice ='求人情報を更新して，メールを送信しました。'
 
         end

@@ -24,8 +24,9 @@ class NoticeMailer < ActionMailer::Base
     mail to: apply.girl.email, subject: "お祝い金申請が完了しました。"
   end
 
-  def invitation_point(invitation)
+  def invitation_point(invitation, girl)
     @invitation = invitation
+    @girl = girl
     mail to: invitation.email, subject: "招待ポイント換金申請が完了しました。"
   end
 
@@ -34,8 +35,9 @@ class NoticeMailer < ActionMailer::Base
     mail to: congratulation.email, subject: "お祝い金申請審査が完了しました。"
   end
 
-  def examine_invitation(invitation)
+  def examine_invitation(invitation, girl)
     @invitation = invitation
+    @girl = girl
     mail to: invitation.email, subject: "招待ポイント換金審査が完了しました。"
   end
 
@@ -49,8 +51,9 @@ class NoticeMailer < ActionMailer::Base
     mail to: shop.admin_email, subject: "登録申請審査が完了しました。"
   end
 
-  def examine_show(shop)
+  def examine_show(shop, shop_show)
     @shop = shop
+    @shop_show = shop_show
     mail to: shop.admin_email, subject: "求人情報掲載の審査が完了しました"
   end
 

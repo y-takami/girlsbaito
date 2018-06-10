@@ -1,9 +1,10 @@
 class InvitationPointMailWorker
   include Sidekiq::Worker
 
-  def perform(invitation_id)
+  def perform(invitation_id, girl_id)
     @invitation = Invitation.find(invitation_id)
-    @mail = NoticeMailer.invitation_point(@invitation).deliver
+    @girl = Girl.find(girl_id)
+    @mail = NoticeMailer.invitation_point(@invitation, @girl).deliver
   end
 
 end

@@ -43,7 +43,7 @@ class Girl::InvitationsController < Girl::Base
       if @invitation.save && @girl.update(girl_invitation_params)
         if @girl.update(invitation_point: @girl.invitation_point-@invitation.application_amount)
           flash.notice ="#{@invitation.application_amount}ポイントの換金申請が完了しました。審査が完了しましたら，メールにてお知らせ申し上げます。"
-          InvitationPointMailWorker.perform_async(@invitation.id)
+          InvitationPointMailWorker.perform_async(@invitation.id, @girl.id)
           redirect_to :girl_account
         else
           render action: 'new'
