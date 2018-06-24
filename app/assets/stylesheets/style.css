@@ -2443,7 +2443,7 @@ aside {
 
 @media (min-width: 768px) {
   .navbar-default .navbar-nav > li > a > span {
-    width: auto;
+    width: 100px;
     padding: 0 15px;
     display: block;
   }

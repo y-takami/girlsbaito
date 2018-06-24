@@ -5,7 +5,7 @@
     <td><%= f.invitation_num %></td>
   </tr>
   <tr>
-    <td>招待して応募した人数</td>
+    <td>招待して求人に応募した人数</td>
     <td><%= Apply.where(invitation_code: f.invitation_code).count %></td>
   </tr>
   <tr>

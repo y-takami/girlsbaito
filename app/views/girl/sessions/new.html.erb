@@ -13,11 +13,11 @@
         <%= form_for @form, url: :girl_session do |f| %>
           <div class="form-group">
             <%= f.label :email, "メールアドレス", {:class => "control-label"} %>
-            <%= f.text_field :email, placeholder: "メールアドレス", :class => "form-control border-color-1" %>
+            <%= f.text_field :email, placeholder: "hanako@email.com", :class => "form-control border-color-1" %>
           </div>
           <div class="form-group">
             <%= f.label :password, "パスワード", {:class => "control-label"} %>
-            <%= f.password_field :password, placeholder: "パスワード", :class => "form-control border-color-2" %>
+            <%= f.password_field :password, placeholder: "パスワードを入力", :class => "form-control border-color-2" %>
           </div>
           <div class="form-group">
               <%= f.submit 'ログイン', :class => "btn btn-outline-primary" %>

@@ -77,6 +77,11 @@ class Girl::TopController < Girl::Base
     else
 
     end
+
+    if @shops_count.nil?
+      @shops_count = 0
+    end
+
   end
 
 
@@ -86,13 +91,19 @@ class Girl::TopController < Girl::Base
         favorite = current_girl.favorite.split(" ")
         @shops = ShopShow.find(favorite)
         @shops_count = @shops.count
+
       end
     elsif cookies[:favorite]
       favorite = cookies[:favorite].split(" ")
       @shops = ShopShow.find(favorite)
       @shops_count = @shops.count
+
     else
 
+    end
+
+    if @shops_count.nil?
+      @shops_count = 0
     end
 
   end

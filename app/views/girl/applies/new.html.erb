@@ -29,26 +29,26 @@
 
     <div class="form-group">
       <%= f.label :name, "氏名（フルネーム）", {:class => "control-label"} %>
-      <%= f.text_field :name, placeholder: "氏名（フルネーム）", :class => "form-control border-color-1" %>
+      <%= f.text_field :name, placeholder: "山田　花子", :class => "form-control border-color-1" %>
     </div>
 
     <div class="form-group">
       <%= f.label :email, "メールアドレス", {:class => "control-label"} %>
-      <%= f.text_field :email, placeholder: "メールアドレス", :class => "form-control border-color-1" %>
+      <%= f.text_field :email, placeholder: "hanako@email.com", :class => "form-control border-color-1" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :tel, "電話番号", {:class => "control-label"} %>
-      <%= f.text_field :tel, placeholder: "電話番号", :class => "form-control border-color-1" %>
+      <%= f.label :tel, "電話番号（ハイフン無し）", {:class => "control-label"} %>
+      <%= f.text_field :tel, placeholder: "09012345678", :class => "form-control border-color-1" %>
     </div>
 
     <div class="form-group">
       <%= f.label :line_id, "ラインID", {:class => "control-label"} %>
-      <%= f.text_field :line_id, placeholder: "ラインID", :class => "form-control border-color-1" %>
+      <%= f.text_field :line_id, placeholder: "hanako", :class => "form-control border-color-1" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :method, "希望する連絡手段", {:class => "control-label"} %>
+      <%= f.label :method, "希望する連絡手段（選択した情報以外は応募店舗に共有されません", {:class => "control-label"} %>
       <%= f.select :method, ['どれでもいい', 'メール', 'LINE', '電話'] %>
     </div>
 

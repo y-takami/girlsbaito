@@ -3,21 +3,21 @@
 </div>
 <div class="form-group">
   <div class="control-label">
-    <%= f.label :first_work_flag, '初日勤務の有無' %>
+    <%= f.label :first_work_flag, '初日勤務は完了しましたか' %>
   </div>
   <div class="checkbox-inline">
-    <%= f.check_box :first_work_flag %><label>完了しました。</label>
+    <%= f.check_box :first_work_flag %><label>完了した。</label>
   </div>
 </div>
 
 <div class="form-group">
   <%= f.label :interview, "面接日（例：2018/5/14）", {:class => "control-label"} %>
-  <%= f.date_field :interview, :class => "form-control border-color-1" %>
+  <%= f.date_field :interview, placeholder: "2018/5/14", :class => "form-control border-color-1" %>
 </div>
 
 <div class="form-group">
   <%= f.label :first_work_day, "初出勤日（例：2018/5/14）", {:class => "control-label"} %>
-  <%= f.date_field :first_work_day, :class => "form-control border-color-2" %>
+  <%= f.date_field :first_work_day, placeholder: "2018/5/14", :class => "form-control border-color-2" %>
 </div>
 
 <div class="form-group">
@@ -32,8 +32,8 @@
     <%= f.label :postal_first, '郵便番号' %>
   </div>
   <div class="form-inline">
-    <%= f.text_field :postal_first, {:class => "form-control border-color-3"} %>-
-    <%= f.text_field :postal_last, {:class => "form-control border-color-3"} %>
+    <%= f.text_field :postal_first, placeholder: "100", {:class => "form-control border-color-3"} %>-
+    <%= f.text_field :postal_last, placeholder: "0001", {:class => "form-control border-color-3"} %>
   </div>
 </div>
 
@@ -41,35 +41,35 @@
   <div class="col-sm-3 control-label">
     <%= f.label :prefecture, '都道府県名' %>
   </div>
-    <%= f.text_field :prefecture, {:class => "form-control border-color-4"} %>
+    <%= f.text_field :prefecture, placeholder: "東京都", {:class => "form-control border-color-4"} %>
 </div>
 
 <div class="form-group" id="city" style="display: none">
   <div class="control-label">
     <%= f.label :city, '市町村' %>
   </div>
-    <%= f.text_field :city, {:class => "form-control border-color-5"} %>
+    <%= f.text_field :city, placeholder: "千代田区", {:class => "form-control border-color-5"} %>
 </div>
 
 <div class="form-group" id="house_number" style="display: none">
   <div class="control-label">
     <%= f.label :house_number, '番地その他' %>
   </div>
-    <%= f.text_field :house_number, {:class => "form-control border-color-6"} %>
+    <%= f.text_field :house_number, placeholder: "◯ー◯◯", {:class => "form-control border-color-6"} %>
 </div>
 
 <div class="form-group" id="bank_name" style="display: none">
   <div class="control-label">
-    <%= f.label :bank_name, '振込先銀行名' %>
+    <%= f.label :bank_name, '振込先銀行名（正式名称をご記載ください。）' %>
   </div>
-    <%= f.text_field :bank_name, {:class => "form-control border-color-1"} %>
+    <%= f.text_field :bank_name, placeholder: "三菱東京UFJ銀行", {:class => "form-control border-color-1"} %>
 </div>
 
 <div class="form-group" id="bank_branch_name" style="display: none">
   <div class="control-label">
     <%= f.label :bank_branch_name, '銀行支店名' %>
   </div>
-    <%= f.text_field :bank_branch_name, {:class => "form-control border-color-2"} %>
+    <%= f.text_field :bank_branch_name, placeholder: "◯◯支店", {:class => "form-control border-color-2"} %>
 </div>
 
 <div class="form-group" id="bank_type" style="display: none">
@@ -83,31 +83,31 @@
   <div class="control-label">
     <%= f.label :bank_number, '口座番号' %>
   </div>
-    <%= f.text_field :bank_number, {:class => "form-control border-color-3"} %>
+    <%= f.text_field :bank_number, placeholder: "1234567", {:class => "form-control border-color-3"} %>
 </div>
 
 <div class="form-group">
   <%= f.label :name, "氏名（フルネーム）", {:class => "control-label"} %>
-  <%= f.text_field :name, placeholder: "氏名（フルネーム）", :class => "form-control border-color-4" %>
+  <%= f.text_field :name, placeholder: "山田　花子", :class => "form-control border-color-4" %>
 </div>
 
 <div class="form-group">
   <%= f.label :name_sei_kana, "フリガナ（姓）", {:class => "control-label"} %>
-  <%= f.text_field :name_sei_kana, placeholder: "フリガナ（姓）", :class => "form-control border-color-5" %>
+  <%= f.text_field :name_sei_kana, placeholder: "ヤマダ", :class => "form-control border-color-5" %>
 </div>
 <div class="form-group">
   <%= f.label :name_mei_kana, "フリガナ（名）", {:class => "control-label"} %>
-  <%= f.text_field :name_mei_kana, placeholder: "フリガナ（名）", :class => "form-control border-color-6" %>
+  <%= f.text_field :name_mei_kana, placeholder: "ハナコ", :class => "form-control border-color-6" %>
 </div>
 
 <div class="form-group">
   <%= f.label :email, "メールアドレス", {:class => "control-label"} %>
-  <%= f.text_field :email, placeholder: "メールアドレス", :class => "form-control border-color-1" %>
+  <%= f.text_field :email, placeholder: "hanako@email.com", :class => "form-control border-color-1" %>
 </div>
 
 <div class="form-group">
   <%= f.label :tel, "電話番号", {:class => "control-label"} %>
-  <%= f.text_field :tel, placeholder: "電話番号", :class => "form-control border-color-2" %>
+  <%= f.text_field :tel, placeholder: "09012345678", :class => "form-control border-color-2" %>
 </div>
 
 <div class="form-group">
