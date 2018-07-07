@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.3'#ほんとは2.1.3
 gem 'rails', '4.1.6'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -33,6 +33,9 @@ gem 'slim'
 gem 'sinatra', require: false
 gem 'sidekiq-failures'
 gem 'font-awesome-rails'
+gem 'devise', '~> 3.5.1'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 group :production do
   gem 'unicorn', '~> 4.8.3'

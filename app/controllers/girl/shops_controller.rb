@@ -14,8 +14,8 @@ class Girl::ShopsController < Girl::Base
     @prefecture = Prefecture.find(params[:prefecture_id])
     @search_form = Girl::ShopSearchForm.new(params[:search])
     @shops = ShopShow.where(prefecture_id: params[:prefecture_id]).where(examine: true).order("shop_point").page(params[:page])
-    @shops_count = @shops.count
-    render :template => "girl/shops/index" and return
+    @shops_count = ShopShow.where(prefecture_id: params[:prefecture_id]).count
+    render :template => "girl/shops/index"
   end
 
 

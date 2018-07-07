@@ -16,7 +16,7 @@
 
 <% end %>
 
-<% unless @shops_count = 0 %>
+<% unless @shops_count == 0 %>
   <%= render 'shared/page_title', f1: @title, f2: "#{@shops_count}件ありました", f3: false %>
 <% else %>
   <%= render 'shared/page_title', f1: @title, f2: "申し訳ございません。お探しの条件の求人はありません", f3: false %>
@@ -25,12 +25,17 @@
 <%= render 'girl/shared/breadcrumb' %>
 <%= render 'girl/shared/search_form' %>
 
+<div class="text-center">
+<%= paginate @shops %>
+</div>
+
 <div class="table-responsive">
-  <%= paginate @shops %>
   <% @shops.each do |n| %>
 
     <%= render 'shared/shop_card', f: n %>
 
   <% end %>
+</div>
+<div class="text-center">
   <%= paginate @shops %>
 </div>

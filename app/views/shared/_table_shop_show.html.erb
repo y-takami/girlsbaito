@@ -5,7 +5,7 @@
       <div class="col-xs-12 block pull-right">
         <div class="thumbnail thumbnailContent alt">
           <%= image_tag(f.main_image.url, :alt => "image", :class => "img-responsive") %>
-          <div class="sticker bg-color-6"><br>お祝い金<br><%= f.congratulation_money %>円</div>
+          <div class="sticker bg-color-6"><br>お祝い金<br><%= f.congratulation_money.to_s(:delimited) %>円</div>
           <div class="caption border-color-6">
             <h3 class="color-1"><%= f.shop_name %></h3>
             <h4><%= f.title %></h4>
@@ -31,7 +31,8 @@
                   </div>
                   <div class="media-body iconContent">
                     <h4 class="media-heading color-2">場所</h4>
-                    <p><%= f.city.name %><%= f.house_number %><%= f.route.name %><%= f.station.name %></p>
+                    <p>エリア：<%= f.city.name %>，市区町村：<%= f.house_number %></p>
+                    <p>路線：<%= f.route.name %>，駅：<%= f.station.name %></p>
                   </div>
                 </li>
                 <li class="media">
@@ -40,7 +41,7 @@
                   </div>
                   <div class="media-body iconContent">
                     <h4 class="media-heading color-3">給料</h4>
-                    <p>時給<%= f.payment_hour_low %>円〜<%= f.payment_hour_high %>円，日給<%= f.payment_day %></p>
+                    <p>時給：<%= f.payment_hour_low.to_s(:delimited) %>円〜<%= f.payment_hour_high.to_s(:delimited) %>円，日給：<%= f.payment_day %></p>
                   </div>
                 </li>
                 <li class="media iconContet">
@@ -59,29 +60,29 @@
                   <div class="media-body iconContent">
                     <h4 class="media-heading color-5">特徴</h4>
                     <span class="featurebox bg-color-1"><%= '日払い可' if f.feature.daily %>
-                      <font color="#a9a9a9"><%= '☓日払い可' unless f.feature.daily %></font></font></span>
+                      <font color="#808080"><%= '☓日払い可' unless f.feature.daily %></font></font></span>
                     <span class="featurebox bg-color-2"><%= '給与保証' if f.feature.guarantee %>
-                      <font color="#a9a9a9"><%= '☓給与保証' unless f.feature.guarantee %></font></font></span>
+                      <font color="#808080"><%= '☓給与保証' unless f.feature.guarantee %></font></font></span>
                     <span class="featurebox bg-color-3"><%= '交通費支給' if f.feature.carfare %>
-                      <font color="#a9a9a9"><%= '☓交通費支給' unless f.feature.carfare %></font></font></span>
+                      <font color="#808080"><%= '☓交通費支給' unless f.feature.carfare %></font></font></span>
                     <span class="featurebox bg-color-4"><%= '初心者歓迎' if f.feature.beginner %>
-                      <font color="#a9a9a9"><%= '☓初心者歓迎' unless f.feature.beginner %></font></font></span>
+                      <font color="#808080"><%= '☓初心者歓迎' unless f.feature.beginner %></font></font></span>
                     <span class="featurebox bg-color-5"><%= '体験入店可' if f.feature.experience %>
-                      <font color="#a9a9a9"><%= '☓体験入店可' unless f.feature.experience %></font></font></span>
+                      <font color="#808080"><%= '☓体験入店可' unless f.feature.experience %></font></font></span>
                     <span class="featurebox bg-color-6"><%= '生理休暇' if f.feature.menstruation %>
-                      <font color="#a9a9a9"><%= '☓生理休暇' unless f.feature.menstruation %></font></font></span>
+                      <font color="#808080"><%= '☓生理休暇' unless f.feature.menstruation %></font></font></span>
                     <span class="featurebox bg-color-1"><%= '寮完備' if f.feature.dormitory %>
-                      <font color="#a9a9a9"><%= '☓寮完備' unless f.feature.dormitory %></font></font></span>
+                      <font color="#808080"><%= '☓寮完備' unless f.feature.dormitory %></font></font></span>
                     <span class="featurebox bg-color-2"><%= '個室待機' if f.feature.room %>
-                      <font color="#a9a9a9"><%= '☓個室待機' unless f.feature.room %></font></font></span>
+                      <font color="#808080"><%= '☓個室待機' unless f.feature.room %></font></font></span>
                     <span class="featurebox bg-color-3"><%= '託児所' if f.feature.nursery %>
-                      <font color="#a9a9a9"><%= '☓託児所' unless f.feature.nursery %></font></font></span>
+                      <font color="#808080"><%= '☓託児所' unless f.feature.nursery %></font></font></span>
                     <span class="featurebox bg-color-4"><%= '送迎' if f.feature.pickup %>
-                      <font color="#a9a9a9"><%= '☓送迎' unless f.feature.pickup %></font></font></span>
+                      <font color="#808080"><%= '☓送迎' unless f.feature.pickup %></font></font></span>
                     <span class="featurebox bg-color-5"><%= 'アリバイ対策' if f.feature.alibi %>
-                      <font color="#a9a9a9"><%= '☓アリバイ対策' unless f.feature.alibi %></font></font></span>
+                      <font color="#808080"><%= '☓アリバイ対策' unless f.feature.alibi %></font></font></span>
                     <span class="featurebox bg-color-6"><%= '在宅勤務可' if f.feature.home %>
-                      <font color="#a9a9a9"><%= '☓在宅勤務可' unless f.feature.home %></font></font></span>
+                      <font color="#808080"><%= '☓在宅勤務可' unless f.feature.home %></font></font></span>
                   </div>
                 </li>
                 <li class="media">
@@ -90,7 +91,7 @@
                   </div>
                   <div class="media-body iconContent">
                     <h4 class="media-heading color-6">お祝い金</h4>
-                    <p><%= f.congratulation_money %>円</p>
+                    <p><%= f.congratulation_money.to_s(:delimited) %>円</p>
                   </div>
                 </li>
                 <li class="media">

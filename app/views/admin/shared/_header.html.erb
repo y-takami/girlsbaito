@@ -55,7 +55,7 @@
 
           <li class="navbar-right">
             <%= if current_admin
-                  link_to 'ログアウト', :admin_session, method: :delete
+                  link_to 'ログアウト', :destroy_admin_session, method: :delete
                 else
                   link_to 'ログイン', :new_admin_session
                 end

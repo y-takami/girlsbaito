@@ -1,41 +1,25 @@
-class Admin::SessionsController < Admin::Base
-  skip_before_action :authorize
+class Admin::SessionsController < Devise::SessionsController
+# before_filter :configure_sign_in_params, only: [:create]
 
-  def new
-    if current_admin
-      redirect_to :admin_root
-    else
-      @form = Admin::LoginForm.new
-      render action: 'new'
-    end
-  end
+  # GET /resource/sign_in
+  # def new
+  #   super
+  # end
 
-  def create
-    @form = Admin::LoginForm.new(params[:admin_login_form])
-    if @form.email.present?
-      admin = Admin.find_by(email: @form.email.downcase)
-    end
-    if admin
-      if admin.authenticate(@form.password)
-        session[:admin_id] = admin.id
-        session[:last_access_time] = Time.current
-        flash.notice ='ログインしました。'
-        ShopPointWorker.perform_async #ショップポイントの更新ワーカー
-        redirect_to :admin_root
-      else
-        flash.now.alert = 'メールアドレスまたはパスワードが正しくありません'
-        render action: 'new'
-      end
-    else
-      flash.now.alert = 'メールアドレスまたはパスワードが正しくありません'
-      render action: 'new'
-    end
-  end
+  # POST /resource/sign_in
+  # def create
+  #   super
+  # end
 
-  def destroy
-    session.delete(:admin_id)
-    flash.notice = 'ログアウトしました。'
-    redirect_to :admin_root
-  end
+  # DELETE /resource/sign_out
+  # def destroy
+  #   super
+  # end
 
+  # protected
+
+  # If you have extra params to permit, append them to the sanitizer.
+  # def configure_sign_in_params
+  #   devise_parameter_sanitizer.for(:sign_in) << :attribute
+  # end
 end

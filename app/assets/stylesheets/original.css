@@ -51,12 +51,12 @@ span.featurebox {
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
     background-color: #ea7066;
     border-radius: 6px;
-    font-size: 12px;
+    font-size: 13px;
     text-transform: uppercase;
     color: #ffffff;
     transition: all 0.3s ease-in-out;
-    font-weight: 400;
-    width: 95px;
+    font-weight: 550;
+    width: 100px;
     display: inline-block;
     text-align: center;
 }

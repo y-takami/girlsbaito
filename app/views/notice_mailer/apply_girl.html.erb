@@ -3,12 +3,12 @@
 <br><br>
 この度は，<%= @shop.shop_name %> へご応募頂きましてありがとうございます。<br>
 後ほど，応募店舗よりご連絡を差し上げますので，しばらくお待ちください。<br>
-今回のご応募のお祝い金は<%= @shop.congratulation_money %>円です。<br>
+今回のご応募のお祝い金は<%= @shop.congratulation_money.to_s(:delimited) %>円です。<br>
 無事採用されましたら，必ずもらえる採用お祝い金の申請を行ってください。<br><br>
 
 お祝い金の申請はこちらから：<a href= <%= "https://girlbaito.com/applies" %>>
   <%= "https://girlbaito.com/applies" %>
 </a><br>
 <br><br>
-女子高生バイトドットコム<br>
+女子バイト<br>
 <a href="https://girlbaito.com">https://girlbaito.com</a><br>

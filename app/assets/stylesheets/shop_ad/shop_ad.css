@@ -129,6 +129,7 @@ header{
 			display: flex;
 			justify-content: center;
 			margin: 0 auto 20px;
+			margin-bottom: 70px;
 		}
 			span.item{
 				background: #EE526B;
@@ -153,7 +154,7 @@ header{
 			}
 			span.main,span.after{
 				font-family: Nikumaru;
-				font-size: 220px;
+				font-size: 160px;
 				color: #EE526B;
 				text-shadow: 
 				        white 3px 1px 0, white -1px -1px 0,
@@ -448,7 +449,9 @@ header{
 		.bnBefore{
 			font-size: 1.8em;
 			display: block;
-			    transform: translateY(0.8em);
+			margin-bottom: 40px;
+
+			transform: translateY(0.8em);
 		}
 			.bnMain,.bnAfter{
 				font-family: Nikumaru;

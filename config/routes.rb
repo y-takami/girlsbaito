@@ -1,6 +1,8 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+
+
   config = Rails.application.config.girlsbaito
 
   constraints host: config[:shop][:host] do
@@ -26,10 +28,10 @@ Rails.application.routes.draw do
     end
   end
 
+
   constraints host: config[:admin][:host] do
     namespace :admin, path: config[:admin][:path] do
       root 'top#index'
-      resource :session, only: [:new, :create, :destroy]
       resources :shops
       resources :shop_shows
       resources :girls
@@ -38,12 +40,18 @@ Rails.application.routes.draw do
       resources :invitations, only: [:index, :edit, :update]
       resources :contacts, only: [:index, :show ]
 
+
       get '/fee' => 'top#fee'
       get '/fee_last_month' => 'top#fee_last_month'
       get '/fee_shop' => 'top#fee_shop'
 
     end
   end
+
+  devise_for :admin, controllers: {
+    sessions:      'admin/sessions',
+    registrations: 'admin/registrations'
+  }
 
   constraints host: config[:girl][:host] do
     namespace :girl, path: config[:girl][:path] do

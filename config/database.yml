@@ -47,13 +47,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: girlbaito
-  password: girlsbaito-m-p-20180502
-  host: 13.230.76.50
-  socket: /var/lib/mysql/mysql.sock
 
-  database: girlbaito_production
+production:
+  url: <%= ENV['DATABASE_URL'] %>
+  socket: /var/lib/mysql/mysql.sock
+  pool: 5

@@ -1,4 +1,4 @@
-20.times do |n|
+30.times do |n|
   c = ShopInfo.create!(
     group_number: '1',
     shop_name: "統括会社#{n}",
@@ -51,20 +51,20 @@
     :image3 => open('images/image3.jpg')
   )
 end
-40.times do |n|
+10.times do |n|
   c = ShopInfo.create!(
     group_number: '1',
-    shop_name: "統括会社#{n+30}",
+    shop_name: "統括会社#{n+200}",
     url: 'example.com',
     admin_name: '山田太郎',
     admin_name_sei: 'ヤマダ',
     admin_name_mei: 'タロウ',
-    admin_email: "shop#{n+30}@email.com",
+    admin_email: "shop#{n+200}@email.com",
     admin_tel: '09012345678',
     manager_name: '山田花子',
     manager_name_sei: 'ヤマダ',
     manager_name_mei: 'ハナコ',
-    manager_email: "manager#{n+30}@email.com",
+    manager_email: "manager#{n+200}@email.com",
     postal_first: '111',
     postal_last: '1111',
     prefecture: '東京都',
@@ -77,7 +77,7 @@ end
 
   )
   c.shop_shows.create!(
-    shop_name: "女子バイト#{n}",
+    shop_name: "女子バイト#{n+200}",
     url: "baito.com",
     prefecture_id: rand(1..5),
     city_id: rand(1..20),
