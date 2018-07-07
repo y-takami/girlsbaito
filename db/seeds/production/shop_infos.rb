@@ -1,4 +1,4 @@
-20.times do |n|
+100.times do |n|
   c = ShopInfo.create!(
     group_number: '1',
     shop_name: "統括会社#{n}",
@@ -51,7 +51,7 @@
     :image3 => open('images/image3.jpg')
   )
 end
-40.times do |n|
+100.times do |n|
   c = ShopInfo.create!(
     group_number: '1',
     shop_name: "統括会社#{n+30}",

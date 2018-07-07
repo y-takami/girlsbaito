@@ -3,7 +3,7 @@ class CreateGirls < ActiveRecord::Migration
     create_table :girls do |t|
       t.string :nickname
       t.string :name
-      t.string :email
+
       t.string :tel
       t.string :line_id
 
@@ -20,13 +20,36 @@ class CreateGirls < ActiveRecord::Migration
       t.string :bank_type
       t.string :bank_number
 
-      t.string :password_digest
+
       t.string :invitation_code
       t.integer :invitation_num, default: 0
       t.integer :invitation_point, default: 0
 
       t.string :favorite
       t.string :history
+
+      t.string :email
+      t.string :encrypted_password
+
+      ## Recoverable
+      t.string   :reset_password_token
+      t.datetime :reset_password_sent_at
+
+      ## Rememberable
+      t.datetime :remember_created_at
+
+      ## Trackable
+      t.integer  :sign_in_count, default: 0, null: false
+      t.datetime :current_sign_in_at
+      t.datetime :last_sign_in_at
+      t.string   :current_sign_in_ip
+      t.string   :last_sign_in_ip
+
+      ## Confirmable
+      t.string   :confirmation_token
+      t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email # Only if using reconfirmable
 
       t.timestamps
     end

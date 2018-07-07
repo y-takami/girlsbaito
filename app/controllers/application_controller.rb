@@ -10,17 +10,11 @@ class ApplicationController < ActionController::Base
 
   include ErrorHandlers if Rails.env.production?
 
-  helper_method :current_girl
-
   layout :set_layout
 
-  private
 
-  def current_girl
-    if girl_id = cookies.signed[:girl_id] || session[:girl_id]
-      @current_girl ||= Girl.find_by(id: girl_id)
-    end
-  end
+
+  private
 
   def set_layout
     if params[:controller].match(%r{\A(shop|admin|girl)/})

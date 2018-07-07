@@ -1,5 +1,5 @@
 class Girl::TopController < Girl::Base
-  skip_before_action :authorize
+  skip_before_action :authenticate_girl!
 
   def index
   end

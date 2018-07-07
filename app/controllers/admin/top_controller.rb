@@ -1,5 +1,5 @@
 class Admin::TopController < Admin::Base
-  skip_before_action :authorize
+  skip_before_action :authenticate_girl!
 
   def index
     if admin_signed_in?

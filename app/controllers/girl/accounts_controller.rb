@@ -1,5 +1,5 @@
 class Girl::AccountsController < Girl::Base
-  skip_before_action :authorize
+  skip_before_action :authenticate_girl!
 
   def show
     @girl = current_girl
@@ -15,18 +15,9 @@ class Girl::AccountsController < Girl::Base
     @girl.invitation_code = rand(100000...999999)
 
     if @girl.save
-      @form = Girl::LoginForm.new(girl_login_params)
-      girl = Girl.find_by(email: @form.email.downcase)
-      girl.authenticate(@form.password)
-      cookies.permanent.signed[:girl_id] = girl.id
-      session[:girl_id] = girl.id
+
       flash.notice ='新規アカウントを作成し，ログインしました。'
-      RegisterMailWorker.perform_async(girl.id)
-      if session[:url_last_access_time]
-        if session[:return_to] && (session[:url_last_access_time] >= 3.minutes.ago)
-          redirect_to session[:return_to] and return
-        end
-      end
+
       redirect_to :girl_root
 
     else

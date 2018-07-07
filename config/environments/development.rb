@@ -1,5 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # deviseのメーラー設定
+
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -7,9 +10,10 @@ Rails.application.configure do
     :port => 587,
     :domain => 'gmail.com',
     :user_name => "girlsbaito39@gmail.com",
-    :password => "girlsbaito",
+    :password => "kvxehufnzvkmvwlf",
     :authentication => 'plain',
     :enable_starttls_auto => true
+
    } 
   # In the development environment your application's code is reloaded on yvkycqejliptpzot
   # every request. This slows down response time but is perfect for development

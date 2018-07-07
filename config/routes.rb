@@ -2,6 +2,12 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
 
+  devise_for :girl, path: :"", controllers: {
+    sessions:      'girl/sessions',
+    passwords:     'girl/passwords',
+    registrations: 'girl/registrations',
+    confirmations: 'girl/confirmations'
+  }
 
   config = Rails.application.config.girlsbaito
 
@@ -28,7 +34,10 @@ Rails.application.routes.draw do
     end
   end
 
-
+  devise_for :admin, controllers: {
+    sessions:      'admin/sessions',
+    registrations: 'admin/registrations'
+  }
   constraints host: config[:admin][:host] do
     namespace :admin, path: config[:admin][:path] do
       root 'top#index'
@@ -48,10 +57,7 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :admin, controllers: {
-    sessions:      'admin/sessions',
-    registrations: 'admin/registrations'
-  }
+
 
   constraints host: config[:girl][:host] do
     namespace :girl, path: config[:girl][:path] do

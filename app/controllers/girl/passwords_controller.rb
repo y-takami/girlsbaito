@@ -1,30 +1,32 @@
-class Girl::PasswordsController < Girl::Base
+class Girl::PasswordsController < Devise::PasswordsController
+  # GET /resource/password/new
+  # def new
+  #   super
+  # end
 
-  def show
-    redirect_to :edit_girl_password
-  end
+  # POST /resource/password
+  # def create
+  #   super
+  # end
 
-  def edit
-    @change_password_form = Girl::ChangePasswordForm.new(object: current_girl)
-  end
+  # GET /resource/password/edit?reset_password_token=abcdef
+  # def edit
+  #   super
+  # end
 
-  def update
-    @change_password_form = Girl::ChangePasswordForm.new(girl_params)
-    @change_password_form.object = current_girl
-    if @change_password_form.save
-      flash.notice = 'パスワードを変更しました。'
-      redirect_to :girl_account
-    else
-      flash.now.alert = '入力に誤りがあります。'
-      render action: 'edit'
-    end
-  end
+  # PUT /resource/password
+  # def update
+  #   super
+  # end
 
-  private
-  def girl_params
-    params.require(:girl_change_password_form).permit(
-      :current_password, :new_password, :new_password_confirmation
-    )
-  end
+  # protected
 
+  # def after_resetting_password_path_for(resource)
+  #   super(resource)
+  # end
+
+  # The path used after sending reset password instructions
+  # def after_sending_reset_password_instructions_path_for(resource_name)
+  #   super(resource_name)
+  # end
 end

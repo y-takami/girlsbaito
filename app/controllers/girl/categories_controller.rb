@@ -1,5 +1,5 @@
 class Girl::CategoriesController < Girl::Base
-  skip_before_action :authorize
+  skip_before_action :authenticate_girl!
 
   def index
     @prefecture = Prefecture.find(params[:prefecture_id])

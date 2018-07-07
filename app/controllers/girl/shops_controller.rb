@@ -1,5 +1,5 @@
 class Girl::ShopsController < Girl::Base
-  skip_before_action :authorize
+  skip_before_action :authenticate_girl!
 
   def index
     @search_form = Girl::ShopSearchForm.new(params[:search])
