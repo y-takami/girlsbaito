@@ -6,10 +6,11 @@ class Girl::ConfirmationsController < Devise::ConfirmationsController
 
   # POST /resource/confirmation
   def create
-   super
-   current_girl.invitation_code = rand(100000...999999)
-    current_girl.save
-
+    super
+    if current_girl
+      current_girl.invitation_code = rand(100000...999999)
+      current_girl.save
+    end
   end
 
   # GET /resource/confirmation?confirmation_token=abcdef

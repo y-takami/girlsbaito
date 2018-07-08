@@ -4,11 +4,15 @@ class Girl::InvitationsController < Girl::Base
   def new
     @girl = current_girl
     girl_hash = current_girl.attributes
-    girl_hash.delete("nickname"); girl_hash.delete("line_id"); girl_hash.delete("password_digest")
+    girl_hash.delete("nickname"); girl_hash.delete("line_id"); girl_hash.delete("encrypted_password")
     girl_hash.delete("invitation_code"); girl_hash.delete("invitation_num"); girl_hash.delete("invitation_point")
-    girl_hash.delete("favorite"); girl_hash.delete("history")
+    girl_hash.delete("favorite"); girl_hash.delete("history"); girl_hash.delete("reset_password_token"); girl_hash.delete("reset_password_sent_at")
+    girl_hash.delete("remember_created_at"); girl_hash.delete("sign_in_count"); girl_hash.delete("current_sign_in_at")
+    girl_hash.delete("last_sign_in_at"); girl_hash.delete("current_sign_in_ip"); girl_hash.delete("last_sign_in_ip")
+    girl_hash.delete("confirmation_token"); girl_hash.delete("confirmed_at"); girl_hash.delete("confirmation_sent_at"); girl_hash.delete("unconfirmed_email")
     @invitation = Invitation.new(girl_hash)
   end
+
 
   def create
 

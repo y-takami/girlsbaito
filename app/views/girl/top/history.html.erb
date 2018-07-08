@@ -1,9 +1,9 @@
 <% @title = '最近見た店舗一覧' %>
 
-<% unless @shops_count = 0 %>
-  <%= render 'shared/page_title', f1: @title, f2: "#{@shops_count}件ありました", f3: false %>
+<% unless @shops_count == 0 %>
+  <%= render 'shared/page_title', f1: @title, f2: "#{@shops_count}件あります", f3: false %>
 <% else %>
-  <%= render 'shared/page_title', f1: @title, f2: "申し訳ございません。お探しの条件の求人はありません", f3: false %>
+  <%= render 'shared/page_title', f1: @title, f2: "閲覧履歴はありません", f3: false %>
 <% end %>
 
 <div class="table-responsive">

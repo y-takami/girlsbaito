@@ -36,7 +36,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  
+
+  #デフォルトメールをhttpsにするために設定
+  config.action_mailer.default_url_options = { :host => 'girlbaito.com', :protocol => 'https'}
+
   config.girlsbaito = {
     shop: { host: 'girlsbaito.example.com', path: 'shop' },
     admin: { host: 'girlsbaito.example.com', path: 'admin' },

@@ -38,17 +38,17 @@
 
     <div class="field">
       <%= f.label :password, "新パスワード", {:class => "control-label"}  %> <i>(変更をしない場合は空欄のままにしてください)</i><br/>
-      <%= f.password_field :password, autocomplete: "off", :class => "form-control border-color-5" %>
+      <%= f.password_field :password, :class => "form-control border-color-5" %>
     </div>
 
     <div class="field">
       <%= f.label :password_confirmation, "新パスワード再確認", {:class => "control-label"}  %><br/>
-      <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control border-color-6" %>
+      <%= f.password_field :password_confirmation, :class => "form-control border-color-6" %>
     </div>
 
     <div class="field">
       <%= f.label :current_password, "現在のパスワード", {:class => "control-label"}  %> <i>(変更をするには現在のパスワードの入力が必要です。)</i><br/>
-      <%= f.password_field :current_password, autocomplete: "off", :class => "form-control border-color-1" %>
+      <%= f.password_field :current_password, :class => "form-control border-color-1" %>
     </div>
 
     <div class="actions">

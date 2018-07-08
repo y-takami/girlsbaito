@@ -23,7 +23,7 @@
   <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header" data-no-turbolink>
+      <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -38,40 +38,40 @@
         <ul class="nav navbar-nav navbar-right">
 
 
-          <li class=" dropdown singleDrop color-2" data-no-turbolink>
+          <li class=" dropdown color-2">
             <%= link_to :new_girl_prefecture, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
-              <i class="fa fa-file-text-o bg-color-2" aria-hidden="true"></i><span>都道府県変更</span>
+              <i class="fa fa-file-text-o bg-color-2" aria-hidden="true"></i><span>都道府県変更<i class="fa fa-angle-right pull-right" aria-hidden="true"></i></span>
             <% end %>
           </li>
 
           <li class="dropdown color-4 ">
             <% if current_girl %>
               <%= link_to :girl_account, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
-                <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true"></i><span>アカウント情報</span>
+                <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true"></i><span>アカウント情報<i class="fa fa-angle-right pull-right" aria-hidden="true"></i></span>
               <% end %>
             <% end %>
           </li>
 
           <li class="dropdown color-5  ">
             <%= link_to :girl_favorite, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
-              <i class="fa fa-calendar bg-color-5" aria-hidden="true"></i><span>気になるリスト</span>
+              <i class="fa fa-calendar bg-color-5" aria-hidden="true"></i><span>気になるリスト<i class="fa fa-angle-right pull-right" aria-hidden="true"></i></span>
             <% end %>
           </li>
 
           <li class="dropdown color-6 ">
             <%= link_to :girl_history, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
-              <i class="fa fa-gg bg-color-6" aria-hidden="true"></i><span>閲覧履歴リスト</span>
+              <i class="fa fa-gg bg-color-6" aria-hidden="true"></i><span>閲覧履歴リスト<i class="fa fa-angle-right pull-right" aria-hidden="true"></i></span>
             <% end %>
           </li>
 
           <li class="dropdown color-1 ">
             <% if current_girl %>
               <%= link_to :destroy_girl_session, method: :delete, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
-                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>ログアウト</span>
+                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>ログアウト<i class="fa fa-angle-right pull-right" aria-hidden="true"></i></span>
               <% end %>
             <% else %>
               <%= link_to :new_girl_session, :class => "dropdown-toggle", :'aria-haspopup' => true, :'aria-expanded' => false do %>
-                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>ログイン/新規登録</span>
+                <i class="fa fa-unlock-alt bg-color-1" aria-hidden="true"></i><span>ログイン/新規登録<i class="fa fa-angle-right pull-right" aria-hidden="true"></i></span>
               <% end %>
             <% end %>
           </li>
