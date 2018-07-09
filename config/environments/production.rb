@@ -4,7 +4,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
   # deviseのメールで必要か？
-  config.action_mailer.default_url_options = { host: 'girlbaito.com' }
+  config.action_mailer.default_url_options = { host: 'girlbaito.com', :protocol => 'https' }
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp

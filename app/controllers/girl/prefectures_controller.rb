@@ -18,6 +18,9 @@ class Girl::PrefecturesController < Girl::Base
     @shops_count = ShopShow.where(prefecture_id: params[:id]).where(examine: true).count
     @search_form = Girl::ShopSearchForm.new(params[:search])
     @new_shops = ShopShow.where(prefecture_id: params[:id]).where(examine: true).order(created_at: :desc).limit(3) #新着ショップの取得
+    #おすすめショップリストの取得
+    @recommend_shops = ShopShow.where(prefecture_id: params[:id]).where(examine: true).order(shop_point: :desc).limit(3)
+
     #気になるショップリストの取得
     if cookies[:favorite]
       favorite = cookies[:favorite].split(" ")
@@ -30,6 +33,9 @@ class Girl::PrefecturesController < Girl::Base
       history = history.reverse.take(3)
       @history_shops = ShopShow.find(history)
     end
+
+
+
 
     #    @shops = @search_form.search.page(params[:page])
     render 'girl/top/index'

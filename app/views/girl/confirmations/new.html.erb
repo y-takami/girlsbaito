@@ -1,16 +1,24 @@
-<h2>Resend confirmation instructions</h2>
+<% @title = '認証メールを再送する' %>
+
+<%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
+
+<div class="container">
+
+  <div class="form-group">
+    項目は全て必須入力です。
+  </div>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    <div class="form-group">
+      <%= f.label :email %><br />
+    <%= f.email_field :email, placeholder: "hanako@email.com", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email, :class => "form-control border-color-1") %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
+    <div class="form-group">
+      <%= f.submit 'メールを再送する', :class => "btn btn-outline-primary" %>
+    </div>
+
 <% end %>
 
 <%= render "girl/shared/links" %>

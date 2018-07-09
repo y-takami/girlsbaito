@@ -56,6 +56,27 @@
 
 <%= render 'girl/shared/search_form' %>
 
+
+<% if @recommend_shops %>
+
+  <section class="whiteSection full-width clearfix newsSection" id="latestNews">
+    <div class="container">
+      <div class="sectionTitle text-center">
+        <h2>
+          <span class="shape shape-left bg-color-4"></span>
+          <span>おすすめ求人</span>
+          <span class="shape shape-right bg-color-4"></span>
+        </h2>
+      </div>
+
+
+      <%= render 'girl/shared/recommend_bannar', f: @recommend_shops %>
+
+
+    </div>
+  </section>
+<% end %>
+
 <% if @new_shops %>
 
   <%= render 'shared/bar' %>
@@ -77,7 +98,6 @@
       </div>
     </div>
   </section>
-
 
 <% end %>
 
@@ -137,33 +157,27 @@
       <%= link_to girl_questions_path, {:class => "list-group-item custumicon_circle2"} do %>
         <span class="icon2 bg-color-6"><i class="fa fa-question"></i></span><h4>よくある質問</h4>
       <% end %>
+    </div>
+    <div class="list-group text-center">
 
       <%= link_to girl_job_category_path, {:class => "list-group-item custumicon_circle2"} do %>
         <span class="icon2 bg-color-6"><i class="fa fa-list"></i></span><h4>お仕事の種類</h4>
       <% end %>
-
     </div>
   </div>
 
 </section>
 
-<section class="whiteSection full-width clearfix">
-
+<!-- お祝い金の申請-->
+<section class="promotionWrapper">
   <div class="container">
-<table class="table table-bordered">
-  <tr>
-    <td><h3>お祝い金の申請はこちらから！</h3>
+    <div class="promotionInfo">
+      <h2>採用お祝い金の申請はこちら</h2>
+      <p>当サイトから求人に応募して採用されれば必ずもらえるお祝い金。最大10万円もらえるチャンス！</p>
+      <%= link_to :girl_applies, {:class => "btn btn-primary"} do %>
+        <i class="fa fa-phone" aria-hidden="true"></i>お祝い金を申請
+      <% end %>
 
-      <div class="list-group text-center">
-        <%= link_to :girl_applies, {:class => "list-group-item custumicon_circle2"} do %>
-          <span class="icon2 bg-color-6"><i class="fa fa-money"></i></span><h4>お祝い金申請</h4>
-        <% end %>
-
-      </div>
-    </td>
-  </tr>
-</table>
-
+    </div>
   </div>
-
 </section>

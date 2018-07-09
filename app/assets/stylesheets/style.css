@@ -4255,6 +4255,8 @@ footer .color-bar {
   background-attachment: fixed;
   color: #ffffff;
   padding: 75px 0;
+  background-image: url("page-title-bg.jpg");
+
 }
 
 .promotionWrapper .promotionInfo {
