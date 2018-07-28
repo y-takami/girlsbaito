@@ -250,6 +250,7 @@ ActiveRecord::Schema.define(version: 20150402120651) do
     t.string   "manager_name"
     t.string   "manager_name_sei"
     t.string   "manager_name_mei"
+    t.string   "manager_tel"
     t.string   "postal_first"
     t.string   "postal_last"
     t.string   "prefecture"

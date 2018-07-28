@@ -12,6 +12,7 @@
     manager_name_sei: 'ヤマダ',
     manager_name_mei: 'ハナコ',
     manager_email: "manager#{n}@email.com",
+    manager_tel: "0909888838",
     postal_first: '111',
     postal_last: '1111',
     prefecture: '東京都',

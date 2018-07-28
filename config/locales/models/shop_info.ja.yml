@@ -10,12 +10,11 @@ ja:
         admin_name_mei: 管理者フリガナ（名）
         admin_email: 管理者メールアドレス
         admin_tel: 管理者電話番号
-        billing_company: 料金等請求先会社名
         manager_name: 貴社代表者氏名
         manager_name_sei: 代表者氏名（姓）
         manager_name_mei: 代表者氏名（名）
-        billing_email: 請求先メールアドレス
-        billing_tel: 請求先電話番号
+        manager_email: 請求先メールアドレス
+        manager_tel: 請求先電話番号
         postal_first: 郵便番号
         postal_last: 郵便番号
         prefecture: 都道府県

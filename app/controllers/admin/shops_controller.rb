@@ -59,8 +59,8 @@ class Admin::ShopsController < Admin::Base
   def shop_params
     params.require(:shop_info).permit(
       :group_number, :shop_name, :url, :admin_name, :admin_name_sei, :admin_name_mei, :admin_email,
-      :admin_tel, :billing_company, :manager_name, :manager_name_sei, :manager_name_mei, :billing_email,
-      :billing_tel, :postal_first, :postal_last, :prefecture, :city, :house_number,
+      :admin_tel, :manager_name, :manager_name_sei, :manager_name_mei,
+      :manager_tel, :postal_first, :postal_last, :prefecture, :city, :house_number,
       :password, :suspended, :examine
     )
   end

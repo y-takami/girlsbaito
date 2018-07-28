@@ -20,6 +20,7 @@ class ShopInfo < ActiveRecord::Base
     self.postal_last = normalize_as_email(postal_last)
     self.url = normalize_as_email(url)
     self.admin_tel = normalize_as_email(admin_tel)
+    self.manager_tel = normalize_as_email(manager_tel)
   end
 
   KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/
@@ -29,7 +30,7 @@ class ShopInfo < ActiveRecord::Base
   validates :manager_email, presence: true, email: {allow_blank: true}, confirmation: true
   validates :admin_email, uniqueness: {allow_blank: true}, presence: true, email: {allow_blank: true}, confirmation: true
   validates :group_number, :shop_name, :url, :admin_name,
-            :admin_tel, :manager_name, :postal_first, :postal_last,
+            :admin_tel, :manager_name, :manager_tel, :postal_first, :postal_last,
             :prefecture, :city, :house_number, presence: true
 
 

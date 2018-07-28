@@ -67,14 +67,7 @@
     <%= f.text_field :admin_tel, {:class => "form-control"} %>
   </div>
 </div>
-<div class="form-group">
-  <%= f.label :billing_company, {:class => "col-sm-3 control-label"} do %>
-    料金等請求先会社名<span class="text-danger">※</span>
-  <% end %>
-  <div class="col-sm-7">
-    <%= f.text_field :billing_company, {:class => "form-control"} %>
-  </div>
-</div>
+
 <div class="form-group">
   <%= f.label :manager_name, {:class => "col-sm-3 control-label"} do %>
     貴社代表者氏名<span class="text-danger">※</p>
@@ -102,19 +95,19 @@
 </div>
 
 <div class="form-group">
-  <%= f.label :billing_email, {:class => "col-sm-3 control-label"} do %>
+  <%= f.label :manager_email, {:class => "col-sm-3 control-label"} do %>
     料金等請求先メールアドレス<span class="text-danger">※</span>
   <% end %>
   <div class="col-sm-7">
-    <%= f.text_field :billing_email, {:class => "form-control"} %>
+    <%= f.text_field :manager_email, {:class => "form-control"} %>
   </div>
 </div>
 <div class="form-group">
-  <%= f.label :billing_tel, {:class => "col-sm-3 control-label"} do %>
+  <%= f.label :manager_tel, {:class => "col-sm-3 control-label"} do %>
     料金等請求先電話番号<span class="text-danger">※</p>
   <% end %>
   <div class="col-sm-7">
-    <%= f.text_field :billing_tel, {:class => "form-control"} %>
+    <%= f.text_field :manager_tel, {:class => "form-control"} %>
   </div>
 </div>
 <div class="form-group">
