@@ -117,7 +117,7 @@
       </div>
       <div class="row">
         <% @favorite_shops.each do |f| %>
-          <%= render 'shared/shop_card', f: f %>
+          <%= render 'shared/shop_card_two', f: f %>
         <% end %>
       </div>
     </div>
@@ -141,7 +141,7 @@
       </div>
       <div class="row">
         <% @history_shops.each do |f| %>
-          <%= render 'shared/shop_card', f: f %>
+          <%= render 'shared/shop_card_two', f: f %>
         <% end %>
       </div>
     </div>
@@ -174,8 +174,8 @@
     <div class="promotionInfo">
       <h2>採用お祝い金の申請はこちら</h2>
       <p>当サイトから求人に応募して採用されれば必ずもらえるお祝い金。最大10万円もらえるチャンス！</p>
-      <%= link_to :girl_applies, {:class => "btn btn-primary"} do %>
-        <i class="fa fa-phone" aria-hidden="true"></i>お祝い金を申請
+      <%= link_to :girl_congra, {:class => "btn btn-primary"} do %>
+        <i class="fa fa-money" aria-hidden="true"></i>採用お祝い金とは？
       <% end %>
 
     </div>

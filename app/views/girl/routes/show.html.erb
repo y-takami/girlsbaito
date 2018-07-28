@@ -16,7 +16,7 @@
 <% @stations.each do |f| %>
 
     <ul class="list-group text-center col-sm-4 col-xs-12">
-    <%= link_to "#{f.name}（#{@shop_shows.where(station_id: f.id).where(examine: true).count}）", girl_prefecture_route_station_path(@prefecture.id, @route.id, f.id), {:class => "list-group-item"} %>
+    <%= link_to "#{f.name}駅（#{@shop_shows.where(station_id: f.id).where(examine: true).count}）", girl_prefecture_route_station_path(@prefecture.id, @route.id, f.id), {:class => "list-group-item"} %>
     </ul>
 
 <% end %>

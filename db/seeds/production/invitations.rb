@@ -1,4 +1,4 @@
-25.times do |n|
+0.times do |n|
   Invitation.create!(
     girl_id: rand(1..10),
     method: '銀行振込',

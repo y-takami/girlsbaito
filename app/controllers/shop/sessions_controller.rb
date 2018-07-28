@@ -1,5 +1,5 @@
 class Shop::SessionsController < Shop::Base
-  skip_before_action :authenticate_girl!
+  skip_before_action :authorize
 
   def new
     if current_shop

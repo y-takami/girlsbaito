@@ -1,5 +1,6 @@
 class Girl::PrefecturesController < Girl::Base
   skip_before_action :authenticate_girl!
+  after_action :modal_check, only: :index
 
   def index
     if cookies[:prefecture]
@@ -24,17 +25,15 @@ class Girl::PrefecturesController < Girl::Base
     #気になるショップリストの取得
     if cookies[:favorite]
       favorite = cookies[:favorite].split(" ")
-      favorite = favorite.reverse.take(3)
+      favorite = favorite.reverse.take(4)
       @favorite_shops = ShopShow.find(favorite)
     end
     #履歴ショップリストの取得
     if cookies[:history]
       history = cookies[:history].split(" ")
-      history = history.reverse.take(3)
+      history = history.reverse.take(4)
       @history_shops = ShopShow.find(history)
     end
-
-
 
 
     #    @shops = @search_form.search.page(params[:page])
@@ -44,6 +43,17 @@ class Girl::PrefecturesController < Girl::Base
   def new
     cookies.delete :prefecture
     redirect_to girl_root_path
+  end
+
+  def go_google
+    cookies.delete :modal
+    redirect_to "https://www.google.co.jp/"
+  end
+
+
+  private
+  def modal_check
+    cookies[:modal] = {value: 1, expires: 60.day.from_now}
   end
 
 end

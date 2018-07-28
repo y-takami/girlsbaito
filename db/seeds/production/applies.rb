@@ -1,4 +1,4 @@
-20.times do |n|
+0.times do |n|
   Apply.create!(
     girl_id: n+1,
     shop_show_id: rand(1..20),
@@ -15,7 +15,7 @@
   )
 end
 
-20.times do |n|
+0.times do |n|
   Apply.create!(
     girl_id: n+21,
     shop_show_id: rand(1..20),
@@ -28,7 +28,7 @@ end
     email: 'apply_email'
   )
 end
-10.times do |n|
+0.times do |n|
   Apply.create!(
     girl_id: n+41,
     shop_show_id: rand(1..20),

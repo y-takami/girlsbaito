@@ -135,25 +135,25 @@
   right: -15px;
 }
 .owl-prev span{
-  background: url(images/left-arrow.png) no-repeat top; /* change here */
+  background: url("left-arrow.png") no-repeat top; /* change here */
   width: 14px;
   height: 14px;
   display: block;
 }
 .owl-prev:hover span{
-  background: url(images/left-arrow.png) no-repeat bottom; /* change here */
+  background: url("left-arrow.png") no-repeat bottom; /* change here */
   width: 14px;
   height: 14px;
   display: block;
 }
 .owl-next span{
-  background: url(images/right-arrow.png) no-repeat top; /* change here */
+  background: url("right-arrow.png") no-repeat top; /* change here */
   width: 14px;
   height: 14px;
   display: block;
 }
 .owl-next:hover span{
-  background: url(images/right-arrow.png) no-repeat bottom; /* change here */
+  background: url("right-arrow.png") no-repeat bottom; /* change here */
   width: 14px;
   height: 14px;
   display: block;

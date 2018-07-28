@@ -1,3 +1,26 @@
+<% if cookies[:modal].nil? %>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">このサイトは18歳以上で高校生でない方を対象としています</h4>
+        </div>
+        <div class="modal-body">
+          <p>18歳以上で高校生ではありませんか？</p>
+        </div>
+        <div class="modal-footer">
+
+          <%= link_to "18歳未満です", girl_go_google_path, {:class => "btn btn-outline-primary"} %>
+          <button type="button" class="btn btn-outline-primary" data-dismiss="modal">18歳以上で高校生ではありません</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>
+
+
 <% @title = 'トップページ（都道府県選択）' %>
 
 <%= render 'girl/shared/top_bannar' %>
@@ -23,13 +46,27 @@
       <div class="collapse" id="collapsehokkaido">
 
         <div class="list-group">
-          <%= link_to girl_prefecture_path(1), {:class => "list-group-item"} do %>北海道<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(2), {:class => "list-group-item"} do %>青森県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(3), {:class => "list-group-item"} do %>岩手県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(4), {:class => "list-group-item"} do %>宮城県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(5), {:class => "list-group-item"} do %>秋田県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(6), {:class => "list-group-item"} do %>山形県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(7), {:class => "list-group-item"} do %>福島県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
+          <%= link_to girl_prefecture_path(1), {:class => "list-group-item"} do %>
+            北海道<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(2), {:class => "list-group-item"} do %>
+            青森県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(3), {:class => "list-group-item"} do %>
+            岩手県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(4), {:class => "list-group-item"} do %>
+            宮城県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(5), {:class => "list-group-item"} do %>
+            秋田県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(6), {:class => "list-group-item"} do %>
+            山形県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(7), {:class => "list-group-item"} do %>
+            福島県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>
@@ -48,13 +85,27 @@
       <div class="collapse" id="collapsekanto">
 
         <div class="list-group">
-          <%= link_to girl_prefecture_path(8), {:class => "list-group-item"} do %>茨城県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(9), {:class => "list-group-item"} do %>栃木県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(10), {:class => "list-group-item"} do %>群馬県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(11), {:class => "list-group-item"} do %>埼玉県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(12), {:class => "list-group-item"} do %>千葉県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(13), {:class => "list-group-item"} do %>東京都<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(14), {:class => "list-group-item"} do %>神奈川県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
+          <%= link_to girl_prefecture_path(8), {:class => "list-group-item"} do %>
+            茨城県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(9), {:class => "list-group-item"} do %>
+            栃木県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(10), {:class => "list-group-item"} do %>
+            群馬県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(11), {:class => "list-group-item"} do %>
+            埼玉県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(12), {:class => "list-group-item"} do %>
+            千葉県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(13), {:class => "list-group-item"} do %>
+            東京都<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(14), {:class => "list-group-item"} do %>
+            神奈川県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>
@@ -71,12 +122,24 @@
       <div class="collapse" id="collapsehokuriku">
 
         <div class="list-group">
-          <%= link_to girl_prefecture_path(15), {:class => "list-group-item"} do %>新潟県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(16), {:class => "list-group-item"} do %>富山県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(17), {:class => "list-group-item"} do %>石川県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(18), {:class => "list-group-item"} do %>福井県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(19), {:class => "list-group-item"} do %>山梨県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(20), {:class => "list-group-item"} do %>長野県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
+          <%= link_to girl_prefecture_path(15), {:class => "list-group-item"} do %>
+            新潟県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(16), {:class => "list-group-item"} do %>
+            富山県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(17), {:class => "list-group-item"} do %>
+            石川県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(18), {:class => "list-group-item"} do %>
+            福井県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(19), {:class => "list-group-item"} do %>
+            山梨県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(20), {:class => "list-group-item"} do %>
+            長野県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>
@@ -93,10 +156,18 @@
       <div class="collapse" id="collapsetokai">
 
         <div class="list-group">
-          <%= link_to girl_prefecture_path(21), {:class => "list-group-item"} do %>岐阜県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(22), {:class => "list-group-item"} do %>静岡県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(23), {:class => "list-group-item"} do %>愛知県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(24), {:class => "list-group-item"} do %>三重県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
+          <%= link_to girl_prefecture_path(21), {:class => "list-group-item"} do %>
+            岐阜県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(22), {:class => "list-group-item"} do %>
+            静岡県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(23), {:class => "list-group-item"} do %>
+            愛知県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(24), {:class => "list-group-item"} do %>
+            三重県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>
@@ -112,12 +183,24 @@
       <div class="collapse" id="collapsekansai">
 
         <div class="list-group">
-          <%= link_to girl_prefecture_path(25), {:class => "list-group-item"} do %>滋賀県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(26), {:class => "list-group-item"} do %>京都府<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(27), {:class => "list-group-item"} do %>大阪府<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(28), {:class => "list-group-item"} do %>兵庫県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(29), {:class => "list-group-item"} do %>奈良県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(30), {:class => "list-group-item"} do %>和歌山県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
+          <%= link_to girl_prefecture_path(25), {:class => "list-group-item"} do %>
+            滋賀県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(26), {:class => "list-group-item"} do %>
+            京都府<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(27), {:class => "list-group-item"} do %>
+            大阪府<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(28), {:class => "list-group-item"} do %>
+            兵庫県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(29), {:class => "list-group-item"} do %>
+            奈良県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(30), {:class => "list-group-item"} do %>
+            和歌山県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>
@@ -133,15 +216,33 @@
       <div class="collapse" id="collapseshikoku">
 
         <div class="list-group">
-          <%= link_to girl_prefecture_path(31), {:class => "list-group-item"} do %>鳥取県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(32), {:class => "list-group-item"} do %>島根県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(33), {:class => "list-group-item"} do %>岡山県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(34), {:class => "list-group-item"} do %>広島県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(35), {:class => "list-group-item"} do %>山口県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(36), {:class => "list-group-item"} do %>徳島県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(37), {:class => "list-group-item"} do %>香川県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(38), {:class => "list-group-item"} do %>愛媛県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(39), {:class => "list-group-item"} do %>高知県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
+          <%= link_to girl_prefecture_path(31), {:class => "list-group-item"} do %>
+            鳥取県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(32), {:class => "list-group-item"} do %>
+            島根県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(33), {:class => "list-group-item"} do %>
+            岡山県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(34), {:class => "list-group-item"} do %>
+            広島県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(35), {:class => "list-group-item"} do %>
+            山口県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(36), {:class => "list-group-item"} do %>
+            徳島県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(37), {:class => "list-group-item"} do %>
+            香川県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(38), {:class => "list-group-item"} do %>
+            愛媛県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(39), {:class => "list-group-item"} do %>
+            高知県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     </div>
@@ -157,30 +258,50 @@
       <div class="collapse" id="collapsekyushu">
 
         <div class="list-group">
-          <%= link_to girl_prefecture_path(40), {:class => "list-group-item"} do %>福岡県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(41), {:class => "list-group-item"} do %>佐賀県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(42), {:class => "list-group-item"} do %>長崎県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(43), {:class => "list-group-item"} do %>熊本県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(44), {:class => "list-group-item"} do %>大分県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(45), {:class => "list-group-item"} do %>宮崎県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(46), {:class => "list-group-item"} do %>鹿児島県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
-          <%= link_to girl_prefecture_path(47), {:class => "list-group-item"} do %>沖縄県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i><% end %>
+          <%= link_to girl_prefecture_path(40), {:class => "list-group-item"} do %>
+            福岡県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(41), {:class => "list-group-item"} do %>
+            佐賀県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(42), {:class => "list-group-item"} do %>
+            長崎県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(43), {:class => "list-group-item"} do %>
+            熊本県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(44), {:class => "list-group-item"} do %>
+            大分県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(45), {:class => "list-group-item"} do %>
+            宮崎県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(46), {:class => "list-group-item"} do %>
+            鹿児島県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to girl_prefecture_path(47), {:class => "list-group-item"} do %>
+            沖縄県<i class="fa fa-angle-right pull-right" aria-hidden="true"></i>
+          <% end %>
 
         </div>
       </div>
     </div>
   </div>
+  <br>
+  <br>
+  <br>
+  <!-- お祝い金の申請-->
+  <section class="promotionWrapper">
+    <div class="container">
+      <div class="promotionInfo">
+        <h2>採用お祝い金の申請はこちら</h2>
+        <p>当サイトから求人に応募して採用されれば必ずもらえるお祝い金。最大10万円もらえるチャンス！</p>
+        <%= link_to :girl_congra, {:class => "btn btn-primary"} do %>
+          <i class="fa fa-money" aria-hidden="true"></i>採用お祝い金とは？
+        <% end %>
 
-
-  <table class="table table-bordered">
-    <tr>
-      <td><h3>お祝い金の申請はこちらから！</h3>
-
-        <div class="list-group col-sm-8">
-          <%= link_to 'お祝い金申請', :girl_applies, {:class => "list-group-item col-sm-4"} %>
-        </div>
-      </td>
-    </tr>
-  </table>
+      </div>
+    </div>
+  </section>
 
 </div>

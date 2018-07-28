@@ -37,6 +37,7 @@ gem 'font-awesome-rails'
 gem 'devise', '~> 3.5.1'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'sitemap_generator'
 
 group :production do
   gem 'unicorn', '~> 4.8.3'

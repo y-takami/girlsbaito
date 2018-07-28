@@ -1,5 +1,7 @@
 <script>
-  $("select#shop_show_prefecture_id").change(function(){
+    $(function($) {
+
+        $("select#shop_show_prefecture_id").change(function(){
     $.ajax({
       url: "/shop/shop_shows/cities_select",
       type: "GET",
@@ -15,6 +17,8 @@
       }
     });
   });
+  });
+    $(function($) {
 
   $("select#shop_show_prefecture_id").change(function(){
     $.ajax({
@@ -32,6 +36,8 @@
       }
     });
   });
+  });
+    $(function($) {
 
   $('#routes_select').on('change', "select#shop_show_route_id", function(){
     $.ajax({
@@ -48,6 +54,7 @@
         alert("errror");
       }
     });
+  });
   });
 
 </script>

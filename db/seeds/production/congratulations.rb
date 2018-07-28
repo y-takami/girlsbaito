@@ -1,4 +1,4 @@
-10.times do |n|
+0.times do |n|
 Congratulation.create!(
   apply_id: rand(1..10),
   email: 'congratulation@email.com',
@@ -14,7 +14,7 @@ Congratulation.create!(
   examine: true
   )
 end
-10.times do |n|
+0.times do |n|
 Congratulation.create!(
     apply_id: rand(11..20),
     email: 'congratulation@email.com',

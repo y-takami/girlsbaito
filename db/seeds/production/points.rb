@@ -1,4 +1,4 @@
-50.times do |n|
+0.times do |n|
   Point.create!(
     girl_id: rand(1..20),
     congratulation_id: rand(1..20),

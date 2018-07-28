@@ -211,92 +211,95 @@ $('.cart-dropdown a').on("click",function() {
     });
   });
 
+/*
+
 //============================== PRICE SLIDER RANGER =========================
 var minimum = 20;
 var maximum = 300;
 
 $( "#price-range" ).slider({
-  range: true,
-  min: minimum,
-  max: maximum,
-  values: [ minimum, maximum ],
-  slide: function( event, ui ) {
-    $( "#price-amount-1" ).val( "$" + ui.values[ 0 ] );
-    $( "#price-amount-2" ).val( "$" + ui.values[ 1 ] );
-  }
+range: true,
+min: minimum,
+max: maximum,
+values: [ minimum, maximum ],
+slide: function( event, ui ) {
+  $( "#price-amount-1" ).val( "$" + ui.values[ 0 ] );
+  $( "#price-amount-2" ).val( "$" + ui.values[ 1 ] );
+}
 });
 
 $( "#price-amount-1" ).val( "$" + $( "#price-range" ).slider( "values", 0 ));
 $( "#price-amount-2" ).val( "$" + $( "#price-range" ).slider( "values", 1 ));
+*/
 
 //============================== ACCORDION OR COLLAPSE ICON CHANGE =========================
 
-    var allIcons = $("#faqAccordion .panel-heading i.fa");
-    $('#faqAccordion .panel-heading').click(function(){
-      allIcons.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
-
-    var allIconsOne = $("#accordionOne .panel-heading i.fa");
-    $('#accordionOne .panel-heading').click(function(){
-      allIconsOne.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
-
-    var allIconsTwo = $("#accordionTwo .panel-heading i.fa");
-    $('#accordionTwo .panel-heading').click(function(){
-      allIconsTwo.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
-
-    var allIconsThree = $("#togglesOne .panel-heading i.fa");
-    $('#togglesOne .panel-heading').click(function(){
-      allIconsThree.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
-
-    var allIconsFour = $("#togglesTwo .panel-heading i.fa");
-    $('#togglesTwo .panel-heading').click(function(){
-      allIconsFour.removeClass('fa-chevron-down').addClass('fa-chevron-up');
-      $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-    });
-
-  //============================== Product Gallery =========================
-  var galleryThumb = $('.product-gallery-thumblist a'),
-      galleryPreview = $('.product-gallery-preview > li');
-
-
-  galleryThumb.on('click', function(e) {
-    var target = $(this).attr('href');
-
-    galleryThumb.parent().removeClass('active');
-    $(this).parent().addClass('active');
-    galleryPreview.removeClass('current');
-    $(target).addClass('current');
-
-    e.preventDefault();
+  var allIcons = $("#faqAccordion .panel-heading i.fa");
+  $('#faqAccordion .panel-heading').click(function(){
+    allIcons.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
   });
 
-  // Count Input (Quantity)
-  //------------------------------------------------------------------------------
-  $(".incr-btn").on("click", function(e) {
-    var $button = $(this);
-    var oldValue = $button.parent().find('.quantity').val();
-    $button.parent().find('.incr-btn[data-action="decrease"]').removeClass('inactive');
-    if ($button.data('action') == "increase") {
-      var newVal = parseFloat(oldValue) + 1;
+  var allIconsOne = $("#accordionOne .panel-heading i.fa");
+  $('#accordionOne .panel-heading').click(function(){
+    allIconsOne.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+  });
+
+  var allIconsTwo = $("#accordionTwo .panel-heading i.fa");
+  $('#accordionTwo .panel-heading').click(function(){
+    allIconsTwo.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+  });
+
+  var allIconsThree = $("#togglesOne .panel-heading i.fa");
+  $('#togglesOne .panel-heading').click(function(){
+    allIconsThree.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+  });
+
+  var allIconsFour = $("#togglesTwo .panel-heading i.fa");
+  $('#togglesTwo .panel-heading').click(function(){
+    allIconsFour.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    $(this).find('i.fa').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+  });
+
+//============================== Product Gallery =========================
+var galleryThumb = $('.product-gallery-thumblist a'),
+    galleryPreview = $('.product-gallery-preview > li');
+
+
+galleryThumb.on('click', function(e) {
+  var target = $(this).attr('href');
+
+  galleryThumb.parent().removeClass('active');
+  $(this).parent().addClass('active');
+  galleryPreview.removeClass('current');
+  $(target).addClass('current');
+
+  e.preventDefault();
+});
+
+// Count Input (Quantity)
+//------------------------------------------------------------------------------
+$(".incr-btn").on("click", function(e) {
+  var $button = $(this);
+  var oldValue = $button.parent().find('.quantity').val();
+  $button.parent().find('.incr-btn[data-action="decrease"]').removeClass('inactive');
+  if ($button.data('action') == "increase") {
+    var newVal = parseFloat(oldValue) + 1;
+  } else {
+   // Don't allow decrementing below 1
+    if (oldValue > 1) {
+      var newVal = parseFloat(oldValue) - 1;
     } else {
-     // Don't allow decrementing below 1
-      if (oldValue > 1) {
-        var newVal = parseFloat(oldValue) - 1;
-      } else {
-        newVal = 1;
-        $button.addClass('inactive');
-      }
+      newVal = 1;
+      $button.addClass('inactive');
     }
-    $button.parent().find('.quantity').val(newVal);
-    e.preventDefault();
-  });
+  }
+  $button.parent().find('.quantity').val(newVal);
+  e.preventDefault();
+});
 
-  $("[data-toggle=tooltip]").tooltip();
+$("[data-toggle=tooltip]").tooltip();
 });

@@ -96,6 +96,9 @@ Rails.application.routes.draw do
       get '/favorite' => 'top#favorite'
       get '/history' => 'top#history'
       get '/intro' => 'top#intro'
+      get '/congra' => 'top#congra'
+      get '/vision' => 'top#vision'
+      get '/go_google' => 'prefectures#go_google'
 
     end
   end

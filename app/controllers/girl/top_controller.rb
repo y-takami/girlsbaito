@@ -123,8 +123,13 @@ class Girl::TopController < Girl::Base
   def personal_info
   end
 
-  def site_map
+  def congra
   end
+
+  def vision
+  end
+
+
 
 
 end

@@ -29,6 +29,7 @@ class Girl::AppliesController < Girl::Base
       @shop = ShopShow.find(params[:shop_id])
       @girl = current_girl
       @apply = apply_vali
+      flash.alert = "入力項目は全て必須です。"
       render action: 'new' and return
     end
 
@@ -47,6 +48,7 @@ class Girl::AppliesController < Girl::Base
       end
 
       girl.update(girl_apply_params)
+
       if cookies[:invitation]
         apply_params_merge = apply_params.merge(girl_id: girl.id, shop_show_id: shop_show.id, congratulation_money: shop_show.congratulation_money, invitation_code: cookies[:invitation])
       else

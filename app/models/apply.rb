@@ -5,7 +5,6 @@ class Apply < ActiveRecord::Base
   has_one :congratulation
 
   validates :name, :email, :line_id, :tel, :method, presence: true
-
   validates_date :interview, if: :after_created_at?
   validates :interview, presence: true, if: :after_created_at?
   validates :employment, inclusion: {in: [true, false]}, if: :after_created_at?
