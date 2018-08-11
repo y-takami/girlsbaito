@@ -1,32 +1,35 @@
 <% @title = '採用管理' %>
 <%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
 
+<% if @applies %>
+  <div class="table-wrapper">
 
-<div class="table-wrapper">
+    <%= paginate @applies %>
 
-  <%= paginate @applies %>
-
-  <table class="table table-bordered">
-    <tr>
-      <th>氏名</th>
-      <th>応募店舗名</th>
-      <th>採用可否</th>
-    </tr>
-    <% @applies.each do |m| %>
+    <table class="table table-bordered">
       <tr>
-        <td><%= m.girl.name %></td>
-        <td><%= m.shop_show.shop_name %></td>
-        <td><%= '未入力' if m.employment==nil %><%= '採用' if m.employment==true %>
-          <%= '不採用' if m.employment==false %></td>
-        <td>
-          <%= link_to '採用可否を入力する', edit_shop_apply_path(m.id) if m.employment==nil%>
-          <%= link_to '採用入力済み', edit_shop_apply_path(m.id) if m.employment==true %>
-          <%= link_to '不採用入力済み', edit_shop_apply_path(m.id) if m.employment==false %>
-        </td>
+        <th>氏名</th>
+        <th>応募店舗名</th>
+        <th>採用可否</th>
       </tr>
-    <% end %>
-  </table>
+      <% @applies.each do |m| %>
+        <tr>
+          <td><%= m.girl.name %></td>
+          <td><%= m.shop_show.shop_name %></td>
+          <td><%= '未入力' if m.employment==nil %><%= '採用' if m.employment==true %>
+            <%= '不採用' if m.employment==false %></td>
+          <td>
+            <%= link_to '採用可否を入力する', edit_shop_apply_path(m.id) if m.employment==nil %>
+            <%= link_to '採用入力済み', edit_shop_apply_path(m.id) if m.employment==true %>
+            <%= link_to '不採用入力済み', edit_shop_apply_path(m.id) if m.employment==false %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
 
-  <%= paginate @applies %>
+    <%= paginate @applies %>
 
-</div>
+  </div>
+<% else %>
+  <h4>まだ求人応募はありません。</h4>
+<% end %>

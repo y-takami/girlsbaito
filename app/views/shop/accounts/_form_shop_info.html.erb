@@ -51,6 +51,8 @@
   </div>
 </div>
 
+
+
 <% unless current_shop %>
   <div class="form-group">
     <%= f.label :manager_email_confirmation, '貴社メールアドレス再確認', {:class => "col-sm-3 control-label"} %>
@@ -59,6 +61,14 @@
     </div>
   </div>
 <% end %>
+
+<div class="form-group">
+  <%= f.label :manager_tel, '貴社電話番号（請求金額等のお問い合わせ先をご記載下さい）', {:class => "col-sm-3 control-label"} %>
+
+  <div class="col-sm-7">
+    <%= f.text_field :manager_tel, {:class => "form-control"} %>
+  </div>
+</div>
 
 <div class="form-group">
   <%= f.label :postal_first, '貴社住所入力欄　郵便番号', {:class => "col-sm-3 control-label"} %>

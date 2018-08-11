@@ -3,10 +3,10 @@
 
 
 <% unless current_shop %>
-<div class='list-group'>
-<%= link_to '新規登録申請', new_shop_account_path, {:class => "list-group-item"} %>
-</div>
-  <% end %>
+  <div class='list-group'>
+    <%= link_to '新規登録申請', new_shop_account_path, {:class => "list-group-item"} %>
+  </div>
+<% end %>
 
 <div class='list-group'>
   <%= link_to '求人ページ管理', shop_recruit_index_path, {:class => "list-group-item"} if current_shop %>
@@ -16,3 +16,5 @@
   <%= link_to '登録情報管理', :shop_account, {:class => "list-group-item"} if current_shop %>
 
 </div>
+
+<%= link_to '料金体系について', :shop_fee_description %>

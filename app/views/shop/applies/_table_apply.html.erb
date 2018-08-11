@@ -5,6 +5,7 @@
       <%= '不採用' if f.employment==false %>
     </td>
   </tr>
+
   <tr>
     <td>面接日</td>
     <td><%= '未入力' if f.interview==nil %><%= f.interview %></td>
@@ -23,8 +24,9 @@
     <td><%= f.girl.name %></td>
   </tr>
 
+  <tr>
     <td>応募時の設定お祝い金</td>
-    <td><%= f.congratulation_money.to_s(:delimited) %></td>円
+    <td><%= f.congratulation_money.to_s(:delimited) %>円</td>
   </tr>
 
   <tr>

@@ -6,7 +6,6 @@ class ShopShow < ActiveRecord::Base
   mount_uploader :image1, Image1Uploader
   mount_uploader :image2, Image2Uploader
   mount_uploader :image3, Image3Uploader
-  mount_uploader :license, LicenseUploader
 
   belongs_to :shop_info, :autosave => true
   has_many :applies

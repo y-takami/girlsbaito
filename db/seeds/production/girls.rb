@@ -1,4 +1,4 @@
-10.times do |n|
+3.times do |n|
 Girl.create!(
     nickname: 'はなこ',
     name: "小倉優子#{n}",

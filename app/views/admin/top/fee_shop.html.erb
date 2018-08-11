@@ -33,7 +33,7 @@
         <td><%= m.shop_show.shop_name %></td>
         <td><%= m.employment_day %></td>
         <td><%= m.congratulation_money.to_s(:delimited) %>円</td>
-        <td><%= m.congratulation_money*2 %>円</td>
+        <td><%= m.congratulation_money.to_s(:delimited)*2 %>円</td>
 
       </tr>
     <% end %>

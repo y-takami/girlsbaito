@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       get '/contact' => 'top#contact'
       get '/policy' => 'top#policy'
       get '/personal_info' => 'top#personal_info'
+      get '/fee_description' => 'top#fee_description'
 
     end
   end

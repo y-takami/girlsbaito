@@ -17,7 +17,8 @@ class Image1Uploader < CarrierWave::Uploader::Base
   end
   # 画像の上限を700pxにする
 
-  process :resize_to_limit => [900, 900]
+  process :resize_and_pad => [900, 600, "#ffffff", Magick::CenterGravity]
+
 
   # 保存形式をJPGにする
   process :convert => 'jpg'

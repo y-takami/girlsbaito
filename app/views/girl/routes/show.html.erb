@@ -3,7 +3,7 @@
 <%= render 'shared/page_title', f1: "#{@title}の駅を選択", f2: false, f3: false %>
 
 <ul class="breadcrumb">
-  <li><%= link_to 'HOME', :girl_prefecture %><span class="divider"></span></li>
+  <li><%= link_to 'HOME', :girl_root %><span class="divider"></span></li>
   <li><%= link_to '路線選択', girl_prefecture_routes_path(@prefecture.id) %><span class="divider"></span></li>
   <li class="active"><%= @route.name %></li>
 </ul>

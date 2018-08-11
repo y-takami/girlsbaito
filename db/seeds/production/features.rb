@@ -1,4 +1,4 @@
-0.times do |n|
+49.times do |n|
   c = Feature.create!(
     shop_show_id: n+1,
     daily: rand(0..1),

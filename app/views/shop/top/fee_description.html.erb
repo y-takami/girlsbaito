@@ -1,0 +1,83 @@
+<%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<%= stylesheet_link_tag "shop_ad/shop_ad", :media => "all" %>
+
+<br><br><br><br><br>
+
+<% @title = '料金体系について' %>
+<%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
+
+<section id="problem" class="content">
+  <div class="solution" class="content">
+    <div class="points">
+      <div class="point">
+        <%= image_tag("point2.png", :class => "pointImg") %>
+        <p class="pointTitle">掲載無料！</p>
+        <p class="pointText">本サイトは成果報酬型求人サイトのため，採用するまで一切料金は発生いたしません。
+        </p>
+      </div>
+
+      <div class="point">
+
+        <%= image_tag("point1.png", :class => "pointImg") %>
+        <p class="pointTitle">
+          採用時のみ料金発生！
+        </p>
+        <p class="pointText">採用した時点ではじめて料金が発生いたします。それ以外の料金は基本的には発生いたしません。
+        </p>
+      </div>
+
+      <div class="point">
+        <%= image_tag("point3.png", :class => "pointImg") %>
+        <p class="pointTitle">料金はお祝い金✕2倍</p>
+        <p class="pointText">採用した場合の料金は，一律女性が求人広告に応募した時点での採用お祝い金の2倍の金額となります。
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<p>例：採用お祝い金1万円で女性を募集した場合</p>
+<p>⇒採用時には2万円の広告掲載料を当サイトより請求させて頂きます。</p>
+<p>※採用お祝い金自体は当サイトより直接女性へ支払いを行いますので，対応は不要でございます。</p>
+
+<p>料金は月末締め，請求予定日は翌月５日前後となります。
+  また，お支払い期限は翌月末までとなります。</p>
+
+<section id="faq" class="content">
+  <h2>女子バイト&nbsp主なQ&A</h2>
+  <ul class="faq">
+    </li>
+    <li class="faq">
+      <p class="q">申し込みをしてからどのくらいで掲載を開始することができますか?
+      </p>
+      <p class="a">申し込みから掲載まで、1週間程度が目安となります。<br>お急ぎの場合は当社スタッフにお申し付けください。
+      </p>
+    </li>
+    <li class="faq">
+      <p class="q">求人の掲載期間はありますか？</p>
+      <p class="a">掲載期間の制限はございません。本当に必要な人材が採用できるまで掲載していただけます。</p>
+    </li>
+    <li class="faq">
+      <p class="q">一度掲載を開始した場合、掲載し続けなければならないのですか？</p>
+      <p class="a">掲載の有無の切り替えは管理画面から簡単に行えます。<br>人が必要な場合のみ、求人広告を掲載することが可能です。</p>
+    </li>
+    <li class="faq">
+      <p class="q">掲載店舗を追加する事はできますか？</p>
+      <p class="a">掲載店舗は管理画面から随時追加することができます。</p>
+    </li>
+    <li class="faq">
+      <p class="q">採用の定義はなんですか？
+      </p>
+      <p class="a">求人に応募してきた女性が，お客様への接客を少なくとも一回以上行った場合をいいます。<br>
+        体験入店での接客も含みますのでご注意下さい。
+      </p>
+    </li>
+
+
+  </ul>
+  <a href="" class="faqMore">Q＆Aとお問い合わせはこちらから</a>
+  <p class="faqNote">お気軽にお問い合わせください。</p>
+</section>

@@ -1,6 +1,6 @@
 <% if @city %>
   <ul class="breadcrumb">
-    <li><%= link_to 'HOME', :girl_prefecture %><span class="divider"></span></li>
+    <li><%= link_to 'HOME', :girl_root %><span class="divider"></span></li>
     <li><%= link_to '地域選択', :girl_prefecture_cities %><span class="divider"></span></li>
     <li class="active"><%= @city.name %></li>
   </ul>
@@ -8,7 +8,7 @@
 
 <% if @category %>
   <ul class="breadcrumb">
-    <li><%= link_to 'HOME', :girl_prefecture %><span class="divider"></span></li>
+    <li><%= link_to 'HOME', :girl_root %><span class="divider"></span></li>
     <li><%= link_to '職種選択', :girl_prefecture_categories %><span class="divider"></span></li>
     <li class="active"><%= @category.name %></li>
   </ul>
@@ -16,7 +16,7 @@
 
 <% if @station %>
   <ul class="breadcrumb">
-    <li><%= link_to 'HOME', :girl_prefecture %><span class="divider"></span></li>
+    <li><%= link_to 'HOME', :girl_root %><span class="divider"></span></li>
     <li><%= link_to '路線選択', girl_prefecture_routes_path(@prefecture.id) %><span class="divider"></span></li>
     <li><%= link_to @route.name, girl_prefecture_route_path(@prefecture.id, @route.id) %><span class="divider"></span></li>
     <li class="active"><%= @station.name %>駅</li>

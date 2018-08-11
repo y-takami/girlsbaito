@@ -9,11 +9,13 @@ class Shop::TopController < Shop::Base
     @shop = current_shop
     @shop_show = ShopShow.where(shop_info_id: @shop.id)
     @shop_show.each do |n|
-      @applies = Apply.where("employment_day <= ?", Time.now ).where("employment_day >= ?", Time.now.beginning_of_month).where(shop_show_id: n.id).where(employment: true).page(params[:page])
+      @applies = Apply.where("employment_day <= ?", Time.now).where("employment_day >= ?", Time.now.beginning_of_month).where(shop_show_id: n.id).where(employment: true).page(params[:page])
     end
     @fee_sum = 0
-    @applies.each do |m|
-      @fee_sum = @fee_sum + m.congratulation_money*2
+    if @applies
+      @applies.each do |m|
+        @fee_sum = @fee_sum + m.congratulation_money*2
+      end
     end
   end
 
@@ -21,11 +23,13 @@ class Shop::TopController < Shop::Base
     @shop = current_shop
     @shop_show = ShopShow.where(shop_info_id: @shop.id)
     @shop_show.each do |n|
-      @applies = Apply.where("employment_day <= ?", Time.now.prev_month.end_of_month ).where("employment_day <= ?", Time.now.prev_month.beginning_of_month).where(shop_show_id: n.id).where(employment: true).page(params[:page])
+      @applies = Apply.where("employment_day <= ?", Time.now.prev_month.end_of_month).where("employment_day <= ?", Time.now.prev_month.beginning_of_month).where(shop_show_id: n.id).where(employment: true).page(params[:page])
     end
     @fee_sum = 0
-    @applies.each do |m|
-      @fee_sum = @fee_sum + m.congratulation_money*2
+    if @applies
+      @applies.each do |m|
+        @fee_sum = @fee_sum + m.congratulation_money*2
+      end
     end
     render 'shop/top/fee'
   end
@@ -55,6 +59,9 @@ class Shop::TopController < Shop::Base
   end
 
   def personal_info
+  end
+
+  def fee_description
   end
 
 end
