@@ -19,7 +19,7 @@
           <td><%= '未入力' if m.employment==nil %><%= '採用' if m.employment==true %>
             <%= '不採用' if m.employment==false %></td>
           <td>
-            <%= link_to '採用可否を入力する', edit_shop_apply_path(m.id) if m.employment==nil %>
+            <%= link_to '応募者情報閲覧/採用可否を入力する', edit_shop_apply_path(m.id) if m.employment==nil %>
             <%= link_to '採用入力済み', edit_shop_apply_path(m.id) if m.employment==true %>
             <%= link_to '不採用入力済み', edit_shop_apply_path(m.id) if m.employment==false %>
           </td>

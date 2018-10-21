@@ -1,147 +1,136 @@
 <div class="form-group">
   項目は全て必須入力です。
 </div>
-<div class="form-group">
-  <%= f.label :group_number, 'グループ店舗数', {:class => "col-sm-3 control-label"} %>
-  <div class="col-sm-7">
-    <%= f.text_field :group_number, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :shop_name, '代表会社名（代表店舗名でも可）', {:class => "col-sm-3 control-label"} %>
 
-  <div class="col-sm-7">
-    <%= f.text_field :shop_name, {:class => "form-control"} %>
-  </div>
-</div>
 <div class="form-group">
-  <%= f.label :url, '代表会社サイトURL（代表店舗でも可）' , {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :url, {:class => "form-control"} %>
-  </div>
+  <%= f.label :group_number, 'グループ店舗数（半角数字で入力して下さい）', {:class => "control-label"} %>
+  <%= f.text_field :group_number, placeholder: "半角数字を入力して下さい", :class => "form-control" %>
 </div>
 
 <div class="form-group">
-  <%= f.label :manager_name, '貴社代表者氏名', {:class => "col-sm-3 control-label"} %>
-  <div class="col-sm-7">
-    <%= f.text_field :manager_name, {:class => "form-control"} %>
-  </div>
+  <%= f.label :shop_name, '代表会社名（代表店舗名でも可）', {:class => "control-label"} %>
+
+
+  <%= f.text_field :shop_name, placeholder: "〇〇株式会社", :class => "form-control" %>
+
+</div>
+<div class="form-group">
+  <%= f.label :url, '代表会社サイトURL（代表店舗でも可）', {:class => "control-label"} %>
+
+
+  <%= f.text_field :url, placeholder: "https://◯◯.com", :class => "form-control" %>
+
 </div>
 
 <div class="form-group">
-  <%= f.label :manager_name_sei, 'フリガナ（姓）', {:class => "col-sm-3 control-label"} %>
+  <%= f.label :manager_name, '貴社代表者氏名', {:class => "control-label"} %>
 
-  <div class="col-sm-7">
-    <%= f.text_field :manager_name_sei, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :manager_name_mei, 'フリガナ（名）', {:class => "col-sm-3 control-label"} %>
-  <div class="col-sm-7">
-    <%= f.text_field :manager_name_mei, {:class => "form-control"} %>
-  </div>
+  <%= f.text_field :manager_name, placeholder: "代表　太郎", :class => "form-control" %>
+
 </div>
 
 <div class="form-group">
-  <%= f.label :manager_email,'貴社メールアドレス（請求金額お知らせメール等が届きます）',  {:class => "col-sm-3 control-label"} %>
+  <%= f.label :manager_name_sei, 'フリガナ（姓）', {:class => "control-label"} %>
 
-  <div class="col-sm-7">
-    <%= f.text_field :manager_email, {:class => "form-control"} %>
-  </div>
+
+  <%= f.text_field :manager_name_sei, placeholder: "ダイヒョウ", :class => "form-control" %>
+
 </div>
-
-
-
-<% unless current_shop %>
-  <div class="form-group">
-    <%= f.label :manager_email_confirmation, '貴社メールアドレス再確認', {:class => "col-sm-3 control-label"} %>
-    <div class="col-sm-7">
-      <%= f.text_field :manager_email_confirmation, :class => "form-control" %>
-    </div>
-  </div>
-<% end %>
-
 <div class="form-group">
-  <%= f.label :manager_tel, '貴社電話番号（請求金額等のお問い合わせ先をご記載下さい）', {:class => "col-sm-3 control-label"} %>
+  <%= f.label :manager_name_mei, 'フリガナ（名）', {:class => "control-label"} %>
 
-  <div class="col-sm-7">
-    <%= f.text_field :manager_tel, {:class => "form-control"} %>
-  </div>
+  <%= f.text_field :manager_name_mei, placeholder: "タロウ", :class => "form-control" %>
+
 </div>
 
 <div class="form-group">
-  <%= f.label :postal_first, '貴社住所入力欄　郵便番号', {:class => "col-sm-3 control-label"} %>
+  <%= f.label :manager_email, '貴社代表メールアドレス（請求金額お知らせメール等が届きます）', {:class => "control-label"} %>
+  <%= f.text_field :manager_email, placeholder: "◯◯@email.com", :class => "form-control" %>
 
-  <div class="col-sm-7 form-inline">
-    <%= f.text_field :postal_first, {:class => "form-control"} %>-
-    <%= f.text_field :postal_last, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :prefecture, '都道府県', {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :prefecture, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :city, '市区町村', {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :city, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :house_number, '番地・建物名', {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :house_number, {:class => "form-control"} %>
-  </div>
-</div>
-
-<div class="form-group">
-  <%= f.label :admin_name, '求人管理者氏名（フルネーム）', {:class => "col-sm-3 control-label"} %>
-  <div class="col-sm-7">
-    <%= f.text_field :admin_name, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :admin_name_sei, 'フリガナ（姓）', {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :admin_name_sei, {:class => "form-control"} %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :admin_name_mei, 'フリガナ（名）', {:class => "col-sm-3 control-label"} %>
-  <div class="col-sm-7">
-    <%= f.text_field :admin_name_mei, {:class => "form-control"} %>
-  </div>
-</div>
-
-<div class="form-group">
-  <%= f.label :admin_email,'求人管理者メールアドレス（求人応募お知らせメール等が届きます）',  {:class => "col-sm-3 control-label"} %>
-
-  <div class="col-sm-7">
-    <%= f.text_field :admin_email, {:class => "form-control"} %>
-  </div>
 </div>
 
 <% unless current_shop %>
   <div class="form-group">
-    <%= f.label :admin_email_confirmation, '求人管理者メールアドレス再確認', {:class => "col-sm-3 control-label"} %>
-    <div class="col-sm-7">
-      <%= f.text_field :admin_email_confirmation, :class => "form-control" %>
-    </div>
+    <%= f.label :manager_email_confirmation, '貴社代表メールアドレス再確認', {:class => "control-label"} %>
+
+    <%= f.text_field :manager_email_confirmation, placeholder: "◯◯@email.com", :class => "form-control" %>
+
   </div>
 <% end %>
 
 <div class="form-group">
-  <%= f.label :admin_tel, '求人管理者電話番号', {:class => "col-sm-3 control-label"} %>
+  <%= f.label :manager_tel, '貴社電話番号（請求金額等のお問い合わせ先をご記載下さい）', {:class => "control-label"} %>
 
-  <div class="col-sm-7">
-    <%= f.text_field :admin_tel, {:class => "form-control"} %>
+
+  <%= f.text_field :manager_tel, placeholder: "09012345678", :class => "form-control" %>
+
+</div>
+
+<div class="form-group">
+  <%= f.label :postal_first, '貴社住所入力欄　郵便番号', {:class => "control-label"} %>
+
+  <div class="form-inline">
+    <%= f.text_field :postal_first, placeholder: "100", :class => "form-control" %>-
+    <%= f.text_field :postal_last, placeholder: "0001", :class => "form-control" %>
   </div>
+</div>
+<div class="form-group">
+  <%= f.label :prefecture, '都道府県', {:class => "control-label"} %>
+
+
+  <%= f.text_field :prefecture, placeholder: "東京都", :class => "form-control" %>
+
+</div>
+<div class="form-group">
+  <%= f.label :city, '市区町村', {:class => "control-label"} %>
+  <%= f.text_field :city, placeholder: "港区", :class => "form-control" %>
+
+</div>
+<div class="form-group">
+  <%= f.label :house_number, '番地・建物名', {:class => "control-label"} %>
+  <%= f.text_field :house_number, placeholder: "１−１１", :class => "form-control" %>
+
+</div>
+
+<div class="form-group">
+  <%= f.label :admin_name, '求人管理者氏名（フルネーム）', {:class => "control-label"} %>
+
+  <%= f.text_field :admin_name, placeholder: "求人　太郎", :class => "form-control" %>
+
+</div>
+<div class="form-group">
+  <%= f.label :admin_name_sei, 'フリガナ（姓）', {:class => "control-label"} %>
+
+
+  <%= f.text_field :admin_name_sei, placeholder: "キュウジン", :class => "form-control" %>
+
+</div>
+<div class="form-group">
+  <%= f.label :admin_name_mei, 'フリガナ（名）', {:class => "control-label"} %>
+
+  <%= f.text_field :admin_name_mei, placeholder: "タロウ", :class => "form-control" %>
+
+</div>
+
+<div class="form-group">
+  <%= f.label :admin_email, '求人管理者メールアドレス（各店舗への求人応募お知らせメール等が届きます。また，本サイトへのログイン用メールアドレスとなります。）', {:class => "control-label"} %>
+
+
+  <%= f.text_field :admin_email, placeholder: "◯◯@email.com", :class => "form-control" %>
+
+</div>
+
+<% unless current_shop %>
+  <div class="form-group">
+    <%= f.label :admin_email_confirmation, '求人管理者メールアドレス再確認', {:class => "control-label"} %>
+
+    <%= f.text_field :admin_email_confirmation, placeholder: "◯◯@email.com", :class => "form-control" %>
+
+  </div>
+<% end %>
+
+<div class="form-group">
+  <%= f.label :admin_tel, '求人管理者電話番号', {:class => "control-label"} %>
+  <%= f.text_field :admin_tel, placeholder: "09012345678", :class => "form-control" %>
 </div>
 

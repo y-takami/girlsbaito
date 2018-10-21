@@ -22,7 +22,7 @@ class CreateCongratulations < ActiveRecord::Migration
       t.date :first_work_day
       t.string :note
       t.boolean :policy
-      t.boolean :examine
+      t.boolean :examine, default: false
       
       t.timestamps
     end

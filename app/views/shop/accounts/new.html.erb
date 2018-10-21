@@ -9,20 +9,25 @@
       <%= render 'form_shop_info', f: f %>
 
       <div class="form-group">
-        <%= f.label :password, 'パスワード', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
+        <%= f.label :password, 'パスワード', {:class => "control-label"} %>
           <%= f.password_field :password, :class => "form-control" %>
-        </div>
       </div>
       <div class="form-group">
-        <%= f.label :password_confirmation, 'パスワード再確認', {:class => "col-sm-3 control-label"} %>
-        <div class="col-sm-7">
+        <%= f.label :password_confirmation, 'パスワード再確認', {:class => "control-label"} %>
           <%= f.password_field :password_confirmation, :class => "form-control" %>
-        </div>
       </div>
 
       <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-10">
+          <%= f.label :policy, ("#{link_to '利用規約', shop_policy_path }を確認して同意します").html_safe, {:class => "control-label"} %>
+        <div class="checkbox-inline">
+          <%= f.check_box :policy %><label>同意する</label>
+        </div>
+      </div>
+      <p>※登録申請審査の際には各店舗の届出確認書の確認を行っておりますので，あらかじめご了承下さい。</p>
+      <p>※提出方法は別途メールにてご案内いたしますので，ご確認のほどよろしくお願いいたします。</p>
+
+      <div class="form-group">
+        <div class="text-center">
           <%= f.submit '登録申請', :class => "btn btn-outline-primary" %>
           <%= link_to 'キャンセル', :girl_root %>
         </div>

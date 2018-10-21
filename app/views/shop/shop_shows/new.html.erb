@@ -13,12 +13,16 @@
       <%= render 'form_shop_show', f: f %>
 
       <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-10">
+        <div class="text-center">
           <%= f.submit '作成', :class => "btn btn-outline-primary" %>
           <%= link_to 'キャンセル', shop_recruit_index_path %>
         </div>
       </div>
     <% end %>
+
+    <p>＜注意＞</p>
+    <p>※初回作成時は画像データのアップロードに時間がかかります。作成を一度だけ押してしばらくそのままお待ち下さい。</p>
+    <p>※通信環境によっては数分〜10分程度かかる場合もございます。</p>
 
   </div>
 </div>

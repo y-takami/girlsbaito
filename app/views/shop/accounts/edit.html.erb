@@ -2,7 +2,10 @@
 <%= render 'shared/page_title', f1: @title, f2: false, f3: false %>
 
 <div>
-  <h1><%= @title %></h1>
+  <h4><注意事項></注意事項></h4>
+  <h4>登録情報を更新した場合，内容確認が完了するまでログインができなくなりますので，ご注意下さい。</h4>
+  <h4>確認は通常１日以内に完了いたしますが，グループ店舗数を増加させた場合には，その店舗分の確認書が必要となります。</h4>
+  <h4>その場合，確認には通常１日〜１週間程度かかります。</h4>
   <%= render 'shared/errors', f: @shop %>
   <div class="form-horizontal" role="form">
     <%= form_for @shop, url: :shop_account do |f| %>

@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20150402120651) do
     t.date     "first_work_day"
     t.string   "note"
     t.boolean  "policy"
-    t.boolean  "examine"
+    t.boolean  "examine",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -259,6 +259,7 @@ ActiveRecord::Schema.define(version: 20150402120651) do
     t.string   "password_digest"
     t.boolean  "examine",          default: false
     t.boolean  "suspended",        default: false
+    t.boolean  "policy"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -29,9 +29,11 @@ class Shop::AccountsController < Shop::Base
 
   def update
     @shop = current_shop
-
+    @shop.examine = false
     if @shop.update(shop_params)
-      flash.notice ='店舗情報を更新しました。'
+      flash.notice ='登録情報を更新しました。更新の内容確認を行います。確認完了までログインができなくなりますので，ご注意下さい。確認が完了しましたら，メールにてご連絡いたしますのでしばらくお待ち下さい。
+審査は通常１日以内に完了いたしますが，グループ店舗数を増加させた場合には，その店舗分の確認書が必要となります。その場合，確認には通常１日〜１週間程度かかります。'
+      RegisterShopMailWorker.perform_async(@shop.id)
       redirect_to :shop_account
     else
       render action: 'edit'

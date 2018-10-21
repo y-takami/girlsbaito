@@ -2,6 +2,7 @@ class Congratulation < ActiveRecord::Base
   include StringNormalizer
   belongs_to :apply, :autosave => true
   has_one :point
+  belongs_to :girl
 
   before_validation do
     self.name_sei_kana = normalize_as_furigana(name_sei_kana)

@@ -22,6 +22,7 @@ class CreateShopInfos < ActiveRecord::Migration
       t.string :password_digest
       t.boolean :examine, default: false
       t.boolean :suspended, default: false
+      t.boolean :policy
 
       t.timestamps
     end

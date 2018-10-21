@@ -1,6 +1,7 @@
 class Shop::Base < ApplicationController
   before_action :authorize
   before_action :check_account
+  before_action :check_examine
   before_action :apply_time_over
 
   private
@@ -32,6 +33,14 @@ class Shop::Base < ApplicationController
     if current_shop && current_shop.suspended?
       session.delete(:shop_id)
       flash.alert = 'アカウントが無効です。'
+      redirect_to :shop_root
+    end
+  end
+
+  def check_examine
+    if current_shop && current_shop.examine==false
+      session.delete(:shop_id)
+      flash.alert = '登録情報審査中です。'
       redirect_to :shop_root
     end
   end
